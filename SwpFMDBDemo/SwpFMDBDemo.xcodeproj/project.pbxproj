@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2DFA7D0B1E5C902800551275 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D0A1E5C902800551275 /* main.m */; };
+		2DFA7D0E1E5C902800551275 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D0D1E5C902800551275 /* AppDelegate.m */; };
+		2DFA7D101E5C902800551275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DFA7D0F1E5C902800551275 /* Assets.xcassets */; };
+		2DFA7D131E5C902800551275 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DFA7D111E5C902800551275 /* LaunchScreen.storyboard */; };
+		2DFA7D361E5C933200551275 /* SwpFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D241E5C933200551275 /* SwpFMDB.m */; };
+		2DFA7D371E5C933200551275 /* SwpFMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D261E5C933200551275 /* SwpFMDBManager.m */; };
+		2DFA7D381E5C933200551275 /* SwpBDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D291E5C933200551275 /* SwpBDModel.m */; };
+		2DFA7D391E5C933200551275 /* SwpFMDBDataTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D2D1E5C933200551275 /* SwpFMDBDataTypes.m */; };
+		2DFA7D3A1E5C933200551275 /* SwpExecuteSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D301E5C933200551275 /* SwpExecuteSQL.m */; };
+		2DFA7D3B1E5C933200551275 /* SwpStitchingSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D321E5C933200551275 /* SwpStitchingSQL.m */; };
+		2DFA7D3C1E5C933200551275 /* SwpFMDBTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D351E5C933200551275 /* SwpFMDBTools.m */; };
+		2DFA7D3F1E5C94C000551275 /* SwpFMDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D3E1E5C94C000551275 /* SwpFMDBViewController.m */; };
+		2DFA7D421E5C96B700551275 /* SwpFMDBTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D411E5C96B700551275 /* SwpFMDBTableView.m */; };
+		2DFA7D481E5C983800551275 /* SwpFMDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D471E5C983800551275 /* SwpFMDBModel.m */; };
+		2DFA7D4E1E5C9AA600551275 /* CustomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D4D1E5C9AA600551275 /* CustomModel.m */; };
+		2DFA7D511E5C9ADB00551275 /* InheritModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D501E5C9ADB00551275 /* InheritModel.m */; };
+		2DFA7D541E5C9D6200551275 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D531E5C9D6200551275 /* TestModel.m */; };
+		2DFA7D571E5CA73E00551275 /* SwpFMDBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFA7D561E5CA73E00551275 /* SwpFMDBCell.m */; };
+		BE3DBBB553DBC8C3A3AE2593 /* libPods-SwpFMDBDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 904EAAB6D4C7A4F43F4AEF50 /* libPods-SwpFMDBDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2DFA7D061E5C902800551275 /* SwpFMDBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwpFMDBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DFA7D0A1E5C902800551275 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2DFA7D0C1E5C902800551275 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2DFA7D0D1E5C902800551275 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2DFA7D0F1E5C902800551275 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2DFA7D121E5C902800551275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2DFA7D141E5C902800551275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DFA7D211E5C933200551275 /* SwpFMDBHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBHeader.h; sourceTree = "<group>"; };
+		2DFA7D231E5C933200551275 /* SwpFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDB.h; sourceTree = "<group>"; };
+		2DFA7D241E5C933200551275 /* SwpFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDB.m; sourceTree = "<group>"; };
+		2DFA7D251E5C933200551275 /* SwpFMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBManager.h; sourceTree = "<group>"; };
+		2DFA7D261E5C933200551275 /* SwpFMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBManager.m; sourceTree = "<group>"; };
+		2DFA7D281E5C933200551275 /* SwpBDModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpBDModel.h; sourceTree = "<group>"; };
+		2DFA7D291E5C933200551275 /* SwpBDModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpBDModel.m; sourceTree = "<group>"; };
+		2DFA7D2C1E5C933200551275 /* SwpFMDBDataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBDataTypes.h; sourceTree = "<group>"; };
+		2DFA7D2D1E5C933200551275 /* SwpFMDBDataTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBDataTypes.m; sourceTree = "<group>"; };
+		2DFA7D2F1E5C933200551275 /* SwpExecuteSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpExecuteSQL.h; sourceTree = "<group>"; };
+		2DFA7D301E5C933200551275 /* SwpExecuteSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpExecuteSQL.m; sourceTree = "<group>"; };
+		2DFA7D311E5C933200551275 /* SwpStitchingSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpStitchingSQL.h; sourceTree = "<group>"; };
+		2DFA7D321E5C933200551275 /* SwpStitchingSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpStitchingSQL.m; sourceTree = "<group>"; };
+		2DFA7D341E5C933200551275 /* SwpFMDBTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBTools.h; sourceTree = "<group>"; };
+		2DFA7D351E5C933200551275 /* SwpFMDBTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBTools.m; sourceTree = "<group>"; };
+		2DFA7D3D1E5C94C000551275 /* SwpFMDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBViewController.h; sourceTree = "<group>"; };
+		2DFA7D3E1E5C94C000551275 /* SwpFMDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBViewController.m; sourceTree = "<group>"; };
+		2DFA7D401E5C96B700551275 /* SwpFMDBTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBTableView.h; sourceTree = "<group>"; };
+		2DFA7D411E5C96B700551275 /* SwpFMDBTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBTableView.m; sourceTree = "<group>"; };
+		2DFA7D461E5C983800551275 /* SwpFMDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBModel.h; sourceTree = "<group>"; };
+		2DFA7D471E5C983800551275 /* SwpFMDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBModel.m; sourceTree = "<group>"; };
+		2DFA7D4C1E5C9AA600551275 /* CustomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomModel.h; sourceTree = "<group>"; };
+		2DFA7D4D1E5C9AA600551275 /* CustomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomModel.m; sourceTree = "<group>"; };
+		2DFA7D4F1E5C9ADB00551275 /* InheritModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InheritModel.h; sourceTree = "<group>"; };
+		2DFA7D501E5C9ADB00551275 /* InheritModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InheritModel.m; sourceTree = "<group>"; };
+		2DFA7D521E5C9D6200551275 /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
+		2DFA7D531E5C9D6200551275 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		2DFA7D551E5CA73E00551275 /* SwpFMDBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBCell.h; sourceTree = "<group>"; };
+		2DFA7D561E5CA73E00551275 /* SwpFMDBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBCell.m; sourceTree = "<group>"; };
+		904EAAB6D4C7A4F43F4AEF50 /* libPods-SwpFMDBDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwpFMDBDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6330FBE5E2E0BF0D62D1461 /* Pods-SwpFMDBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwpFMDBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwpFMDBDemo/Pods-SwpFMDBDemo.release.xcconfig"; sourceTree = "<group>"; };
+		D825E198027BFCE57525E1B1 /* Pods-SwpFMDBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwpFMDBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwpFMDBDemo/Pods-SwpFMDBDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2DFA7D031E5C902800551275 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE3DBBB553DBC8C3A3AE2593 /* libPods-SwpFMDBDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0245E99FE68C8F4131FDFCA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				904EAAB6D4C7A4F43F4AEF50 /* libPods-SwpFMDBDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DFA7CFD1E5C902800551275 = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D081E5C902800551275 /* SwpFMDBDemo */,
+				2DFA7D071E5C902800551275 /* Products */,
+				3CC7DC94D642C4BC7DB27D31 /* Pods */,
+				0245E99FE68C8F4131FDFCA5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2DFA7D071E5C902800551275 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D061E5C902800551275 /* SwpFMDBDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2DFA7D081E5C902800551275 /* SwpFMDBDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D1A1E5C932A00551275 /* Class */,
+				2DFA7D1E1E5C932A00551275 /* Librarys */,
+				2DFA7D0C1E5C902800551275 /* AppDelegate.h */,
+				2DFA7D0D1E5C902800551275 /* AppDelegate.m */,
+				2DFA7D0F1E5C902800551275 /* Assets.xcassets */,
+				2DFA7D111E5C902800551275 /* LaunchScreen.storyboard */,
+				2DFA7D141E5C902800551275 /* Info.plist */,
+				2DFA7D091E5C902800551275 /* Supporting Files */,
+			);
+			path = SwpFMDBDemo;
+			sourceTree = "<group>";
+		};
+		2DFA7D091E5C902800551275 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D0A1E5C902800551275 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DFA7D1A1E5C932A00551275 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D1B1E5C932A00551275 /* Controllers */,
+				2DFA7D1C1E5C932A00551275 /* Models */,
+				2DFA7D1D1E5C932A00551275 /* Views */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		2DFA7D1B1E5C932A00551275 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D3D1E5C94C000551275 /* SwpFMDBViewController.h */,
+				2DFA7D3E1E5C94C000551275 /* SwpFMDBViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2DFA7D1C1E5C932A00551275 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D461E5C983800551275 /* SwpFMDBModel.h */,
+				2DFA7D471E5C983800551275 /* SwpFMDBModel.m */,
+				2DFA7D4C1E5C9AA600551275 /* CustomModel.h */,
+				2DFA7D4D1E5C9AA600551275 /* CustomModel.m */,
+				2DFA7D4F1E5C9ADB00551275 /* InheritModel.h */,
+				2DFA7D501E5C9ADB00551275 /* InheritModel.m */,
+				2DFA7D521E5C9D6200551275 /* TestModel.h */,
+				2DFA7D531E5C9D6200551275 /* TestModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2DFA7D1D1E5C932A00551275 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D401E5C96B700551275 /* SwpFMDBTableView.h */,
+				2DFA7D411E5C96B700551275 /* SwpFMDBTableView.m */,
+				2DFA7D551E5CA73E00551275 /* SwpFMDBCell.h */,
+				2DFA7D561E5CA73E00551275 /* SwpFMDBCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2DFA7D1E1E5C932A00551275 /* Librarys */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D1F1E5C933200551275 /* SwpFMDB */,
+			);
+			path = Librarys;
+			sourceTree = "<group>";
+		};
+		2DFA7D1F1E5C933200551275 /* SwpFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D201E5C933200551275 /* SwpFMDBHeader */,
+				2DFA7D221E5C933200551275 /* SwpFMDBMain */,
+				2DFA7D271E5C933200551275 /* SwpFMDBModels */,
+				2DFA7D2A1E5C933200551275 /* SwpFMDBTools */,
+			);
+			name = SwpFMDB;
+			path = ../../../SwpFMDB;
+			sourceTree = "<group>";
+		};
+		2DFA7D201E5C933200551275 /* SwpFMDBHeader */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D211E5C933200551275 /* SwpFMDBHeader.h */,
+			);
+			path = SwpFMDBHeader;
+			sourceTree = "<group>";
+		};
+		2DFA7D221E5C933200551275 /* SwpFMDBMain */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D231E5C933200551275 /* SwpFMDB.h */,
+				2DFA7D241E5C933200551275 /* SwpFMDB.m */,
+				2DFA7D251E5C933200551275 /* SwpFMDBManager.h */,
+				2DFA7D261E5C933200551275 /* SwpFMDBManager.m */,
+			);
+			path = SwpFMDBMain;
+			sourceTree = "<group>";
+		};
+		2DFA7D271E5C933200551275 /* SwpFMDBModels */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D281E5C933200551275 /* SwpBDModel.h */,
+				2DFA7D291E5C933200551275 /* SwpBDModel.m */,
+			);
+			path = SwpFMDBModels;
+			sourceTree = "<group>";
+		};
+		2DFA7D2A1E5C933200551275 /* SwpFMDBTools */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D2B1E5C933200551275 /* SwpFMDBDataTypes */,
+				2DFA7D2E1E5C933200551275 /* SwpFMDBSQLTools */,
+				2DFA7D331E5C933200551275 /* SwpFMDBTools */,
+			);
+			path = SwpFMDBTools;
+			sourceTree = "<group>";
+		};
+		2DFA7D2B1E5C933200551275 /* SwpFMDBDataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D2C1E5C933200551275 /* SwpFMDBDataTypes.h */,
+				2DFA7D2D1E5C933200551275 /* SwpFMDBDataTypes.m */,
+			);
+			path = SwpFMDBDataTypes;
+			sourceTree = "<group>";
+		};
+		2DFA7D2E1E5C933200551275 /* SwpFMDBSQLTools */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D2F1E5C933200551275 /* SwpExecuteSQL.h */,
+				2DFA7D301E5C933200551275 /* SwpExecuteSQL.m */,
+				2DFA7D311E5C933200551275 /* SwpStitchingSQL.h */,
+				2DFA7D321E5C933200551275 /* SwpStitchingSQL.m */,
+			);
+			path = SwpFMDBSQLTools;
+			sourceTree = "<group>";
+		};
+		2DFA7D331E5C933200551275 /* SwpFMDBTools */ = {
+			isa = PBXGroup;
+			children = (
+				2DFA7D341E5C933200551275 /* SwpFMDBTools.h */,
+				2DFA7D351E5C933200551275 /* SwpFMDBTools.m */,
+			);
+			path = SwpFMDBTools;
+			sourceTree = "<group>";
+		};
+		3CC7DC94D642C4BC7DB27D31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D825E198027BFCE57525E1B1 /* Pods-SwpFMDBDemo.debug.xcconfig */,
+				B6330FBE5E2E0BF0D62D1461 /* Pods-SwpFMDBDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2DFA7D051E5C902800551275 /* SwpFMDBDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DFA7D171E5C902800551275 /* Build configuration list for PBXNativeTarget "SwpFMDBDemo" */;
+			buildPhases = (
+				821FEEDAE669DB9E405DC5A4 /* [CP] Check Pods Manifest.lock */,
+				2DFA7D021E5C902800551275 /* Sources */,
+				2DFA7D031E5C902800551275 /* Frameworks */,
+				2DFA7D041E5C902800551275 /* Resources */,
+				832E6D300DF524230960230B /* [CP] Embed Pods Frameworks */,
+				0879B0F8BD1E1EC0DB9731E6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwpFMDBDemo;
+			productName = SwpFMDBDemo;
+			productReference = 2DFA7D061E5C902800551275 /* SwpFMDBDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2DFA7CFE1E5C902800551275 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = swp_song;
+				TargetAttributes = {
+					2DFA7D051E5C902800551275 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2DFA7D011E5C902800551275 /* Build configuration list for PBXProject "SwpFMDBDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2DFA7CFD1E5C902800551275;
+			productRefGroup = 2DFA7D071E5C902800551275 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2DFA7D051E5C902800551275 /* SwpFMDBDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DFA7D041E5C902800551275 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DFA7D101E5C902800551275 /* Assets.xcassets in Resources */,
+				2DFA7D131E5C902800551275 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0879B0F8BD1E1EC0DB9731E6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwpFMDBDemo/Pods-SwpFMDBDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		821FEEDAE669DB9E405DC5A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		832E6D300DF524230960230B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwpFMDBDemo/Pods-SwpFMDBDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DFA7D021E5C902800551275 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DFA7D421E5C96B700551275 /* SwpFMDBTableView.m in Sources */,
+				2DFA7D0E1E5C902800551275 /* AppDelegate.m in Sources */,
+				2DFA7D391E5C933200551275 /* SwpFMDBDataTypes.m in Sources */,
+				2DFA7D4E1E5C9AA600551275 /* CustomModel.m in Sources */,
+				2DFA7D481E5C983800551275 /* SwpFMDBModel.m in Sources */,
+				2DFA7D3A1E5C933200551275 /* SwpExecuteSQL.m in Sources */,
+				2DFA7D541E5C9D6200551275 /* TestModel.m in Sources */,
+				2DFA7D3B1E5C933200551275 /* SwpStitchingSQL.m in Sources */,
+				2DFA7D371E5C933200551275 /* SwpFMDBManager.m in Sources */,
+				2DFA7D511E5C9ADB00551275 /* InheritModel.m in Sources */,
+				2DFA7D0B1E5C902800551275 /* main.m in Sources */,
+				2DFA7D571E5CA73E00551275 /* SwpFMDBCell.m in Sources */,
+				2DFA7D3F1E5C94C000551275 /* SwpFMDBViewController.m in Sources */,
+				2DFA7D361E5C933200551275 /* SwpFMDB.m in Sources */,
+				2DFA7D381E5C933200551275 /* SwpBDModel.m in Sources */,
+				2DFA7D3C1E5C933200551275 /* SwpFMDBTools.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2DFA7D111E5C902800551275 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DFA7D121E5C902800551275 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2DFA7D151E5C902800551275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2DFA7D161E5C902800551275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2DFA7D181E5C902800551275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D825E198027BFCE57525E1B1 /* Pods-SwpFMDBDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SwpFMDBDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "swp-song.SwpFMDBDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2DFA7D191E5C902800551275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6330FBE5E2E0BF0D62D1461 /* Pods-SwpFMDBDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SwpFMDBDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "swp-song.SwpFMDBDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DFA7D011E5C902800551275 /* Build configuration list for PBXProject "SwpFMDBDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DFA7D151E5C902800551275 /* Debug */,
+				2DFA7D161E5C902800551275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DFA7D171E5C902800551275 /* Build configuration list for PBXNativeTarget "SwpFMDBDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DFA7D181E5C902800551275 /* Debug */,
+				2DFA7D191E5C902800551275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2DFA7CFE1E5C902800551275 /* Project object */;
+}
