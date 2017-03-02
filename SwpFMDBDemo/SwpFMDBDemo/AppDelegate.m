@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  SwpFMDBDemo
 //
-//  Created by swp_song on 2017/2/21.
+//  Created by swp_song on 2017/3/2.
 //  Copyright © 2017年 swp_song. All rights reserved.
 //
 
@@ -18,10 +18,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.window                    = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor    = [UIColor whiteColor];
-    
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[SwpFMDBViewController new]];
     [self.window makeKeyAndVisible];
     return YES;

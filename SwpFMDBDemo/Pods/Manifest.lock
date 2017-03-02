@@ -3,15 +3,30 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - Masonry (1.0.2)
+  - pop (1.0.9)
+  - SVProgressHUD (2.1.2)
+  - SwpCateGory (1.2.0)
+  - SwpPopTools (1.0.2)
+  - SwpTools (2.0.1)
 
 DEPENDENCIES:
   - FMDB
   - Masonry
+  - pop
+  - SVProgressHUD
+  - SwpCateGory
+  - SwpPopTools
+  - SwpTools
 
 SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SwpCateGory: 6355fc98d20be27171d3c0a3a2e968f0627838a8
+  SwpPopTools: a9144eca522201b97321e2db0bf99054b657aa35
+  SwpTools: b0fb8cb43d1528c66d2dfde394804069ddd6e28f
 
-PODFILE CHECKSUM: da6156020d6088afa99956840e8571da393eb0af
+PODFILE CHECKSUM: 287ef3db02e7ed7209752af53d0f70d7f912e5f5
 
 COCOAPODS: 1.2.0

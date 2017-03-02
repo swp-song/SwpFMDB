@@ -9,9 +9,14 @@ target 'SwpFMDBDemo' do
   # use_frameworks!
 
   # Pods for SwpFMDBDemo
-  inhibit_all_warnings!
   
+  inhibit_all_warnings!
+  pod 'pop'  
   pod 'FMDB'
-  pod 'Masonry'					                  # Masonry 自动布局框架
+  pod 'Masonry'
+  pod 'SwpTools'
+  pod 'SwpCateGory'
+  pod 'SwpPopTools'
+  pod 'SVProgressHUD'
 
 end

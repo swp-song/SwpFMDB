@@ -1,0 +1,1 @@
+../../../SwpTools/SwpTools/Header/SwpLog.h

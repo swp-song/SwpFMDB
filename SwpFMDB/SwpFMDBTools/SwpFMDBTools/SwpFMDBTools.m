@@ -26,7 +26,7 @@
  */
 + (NSString *)swpFMDBToolsGetSqlFilePath {
     NSString      *sandboxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-    NSString      *sqlFilePath = [sandboxPath stringByAppendingPathComponent:@"SwpFMDB.sqlite"];
+    NSString      *sqlFilePath = [sandboxPath stringByAppendingPathComponent:@"SwpFMDB.db"];
     NSFileManager *manager     = [NSFileManager defaultManager];
     BOOL          isDirectory;
     BOOL isExists = [manager fileExistsAtPath:sqlFilePath isDirectory:&isDirectory];

@@ -123,16 +123,22 @@
 + (NSString *)swpStitchingUpdateSQL:(id)model conditionKey:(NSString *)key conditionValue:(NSString *)value {
     
     NSArray<NSString *> *propertys = [SwpFMDBTools swpFMDBToolsGetAllPropertysNames:[model class]];
-    NSMutableString     *insterSQL = [NSMutableString stringWithFormat:@"UPDATE %@ SET ", [model class]];
+    NSMutableString     *updateSQL = [NSMutableString stringWithFormat:@"UPDATE %@ SET ", [model class]];
     [propertys enumerateObjectsUsingBlock:^(NSString * _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
         id value = [model valueForKey:key];
+        
+        if (value == nil) value = @"";
+        
         if ([SwpFMDBTools swpFMDBToolsVerifySystemCollectionType:value]) {
             value = [SwpFMDBTools swpFMDBToolsSetConversionJSONSting:value];
         }
-        [insterSQL appendString:idx == propertys.count - 1 ? [NSString stringWithFormat:@"%@ = '%@'", key, value] : [NSString stringWithFormat:@"%@ = '%@', ", key, value]];
+        
+        value = value ? [NSString stringWithFormat:@"'%@'", value] : value;
+        
+        [updateSQL appendString:idx == propertys.count - 1 ? [NSString stringWithFormat:@"%@ = %@", key, value] : [NSString stringWithFormat:@"%@ = %@, ", key, value]];
     }];
-    [insterSQL appendFormat:@" WHERE %@ = '%@';", key, value];
-    return insterSQL.copy;
+    [updateSQL appendFormat:@" WHERE %@ = '%@';", key, value];
+    return updateSQL.copy;
 }
 
 #pragma mark - Swp Stitching Select SQL Methods
