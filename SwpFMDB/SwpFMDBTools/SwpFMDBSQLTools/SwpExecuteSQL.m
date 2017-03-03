@@ -176,6 +176,32 @@
     return models;
 }
 
+#pragma mark - SwpExecuteSQL Execute Delete SQL Methods
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpExecuteDeleteModelSQL:model:isCloseDB: ( 执行 删除 单条  数据 SQL )
+ *
+ *  @ param  dataBase
+ *
+ *  @ param  model
+ *
+ *  @ param  isCloseDB
+ *
+ *  @ return BOOL
+ */
++ (BOOL)swpExecuteDeleteModelSQL:(FMDatabase *)dataBase model:(id)model isCloseDB:(BOOL)isCloseDB {
+    
+    __block BOOL executionStatus = NO;
+    if (![[self class] swpExecuteDBOperation:dataBase dbOpenBlock:^{
+
+        executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingDeleteModelsSQL:[model class] swpDBID:[model valueForKey:@"swpDBID"]]];
+        
+    } isCloseDB:isCloseDB]) return executionStatus;
+
+    return executionStatus;
+}
+
 #pragma mark - SwpFMDB Execute Verify Table SQL Methods
 /**!
  *  @ author swp_song

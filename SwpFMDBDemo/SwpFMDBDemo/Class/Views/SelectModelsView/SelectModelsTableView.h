@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @ brief  selectModels:  ( 设置 数据 )
  */
-- (SelectModelsTableView *(^)(NSArray *selectModels))selectModels;
+- (SelectModelsTableView *(^)(NSArray *selectModels, BOOL isAnimationReloadData))selectModels;
 
 /**!
  *  @ author swp_song
@@ -28,6 +28,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  @ param  selectModelsTableViewClickCell
  */
 - (void)selectModelsTableViewClickCell:(void (^)(SelectModelsTableView *selectModelsTableView, NSIndexPath *indexPath))selectModelsTableViewClickCell;
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  selectModelsTableViewClickCell:    ( 点击 编辑 cell )
+ *
+ *  @ param  selectModelsTableViewClicEditingkCell
+ */
+- (void)selectModelsTableViewClicEditingkCell:(void (^)(SelectModelsTableView *selectModelsTableView, NSIndexPath *indexPath))selectModelsTableViewClicEditingkCell;
 
 @end
 NS_ASSUME_NONNULL_END;

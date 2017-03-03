@@ -55,6 +55,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    
+//    [[SwpFMDB shareManager] swpFMDBDelegateModel:[CustomModel customInsterModelData] swpFMDBExecutionUpdateComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus) {
+//        
+//    }];
+//    return;
+    
     [self setUI];
     
     [self setData];

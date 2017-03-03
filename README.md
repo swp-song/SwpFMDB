@@ -9,11 +9,12 @@
 
 
 ```
----
-
-##### 效果:
 
 ---
+##### 效果：
+![(图片轮播效果)](https://raw.githubusercontent.com/swp-song/SwpFMDB/master/Screenshot/SwpFMDB.gif)
+---
+
 
 ##### 导入:
 
@@ -43,16 +44,42 @@ pod 'SwpFMDB'
 
 ```Objective-C
 
+	SwpFMDB *swpFMDB = [SwpFMDBshareManager];
+
+	// 插入 单条 数据
+	[swpFMDBswpFMDBInsertModel:model swpFMDBExecutionUpdateComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus) {
+        result = executionStatus;
+        NSLog(@"%@", result ? @"插入成功" : @"插入失败");
+    }];
+
+	  // 修改 单条 数据
+     [swpFMDB swpFMDBUpdateModel:model swpFMDBExecutionUpdateComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus) {
+        result = executionStatus;
+        NSLog(@"%@", result ? @"修改成功" : @"修改失败");
+    }];
+
+    .... 更多请查看代码
+
 ```
 
 --
-##### 1.0.0 第一次 上传
+##### 1.0.3 第一次 上传
+```
+1. 2017-03-03 18:14:26
+2. 新增 删除 单条数据方法,
+
+  - (void)swpFMDBDelegateModel:(id)model swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+
+```
+--
+
+--
+##### 1.0.2 第一次 上传
 ```
 1. 2017-03-03 07:50:08
 2. 更新 Demo 上传版本
 
 ```
-
 --
 ##### 1.0.0 第一次 上传
 ```

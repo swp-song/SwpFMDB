@@ -15,7 +15,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SwpFMDBManager : NSObject
 
-
+#pragma mark - SwpFMDBManager Verify Table Methods
 /**!
  *  @ author swp_song
  *
@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)executeVerifyThatTheTableExists:(Class)modelClass dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB;
 
+#pragma mark - SwpFMDBManager Create Table Methods
 /**!
  *  @ author swp_song
  *
@@ -40,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)createTable:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
 
+#pragma mark - SwpFMDBManager Insert Methods
 /**!
  *  @ author swp_song
  *
@@ -74,6 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)insertModels:(NSArray *)models swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
 
+#pragma mark - SwpFMDBManager Update Methods
 /**!
  *  @ author swp_song
  *
@@ -108,6 +111,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)updateModels:(NSArray *)models swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
 
+#pragma mark - SwpFMDBManager Select Methods
 /**!
  *  @ author swp_song
  *
@@ -145,6 +149,24 @@ NS_ASSUME_NONNULL_BEGIN
  *  @ param  executionSelectModelComplete
  */
 + (void)selectModels:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionSelectModelsComplete:(nullable SwpFMDBExecutionSelectModelsComplete)executionSelectModelsComplete;
+
+#pragma mark - SwpFMDBManager Delegate Methods
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  delegateModel:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 删除 表中 指定数据 )
+ *
+ *  @ param  model
+ *
+ *  @ param  swpFMDB
+ *
+ *  @ param  dataBase
+ *
+ *  @ param  isCloseDB
+ *
+ *  @ param  executionUpdateComplete
+ */
++ (void)delegateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
 
 @end
 NS_ASSUME_NONNULL_END

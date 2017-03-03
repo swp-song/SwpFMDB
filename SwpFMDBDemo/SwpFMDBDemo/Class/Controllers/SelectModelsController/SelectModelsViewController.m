@@ -8,8 +8,10 @@
 
 #import "SelectModelsViewController.h"
 /*! ---------------------- Tool       ---------------------- !*/
+#import "SwpFMDBHeader.h"
 #import <Masonry/Masonry.h>
 #import "SwpFMDBDemoTools.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 /*! ---------------------- Tool       ---------------------- !*/
 
 /*! ---------------------- Model      ---------------------- !*/
@@ -62,9 +64,15 @@
  *  @ brief  setData ( 设置 初始化 数据 )
  */
 - (void)setData {
+
+    
+    [self setSelectModelsTableViewData:self.datas isAnimationReloadData:YES];
+}
+
+- (void)setSelectModelsTableViewData:(NSArray *)data isAnimationReloadData:(BOOL)isAnimationReloadData {
     __weak typeof(self) vc = self;
     [SwpFMDBDemoTools swpFMDBDemoToolsExecuteInMainQueue:^{
-        vc.selectModelsTableView.selectModels(vc.datas);
+        vc.selectModelsTableView.selectModels(data, isAnimationReloadData);
     } afterDelaySecs:0.5f];
 }
 
@@ -131,10 +139,57 @@
     
     __weak typeof(self) vc = self;
     [selectModelsTableView selectModelsTableViewClickCell:^(SelectModelsTableView * _Nonnull selectModelsTableView, NSIndexPath * _Nonnull indexPath) {
-        vc.swpDataDisplayView.model(_datas[indexPath.row]);
+        vc.swpDataDisplayView.model(vc.datas[indexPath.row]);
         vc.swpDataDisplayView.swpDataDisplayViewShow();
     }];
+    
+    
+    
+    [selectModelsTableView selectModelsTableViewClicEditingkCell:^(SelectModelsTableView * _Nonnull selectModelsTableView, NSIndexPath * _Nonnull indexPath) {
+
+        
+        id model = vc.datas[indexPath.row];
+        if (![vc deleteDataWihtModelClass:model]) {
+            [SVProgressHUD showInfoWithStatus:@"删除数据失败"];
+            return;
+        }
+        
+        [SVProgressHUD showInfoWithStatus:@"删除数据成功"];
+        
+        vc.datas = [vc selelctDatasWihtModelClass:[model class]];
+        
+        // isAnimationReloadData NO
+        [vc setSelectModelsTableViewData:vc.datas isAnimationReloadData:NO];
+    }];
 }
+
+
+- (BOOL)deleteDataWihtModelClass:(id)model {
+    __block BOOL result = NO;
+    [[SwpFMDB shareManager] swpFMDBDelegateModel:model swpFMDBExecutionUpdateComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus) {
+        result = executionStatus;
+        NSLog(@"%@", result ? @"删除数据成功" : @"删除数据失败");
+    }];
+    return YES;
+}
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  selelctDatasWihtModelClass: ( 查询 全部 数据  )
+ *
+ *  @ param modelClass
+ *
+ *  @ return NSArray
+ */
+- (NSArray *)selelctDatasWihtModelClass:(Class)modelClass {
+    __block NSArray *selectModels = [NSArray array];
+    [[SwpFMDB shareManager] swpFMDBSelectModels:modelClass swpFMDBExecutionSelectModelsComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus, NSArray * _Nonnull models) {
+        selectModels = models;
+    }];
+    return selectModels;
+}
+
 
 #pragma mark - Public Methods
 /**!

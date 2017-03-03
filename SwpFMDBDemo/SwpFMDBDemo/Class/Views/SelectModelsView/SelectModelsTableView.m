@@ -33,6 +33,9 @@ static NSString * const kSelectModelsCellID = @" Select Models Cell ID ";
 @property (nonatomic, copy) NSArray *datas;
 /*! 点击 cell 回调  !*/
 @property (nonatomic, copy, setter = selectModelsTableViewClickCell:) void(^selectModelsTableViewClickCell)(SelectModelsTableView *selectModelsTableView, NSIndexPath *indexPath);
+
+/*! 点击 编辑 cell  !*/
+@property (nonatomic, copy, setter = selectModelsTableViewClicEditingkCell:) void(^selectModelsTableViewClicEditingkCell)(SelectModelsTableView *selectModelsTableView, NSIndexPath *indexPath);
 /*! ---------------------- Data Property  ---------------------- !*/
 
 @end
@@ -122,17 +125,71 @@ static NSString * const kSelectModelsCellID = @" Select Models Cell ID ";
 }
 
 
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  tableView:didSelectRowAtIndexPath: ( tableView cell 是否 可以编辑 )
+ *
+ *  @ param tableView
+ *
+ *  @ param indexPath
+ *
+ *  @ return BOOL
+ */
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  tableView:editingStyleForRowAtIndexPath:   ( tableView cell 编辑样式 )
+ *
+ *  @ param  tableView
+ *
+ *  @ param  indexPath
+ *
+ *  @ return UITableViewCellEditingStyle
+ */
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  tableView:editingStyleForRowAtIndexPath:   ( tableView cell 点击编辑样式 )
+ *
+ *  @ param  tableView
+ *
+ *  @ param  editingStyle
+ *
+ *  @ param  indexPath
+ */
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        if (self.selectModelsTableViewClicEditingkCell) self.selectModelsTableViewClicEditingkCell(self, indexPath);
+    }
+}
+
 #pragma mark - Public Methods
 /**!
  *  @ author swp_song
  *
  *  @ brief  selectModels:  ( 设置 数据 )
  */
-- (SelectModelsTableView *(^)(NSArray *selectModels))selectModels {
+- (SelectModelsTableView *(^)(NSArray *selectModels, BOOL isAnimationReloadData))selectModels {
     
-    return ^SelectModelsTableView *(NSArray *selectModels) {
+    return ^SelectModelsTableView *(NSArray *selectModels, BOOL isAnimationReloadData) {
         _datas = selectModels;
-        [self insertRowsAtIndexPaths:[SwpFMDBDemoTools swpFMDBDemoToolsObtainDataIndexPath:selectModels] withRowAnimation:UITableViewRowAnimationFade];
+        
+        if (isAnimationReloadData) {
+            [self insertRowsAtIndexPaths:[SwpFMDBDemoTools swpFMDBDemoToolsObtainDataIndexPath:selectModels] withRowAnimation:UITableViewRowAnimationFade];
+        } else {
+            [self reloadData];
+        }
         return self;
     };
 }
@@ -147,6 +204,19 @@ static NSString * const kSelectModelsCellID = @" Select Models Cell ID ";
 - (void)selectModelsTableViewClickCell:(void (^)(SelectModelsTableView *selectModelsTableView, NSIndexPath *indexPath))selectModelsTableViewClickCell {
     _selectModelsTableViewClickCell = selectModelsTableViewClickCell;
 }
+
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  selectModelsTableViewClickCell:    ( 点击 编辑 cell )
+ *
+ *  @ param  selectModelsTableViewClicEditingkCell
+ */
+- (void)selectModelsTableViewClicEditingkCell:(void (^)(SelectModelsTableView *selectModelsTableView, NSIndexPath *indexPath))selectModelsTableViewClicEditingkCell {
+    _selectModelsTableViewClicEditingkCell = selectModelsTableViewClicEditingkCell;
+}
+
 
 
 /*

@@ -189,4 +189,38 @@
     return [NSString stringWithFormat:@"SELECT * FROM %@;", NSStringFromClass(modelClass)];
 }
 
+#pragma mark - Swp Stitching Delete SQL Methods
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpStitchingDeleteModelsSQL:key:value: ( 删除 单条 数据 SQL < 单条数据 > )
+ *
+ *  @ param  modelClass
+ *
+ *  @ param  key
+ *
+ *  @ param  value
+ *
+ *  @ return NSString
+ */
++ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass key:(NSString *)key value:(NSString *)value {
+    return [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ = '%@';", NSStringFromClass(modelClass), key, value];
+}
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpStitchingDeleteModelsSQL:swpDBID:   ( 删除 单条 数据 SQL 根据 swpDBID < 单条数据 > )
+ *
+ *  @ param  modelClass
+ *
+ *  @ param  swpDBID
+ *
+ *  @ return NSString
+ */
++ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass swpDBID:(NSString *)swpDBID {
+    return [[self class] swpStitchingDeleteModelsSQL:modelClass key:@"swpDBID" value:swpDBID];
+}
+
+
 @end

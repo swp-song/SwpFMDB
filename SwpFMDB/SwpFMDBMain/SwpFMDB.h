@@ -15,6 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SwpFMDB : NSObject
 
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  shareManager   ( 单利 方法 创建 SwpFMDB  )
+ *
+ *  @ return SwpFMDB
+ */
 + (instancetype)shareManager;
 
 /**!
@@ -110,6 +117,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)swpFMDBSelectModels:(Class)modelClass swpFMDBExecutionSelectModelsComplete:(nullable SwpFMDBExecutionSelectModelsComplete)swpFMDBExecutionSelectModelsComplete;
 
+#pragma mark - SwpFMDB Delete Methods
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:   ( 删除 单条 数据 )
+ *
+ *  @ param  model
+ *
+ *  @ param  swpFMDBExecutionUpdateComplete
+ */
+- (void)swpFMDBDelegateModel:(id)model swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
 
 /**!
  *  @ author swp_song

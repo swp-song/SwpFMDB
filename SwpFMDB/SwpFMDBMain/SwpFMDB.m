@@ -11,7 +11,7 @@
 /*! ---------------------- Tool       ---------------------- !*/
 #import "FMDB.h"                        //  FMDB
 #import "SwpFMDBTools.h"                //  Tools
-#import "SwpFMDBManager.h"
+#import "SwpFMDBManager.h"              //  SwpFMDBManager
 /*! ---------------------- Tool       ---------------------- !*/
 
 @interface SwpFMDB ()
@@ -140,8 +140,6 @@ static id _swpFMDB;
 }
 
 #pragma mark - Public Methods
-
-#pragma mark - SwpFMDB Verify Table Methods
 /**!
  *  @ author swp_song
  *
@@ -159,6 +157,7 @@ static id _swpFMDB;
     return swpFMDB;
 }
 
+#pragma mark - SwpFMDB Verify Table Methods
 /**!
  *  @ author swp_song
  *
@@ -306,6 +305,23 @@ static id _swpFMDB;
     [self swpFMDBInTransaction:self.databaseQueue block:^(SwpFMDB *swpFMDB, FMDatabase *dataBase, BOOL *rollback) {
         // 查询 一组 数据
         [SwpFMDBManager selectModels:modelClass swpFMDB:swpFMDB dataBase:dataBase isCloseDB:YES executionSelectModelsComplete:swpFMDBExecutionSelectModelsComplete];
+    }];
+}
+
+#pragma mark - SwpFMDB Delete Methods
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:   ( 删除 单条 数据 )
+ *
+ *  @ param  model
+ *
+ *  @ param  swpFMDBExecutionUpdateComplete
+ */
+- (void)swpFMDBDelegateModel:(id)model swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete {
+    
+    [self swpFMDBInTransaction:self.databaseQueue block:^(SwpFMDB *swpFMDB, FMDatabase *dataBase, BOOL *rollback) {
+        [SwpFMDBManager delegateModel:model swpFMDB:swpFMDB dataBase:dataBase isCloseDB:YES executionUpdateComplete:swpFMDBExecutionUpdateComplete];
     }];
 }
 

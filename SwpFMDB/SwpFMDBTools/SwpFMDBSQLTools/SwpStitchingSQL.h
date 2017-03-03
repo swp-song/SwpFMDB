@@ -113,5 +113,34 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)swpStitchingSelectModelsSQL:(Class)modelClass;
 
+#pragma mark - Swp Stitching Delete SQL Methods
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpStitchingDeleteModelsSQL:key:value: ( 删除 单条 数据 SQL < 单条数据 > )
+ *
+ *  @ param  modelClass
+ *
+ *  @ param  key
+ *
+ *  @ param  value
+ *
+ *  @ return NSString
+ */
++ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass key:(NSString *)key value:(NSString *)value;
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpStitchingDeleteModelsSQL:swpDBID:   ( 删除 单条 数据 SQL 根据 swpDBID < 单条数据 > )
+ *
+ *  @ param  modelClass
+ *
+ *  @ param  swpDBID
+ *
+ *  @ return NSString
+ */
++ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass swpDBID:(NSString *)swpDBID;
+
 @end
 NS_ASSUME_NONNULL_END

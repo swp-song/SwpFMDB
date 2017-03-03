@@ -17,6 +17,7 @@
 
 @implementation SwpFMDBManager
 
+#pragma mark - SwpFMDBManager Verify Table Methods
 /**!
  *  @ author swp_song
  *
@@ -26,10 +27,11 @@
  *
  *  @ return BOOL
  */
-+ (BOOL)executeVerifyThatTheTableExists:(Class)modelClass dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB {    return [SwpExecuteSQL swpExecuteVerifyThatTheTableExistsSQL:dataBase table:modelClass isCloseDB:isCloseDB];
++ (BOOL)executeVerifyThatTheTableExists:(Class)modelClass dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB {
+    return [SwpExecuteSQL swpExecuteVerifyThatTheTableExistsSQL:dataBase table:modelClass isCloseDB:isCloseDB];
 }
 
-#pragma mark - SwpFMDB Private Create Table Methods
+#pragma mark - SwpFMDBManager Create Table Methods
 /**!
  *  @ author swp_song
  *
@@ -56,7 +58,7 @@
     if (executionUpdateComplete) executionUpdateComplete(swpFMDB, executionStatus);
 }
 
-#pragma mark - SwpFMDB Private Insert Methods
+#pragma mark - SwpFMDBManager Insert Methods
 /**!
  *  @ author swp_song
  *
@@ -74,7 +76,7 @@
  */
 + (void)insertModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete {
     
-    [[self class] createTable:[model class] swpFMDB:swpFMDB dataBase:dataBase isCloseDB:YES executionUpdateComplete:nil];
+    [[self class] createTable:[model class] swpFMDB:swpFMDB dataBase:dataBase isCloseDB:isCloseDB executionUpdateComplete:nil];
     BOOL executionStatus  = [SwpExecuteSQL swpExecuteInsertModelSQL:dataBase model:model isCloseDB:isCloseDB];
     if (executionUpdateComplete) executionUpdateComplete(swpFMDB, executionStatus);
 }
@@ -107,7 +109,7 @@
     
 }
 
-#pragma mark - SwpFMDB Private Update Methods
+#pragma mark - SwpFMDBManager Update Methods
 /**!
  *  @ author swp_song
  *
@@ -167,7 +169,7 @@
     }];
 }
 
-#pragma mark - SwpFMDB Private Select Methods
+#pragma mark - SwpFMDBManager Select Methods
 /**!
  *  @ author swp_song
  *
@@ -223,6 +225,36 @@
     }
     NSArray *models = [SwpExecuteSQL swpExecuteSelectModelsSQL:dataBase table:modelClass isCloseDB:YES];
     if (executionSelectModelsComplete) executionSelectModelsComplete(swpFMDB, models.count && models ? YES : NO, models);
+}
+
+
+#pragma mark - SwpFMDBManager Delegate Methods
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  delegateModel:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 删除 表中 指定数据 )
+ *
+ *  @ param  model
+ *
+ *  @ param  swpFMDB
+ *
+ *  @ param  dataBase
+ *
+ *  @ param  isCloseDB
+ *
+ *  @ param  executionUpdateComplete
+ */
++ (void)delegateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete {
+    
+    if (![[self class] executeVerifyThatTheTableExists:[model class] dataBase:dataBase isCloseDB:isCloseDB]) {
+        // 不存在
+        if (executionUpdateComplete) executionUpdateComplete(swpFMDB, NO);
+        return;
+    }
+    
+    BOOL executionStatus = [SwpExecuteSQL swpExecuteDeleteModelSQL:dataBase model:model isCloseDB:isCloseDB];
+    if (executionUpdateComplete) executionUpdateComplete(swpFMDB, executionStatus);
+    
 }
 
 
