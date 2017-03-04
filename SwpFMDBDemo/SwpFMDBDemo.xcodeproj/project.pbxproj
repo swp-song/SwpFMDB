@@ -24,13 +24,13 @@
 		2D88602B1E681A43006E0819 /* SwpDataDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D88601C1E681A43006E0819 /* SwpDataDisplayView.m */; };
 		2D88602C1E681A43006E0819 /* SwpFMDBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D88601E1E681A43006E0819 /* SwpFMDBCell.m */; };
 		2D88602D1E681A43006E0819 /* SwpFMDBTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8860201E681A43006E0819 /* SwpFMDBTableView.m */; };
-		2D8860451E681A51006E0819 /* SwpFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8860331E681A51006E0819 /* SwpFMDB.m */; };
-		2D8860461E681A51006E0819 /* SwpFMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8860351E681A51006E0819 /* SwpFMDBManager.m */; };
-		2D8860471E681A51006E0819 /* SwpBDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8860381E681A51006E0819 /* SwpBDModel.m */; };
-		2D8860481E681A51006E0819 /* SwpFMDBDataTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D88603C1E681A51006E0819 /* SwpFMDBDataTypes.m */; };
-		2D8860491E681A51006E0819 /* SwpExecuteSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D88603F1E681A51006E0819 /* SwpExecuteSQL.m */; };
-		2D88604A1E681A51006E0819 /* SwpStitchingSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8860411E681A51006E0819 /* SwpStitchingSQL.m */; };
-		2D88604B1E681A51006E0819 /* SwpFMDBTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8860441E681A51006E0819 /* SwpFMDBTools.m */; };
+		2DD4DA141E6A834400694D00 /* SwpFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA021E6A834400694D00 /* SwpFMDB.m */; };
+		2DD4DA151E6A834400694D00 /* SwpFMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA041E6A834400694D00 /* SwpFMDBManager.m */; };
+		2DD4DA161E6A834400694D00 /* SwpBDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA071E6A834400694D00 /* SwpBDModel.m */; };
+		2DD4DA171E6A834400694D00 /* SwpFMDBDataTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA0B1E6A834400694D00 /* SwpFMDBDataTypes.m */; };
+		2DD4DA181E6A834400694D00 /* SwpExecuteSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA0E1E6A834400694D00 /* SwpExecuteSQL.m */; };
+		2DD4DA191E6A834400694D00 /* SwpStitchingSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA101E6A834400694D00 /* SwpStitchingSQL.m */; };
+		2DD4DA1A1E6A834400694D00 /* SwpFMDBTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA131E6A834400694D00 /* SwpFMDBTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,21 +65,21 @@
 		2D88601E1E681A43006E0819 /* SwpFMDBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBCell.m; sourceTree = "<group>"; };
 		2D88601F1E681A43006E0819 /* SwpFMDBTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBTableView.h; sourceTree = "<group>"; };
 		2D8860201E681A43006E0819 /* SwpFMDBTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBTableView.m; sourceTree = "<group>"; };
-		2D8860301E681A51006E0819 /* SwpFMDBHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBHeader.h; sourceTree = "<group>"; };
-		2D8860321E681A51006E0819 /* SwpFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDB.h; sourceTree = "<group>"; };
-		2D8860331E681A51006E0819 /* SwpFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDB.m; sourceTree = "<group>"; };
-		2D8860341E681A51006E0819 /* SwpFMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBManager.h; sourceTree = "<group>"; };
-		2D8860351E681A51006E0819 /* SwpFMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBManager.m; sourceTree = "<group>"; };
-		2D8860371E681A51006E0819 /* SwpBDModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpBDModel.h; sourceTree = "<group>"; };
-		2D8860381E681A51006E0819 /* SwpBDModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpBDModel.m; sourceTree = "<group>"; };
-		2D88603B1E681A51006E0819 /* SwpFMDBDataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBDataTypes.h; sourceTree = "<group>"; };
-		2D88603C1E681A51006E0819 /* SwpFMDBDataTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBDataTypes.m; sourceTree = "<group>"; };
-		2D88603E1E681A51006E0819 /* SwpExecuteSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpExecuteSQL.h; sourceTree = "<group>"; };
-		2D88603F1E681A51006E0819 /* SwpExecuteSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpExecuteSQL.m; sourceTree = "<group>"; };
-		2D8860401E681A51006E0819 /* SwpStitchingSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpStitchingSQL.h; sourceTree = "<group>"; };
-		2D8860411E681A51006E0819 /* SwpStitchingSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpStitchingSQL.m; sourceTree = "<group>"; };
-		2D8860431E681A51006E0819 /* SwpFMDBTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBTools.h; sourceTree = "<group>"; };
-		2D8860441E681A51006E0819 /* SwpFMDBTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBTools.m; sourceTree = "<group>"; };
+		2DD4D9FF1E6A834400694D00 /* SwpFMDBHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBHeader.h; sourceTree = "<group>"; };
+		2DD4DA011E6A834400694D00 /* SwpFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDB.h; sourceTree = "<group>"; };
+		2DD4DA021E6A834400694D00 /* SwpFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDB.m; sourceTree = "<group>"; };
+		2DD4DA031E6A834400694D00 /* SwpFMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBManager.h; sourceTree = "<group>"; };
+		2DD4DA041E6A834400694D00 /* SwpFMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBManager.m; sourceTree = "<group>"; };
+		2DD4DA061E6A834400694D00 /* SwpBDModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpBDModel.h; sourceTree = "<group>"; };
+		2DD4DA071E6A834400694D00 /* SwpBDModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpBDModel.m; sourceTree = "<group>"; };
+		2DD4DA0A1E6A834400694D00 /* SwpFMDBDataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBDataTypes.h; sourceTree = "<group>"; };
+		2DD4DA0B1E6A834400694D00 /* SwpFMDBDataTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBDataTypes.m; sourceTree = "<group>"; };
+		2DD4DA0D1E6A834400694D00 /* SwpExecuteSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpExecuteSQL.h; sourceTree = "<group>"; };
+		2DD4DA0E1E6A834400694D00 /* SwpExecuteSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpExecuteSQL.m; sourceTree = "<group>"; };
+		2DD4DA0F1E6A834400694D00 /* SwpStitchingSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpStitchingSQL.h; sourceTree = "<group>"; };
+		2DD4DA101E6A834400694D00 /* SwpStitchingSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpStitchingSQL.m; sourceTree = "<group>"; };
+		2DD4DA121E6A834400694D00 /* SwpFMDBTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBTools.h; sourceTree = "<group>"; };
+		2DD4DA131E6A834400694D00 /* SwpFMDBTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBTools.m; sourceTree = "<group>"; };
 		8502D38043E79509C6E3986C /* Pods-SwpFMDBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwpFMDBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwpFMDBDemo/Pods-SwpFMDBDemo.release.xcconfig"; sourceTree = "<group>"; };
 		ADB6CD7DCF0B8430D3305B79 /* libPods-SwpFMDBDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwpFMDBDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBDA860C3E4AF8B60E5BEFF /* Pods-SwpFMDBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwpFMDBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwpFMDBDemo/Pods-SwpFMDBDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,8 +118,8 @@
 		2D885FEA1E68192F006E0819 /* SwpFMDBDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2DD4D9FD1E6A834400694D00 /* SwpFMDB */,
 				2D885FFC1E681A43006E0819 /* Class */,
-				2D8860211E681A43006E0819 /* Librarys */,
 				2D885FEE1E68192F006E0819 /* AppDelegate.h */,
 				2D885FEF1E68192F006E0819 /* AppDelegate.m */,
 				2D885FF11E68192F006E0819 /* Assets.xcassets */,
@@ -265,89 +265,81 @@
 			path = SwpFMDBView;
 			sourceTree = "<group>";
 		};
-		2D8860211E681A43006E0819 /* Librarys */ = {
+		2DD4D9FD1E6A834400694D00 /* SwpFMDB */ = {
 			isa = PBXGroup;
 			children = (
-				2D88602E1E681A51006E0819 /* SwpFMDB */,
-			);
-			path = Librarys;
-			sourceTree = "<group>";
-		};
-		2D88602E1E681A51006E0819 /* SwpFMDB */ = {
-			isa = PBXGroup;
-			children = (
-				2D88602F1E681A51006E0819 /* SwpFMDBHeader */,
-				2D8860311E681A51006E0819 /* SwpFMDBMain */,
-				2D8860361E681A51006E0819 /* SwpFMDBModels */,
-				2D8860391E681A51006E0819 /* SwpFMDBTools */,
+				2DD4D9FE1E6A834400694D00 /* SwpFMDBHeader */,
+				2DD4DA001E6A834400694D00 /* SwpFMDBMain */,
+				2DD4DA051E6A834400694D00 /* SwpFMDBModels */,
+				2DD4DA081E6A834400694D00 /* SwpFMDBTools */,
 			);
 			name = SwpFMDB;
-			path = ../../../SwpFMDB;
+			path = ../../SwpFMDB;
 			sourceTree = "<group>";
 		};
-		2D88602F1E681A51006E0819 /* SwpFMDBHeader */ = {
+		2DD4D9FE1E6A834400694D00 /* SwpFMDBHeader */ = {
 			isa = PBXGroup;
 			children = (
-				2D8860301E681A51006E0819 /* SwpFMDBHeader.h */,
+				2DD4D9FF1E6A834400694D00 /* SwpFMDBHeader.h */,
 			);
 			path = SwpFMDBHeader;
 			sourceTree = "<group>";
 		};
-		2D8860311E681A51006E0819 /* SwpFMDBMain */ = {
+		2DD4DA001E6A834400694D00 /* SwpFMDBMain */ = {
 			isa = PBXGroup;
 			children = (
-				2D8860321E681A51006E0819 /* SwpFMDB.h */,
-				2D8860331E681A51006E0819 /* SwpFMDB.m */,
-				2D8860341E681A51006E0819 /* SwpFMDBManager.h */,
-				2D8860351E681A51006E0819 /* SwpFMDBManager.m */,
+				2DD4DA011E6A834400694D00 /* SwpFMDB.h */,
+				2DD4DA021E6A834400694D00 /* SwpFMDB.m */,
+				2DD4DA031E6A834400694D00 /* SwpFMDBManager.h */,
+				2DD4DA041E6A834400694D00 /* SwpFMDBManager.m */,
 			);
 			path = SwpFMDBMain;
 			sourceTree = "<group>";
 		};
-		2D8860361E681A51006E0819 /* SwpFMDBModels */ = {
+		2DD4DA051E6A834400694D00 /* SwpFMDBModels */ = {
 			isa = PBXGroup;
 			children = (
-				2D8860371E681A51006E0819 /* SwpBDModel.h */,
-				2D8860381E681A51006E0819 /* SwpBDModel.m */,
+				2DD4DA061E6A834400694D00 /* SwpBDModel.h */,
+				2DD4DA071E6A834400694D00 /* SwpBDModel.m */,
 			);
 			path = SwpFMDBModels;
 			sourceTree = "<group>";
 		};
-		2D8860391E681A51006E0819 /* SwpFMDBTools */ = {
+		2DD4DA081E6A834400694D00 /* SwpFMDBTools */ = {
 			isa = PBXGroup;
 			children = (
-				2D88603A1E681A51006E0819 /* SwpFMDBDataTypes */,
-				2D88603D1E681A51006E0819 /* SwpFMDBSQLTools */,
-				2D8860421E681A51006E0819 /* SwpFMDBTools */,
+				2DD4DA091E6A834400694D00 /* SwpFMDBDataTypes */,
+				2DD4DA0C1E6A834400694D00 /* SwpFMDBSQLTools */,
+				2DD4DA111E6A834400694D00 /* SwpFMDBTools */,
 			);
 			path = SwpFMDBTools;
 			sourceTree = "<group>";
 		};
-		2D88603A1E681A51006E0819 /* SwpFMDBDataTypes */ = {
+		2DD4DA091E6A834400694D00 /* SwpFMDBDataTypes */ = {
 			isa = PBXGroup;
 			children = (
-				2D88603B1E681A51006E0819 /* SwpFMDBDataTypes.h */,
-				2D88603C1E681A51006E0819 /* SwpFMDBDataTypes.m */,
+				2DD4DA0A1E6A834400694D00 /* SwpFMDBDataTypes.h */,
+				2DD4DA0B1E6A834400694D00 /* SwpFMDBDataTypes.m */,
 			);
 			path = SwpFMDBDataTypes;
 			sourceTree = "<group>";
 		};
-		2D88603D1E681A51006E0819 /* SwpFMDBSQLTools */ = {
+		2DD4DA0C1E6A834400694D00 /* SwpFMDBSQLTools */ = {
 			isa = PBXGroup;
 			children = (
-				2D88603E1E681A51006E0819 /* SwpExecuteSQL.h */,
-				2D88603F1E681A51006E0819 /* SwpExecuteSQL.m */,
-				2D8860401E681A51006E0819 /* SwpStitchingSQL.h */,
-				2D8860411E681A51006E0819 /* SwpStitchingSQL.m */,
+				2DD4DA0D1E6A834400694D00 /* SwpExecuteSQL.h */,
+				2DD4DA0E1E6A834400694D00 /* SwpExecuteSQL.m */,
+				2DD4DA0F1E6A834400694D00 /* SwpStitchingSQL.h */,
+				2DD4DA101E6A834400694D00 /* SwpStitchingSQL.m */,
 			);
 			path = SwpFMDBSQLTools;
 			sourceTree = "<group>";
 		};
-		2D8860421E681A51006E0819 /* SwpFMDBTools */ = {
+		2DD4DA111E6A834400694D00 /* SwpFMDBTools */ = {
 			isa = PBXGroup;
 			children = (
-				2D8860431E681A51006E0819 /* SwpFMDBTools.h */,
-				2D8860441E681A51006E0819 /* SwpFMDBTools.m */,
+				2DD4DA121E6A834400694D00 /* SwpFMDBTools.h */,
+				2DD4DA131E6A834400694D00 /* SwpFMDBTools.m */,
 			);
 			path = SwpFMDBTools;
 			sourceTree = "<group>";
@@ -490,24 +482,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D8860491E681A51006E0819 /* SwpExecuteSQL.m in Sources */,
+				2DD4DA181E6A834400694D00 /* SwpExecuteSQL.m in Sources */,
 				2D8860241E681A43006E0819 /* CustomModel.m in Sources */,
-				2D8860481E681A51006E0819 /* SwpFMDBDataTypes.m in Sources */,
+				2DD4DA171E6A834400694D00 /* SwpFMDBDataTypes.m in Sources */,
 				2D8860231E681A43006E0819 /* SwpFMDBViewController.m in Sources */,
-				2D8860451E681A51006E0819 /* SwpFMDB.m in Sources */,
+				2DD4DA141E6A834400694D00 /* SwpFMDB.m in Sources */,
 				2D885FF01E68192F006E0819 /* AppDelegate.m in Sources */,
 				2D88602D1E681A43006E0819 /* SwpFMDBTableView.m in Sources */,
 				2D8860251E681A43006E0819 /* InheritModel.m in Sources */,
 				2D885FED1E68192F006E0819 /* main.m in Sources */,
-				2D8860471E681A51006E0819 /* SwpBDModel.m in Sources */,
+				2DD4DA161E6A834400694D00 /* SwpBDModel.m in Sources */,
 				2D8860261E681A43006E0819 /* SwpFMDBModel.m in Sources */,
 				2D8860221E681A43006E0819 /* SelectModelsViewController.m in Sources */,
-				2D8860461E681A51006E0819 /* SwpFMDBManager.m in Sources */,
+				2DD4DA151E6A834400694D00 /* SwpFMDBManager.m in Sources */,
 				2D8860291E681A43006E0819 /* SelectModelsCell.m in Sources */,
 				2D88602C1E681A43006E0819 /* SwpFMDBCell.m in Sources */,
-				2D88604A1E681A51006E0819 /* SwpStitchingSQL.m in Sources */,
+				2DD4DA191E6A834400694D00 /* SwpStitchingSQL.m in Sources */,
 				2D88602B1E681A43006E0819 /* SwpDataDisplayView.m in Sources */,
-				2D88604B1E681A51006E0819 /* SwpFMDBTools.m in Sources */,
+				2DD4DA1A1E6A834400694D00 /* SwpFMDBTools.m in Sources */,
 				2D8860271E681A43006E0819 /* TestModel.m in Sources */,
 				2D8860281E681A43006E0819 /* SwpFMDBDemoTools.m in Sources */,
 				2D88602A1E681A43006E0819 /* SelectModelsTableView.m in Sources */,
