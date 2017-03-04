@@ -12,7 +12,8 @@
 
 ---
 ##### 效果：
-![(图片轮播效果)](https://raw.githubusercontent.com/swp-song/SwpFMDB/master/Screenshot/SwpFMDB.gif)
+![(图片轮播效果)](https://raw.githubusercontent.com/swp-song/SwpFMDB/master/Screenshot/InsterData.gif) ![(图片轮播效果)](https://raw.githubusercontent.com/swp-song/SwpFMDB/master/Screenshot/UpdateData.gif)
+![(图片轮播效果)](https://raw.githubusercontent.com/swp-song/SwpFMDB/master/Screenshot/SelectDataAndDeleteData.gif)
 ---
 
 
