@@ -10,13 +10,14 @@
 
 @implementation SwpFMDBModel
 
-+ (instancetype)swpFMDBWithTitle:(NSString *)title setSwpFMDBSubTitle:(NSString *)subTitle setSwpFMDBOption:(nullable SwpFMDBOption)option setSwpFMDBJumpContriller:(nullable Class)contriller {
++ (instancetype)swpFMDBWithTitle:(NSString *)title setSwpFMDBSubTitle:(NSString *)subTitle setSwpFMDBOption:(nullable SwpFMDBOption)option setSwpFMDBJumpContriller:(nullable Class)contriller setSelectModelClass:(Class)modelClass {
     
-    SwpFMDBModel *swpFMDB         = [SwpFMDBModel new];
-    swpFMDB.swpFMDBTitle          = title;
-    swpFMDB.swpFMDBSubTitle       = subTitle;
-    swpFMDB.swpFMDBOption         = option;
-    swpFMDB.swpFMDBJumpContriller = contriller;
+    SwpFMDBModel *swpFMDB           = [SwpFMDBModel new];
+    swpFMDB.swpFMDBTitle            = title;
+    swpFMDB.swpFMDBSubTitle         = subTitle;
+    swpFMDB.swpFMDBOption           = option;
+    swpFMDB.swpFMDBJumpContriller   = contriller;
+    swpFMDB.swpFMDBSelectModelClass = modelClass;
     return swpFMDB;
 }
 

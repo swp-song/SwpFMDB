@@ -132,6 +132,28 @@ NS_ASSUME_NONNULL_BEGIN
 /**!
  *  @ author swp_song
  *
+ *  @ brief  swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:   ( 删除 一组 数据 )
+ *
+ *  @ param  models
+ *
+ *  @ param  swpFMDBExecutionUpdateComplete
+ */
+- (void)swpFMDBDelegateModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpFMDBClearModel:swpFMDBExecutionUpdateComplete:  ( 删除 一组 数据 )
+ *
+ *  @ param  modelsClass
+ *
+ *  @ param  swpFMDBExecutionUpdateComplete
+ */
+- (void)swpFMDBClearModel:(Class)modelsClass swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+
+/**!
+ *  @ author swp_song
+ *
  *  @ brief  swpFMDBSelectTest: ( 测试方法 )
  */
 - (void)swpFMDBSelectTest;

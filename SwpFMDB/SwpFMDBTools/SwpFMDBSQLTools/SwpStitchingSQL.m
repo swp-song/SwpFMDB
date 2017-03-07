@@ -193,7 +193,7 @@
 /**!
  *  @ author swp_song
  *
- *  @ brief  swpStitchingDeleteModelsSQL:key:value: ( 删除 单条 数据 SQL < 单条数据 > )
+ *  @ brief  swpStitchingDeleteModelSQL:key:value: ( 删除 单条 数据 SQL < 单条数据 > )
  *
  *  @ param  modelClass
  *
@@ -203,14 +203,14 @@
  *
  *  @ return NSString
  */
-+ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass key:(NSString *)key value:(NSString *)value {
++ (NSString *)swpStitchingDeleteModelSQL:(Class)modelClass key:(NSString *)key value:(NSString *)value {
     return [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ = '%@';", NSStringFromClass(modelClass), key, value];
 }
 
 /**!
  *  @ author swp_song
  *
- *  @ brief  swpStitchingDeleteModelsSQL:swpDBID:   ( 删除 单条 数据 SQL 根据 swpDBID < 单条数据 > )
+ *  @ brief  swpStitchingDeleteModelSQL:swpDBID:   ( 删除 单条 数据 SQL 根据 swpDBID < 单条数据 > )
  *
  *  @ param  modelClass
  *
@@ -218,8 +218,45 @@
  *
  *  @ return NSString
  */
-+ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass swpDBID:(NSString *)swpDBID {
-    return [[self class] swpStitchingDeleteModelsSQL:modelClass key:@"swpDBID" value:swpDBID];
++ (NSString *)swpStitchingDeleteModelSQL:(Class)modelClass swpDBID:(NSString *)swpDBID {
+    return [[self class] swpStitchingDeleteModelSQL:modelClass key:@"swpDBID" value:swpDBID];
+}
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpStitchingDeleteModelsSQL:models:    ( 删除 一组 数据 SQL 根据 swpDBID < 删除一组数据 > )
+ *
+ *  @ param  modelClass
+ *
+ *  @ param  models
+ *
+ *  @ return NSString
+ */
++ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass models:(NSArray *)models {
+    
+    NSMutableString *deleteSQL = [NSMutableString stringWithFormat:@"DELETE FROM %@ WHERE swpDBID IN ( ", [modelClass class]];
+    [models enumerateObjectsUsingBlock:^(id _Nonnull model, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@", [model valueForKey:@"swpDBID"]);
+        [deleteSQL appendFormat:@"'%@', ", [model valueForKey:@"swpDBID"]];
+    }];
+    
+    [deleteSQL deleteCharactersInRange:NSMakeRange(deleteSQL.length - 2, 1)];
+    [deleteSQL appendString:@");"];
+    return [NSString stringWithFormat:@"%@", deleteSQL];
+}
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpStitchingClearModelsSQL:    ( 清空表数据 )
+ *
+ *  @ param  modelClass
+ *
+ *  @ return NSString
+ */
++ (NSString *)swpStitchingClearModelsSQL:(Class)modelClass {
+    return [NSString stringWithFormat:@"DELETE FROM %@", NSStringFromClass(modelClass)];
 }
 
 

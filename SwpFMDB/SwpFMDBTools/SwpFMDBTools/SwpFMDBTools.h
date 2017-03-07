@@ -122,6 +122,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)swpFMDBToolsVerifySystemDataTypesAssert:(id)model;
 
++ (void)swpFMDBToolsVerifyArray:(NSArray *)models verificationMessage:(void(^)(BOOL verificationResult, id verificationModel))verificationMessage;
+
 
 @end
 NS_ASSUME_NONNULL_END

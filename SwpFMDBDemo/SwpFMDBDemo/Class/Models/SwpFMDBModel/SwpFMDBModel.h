@@ -21,9 +21,10 @@ typedef void(^SwpFMDBOption)(SwpFMDBModel *swpFMDBModel);
 @property (nonatomic, copy  ) SwpFMDBOption swpFMDBOption;
 @property (nonatomic, assign) Class swpFMDBJumpContriller;
 @property (nonatomic, strong) id  swpFMDBData;
+@property (nonatomic, assign) Class swpFMDBSelectModelClass;
 
 
 
-+ (instancetype)swpFMDBWithTitle:(NSString *)title setSwpFMDBSubTitle:(NSString *)subTitle setSwpFMDBOption:(nullable SwpFMDBOption)option setSwpFMDBJumpContriller:(nullable Class)contriller;
++ (instancetype)swpFMDBWithTitle:(NSString *)title setSwpFMDBSubTitle:(NSString *)subTitle setSwpFMDBOption:(nullable SwpFMDBOption)option setSwpFMDBJumpContriller:(nullable Class)contriller setSelectModelClass:(Class)modelClass;
 @end
 NS_ASSUME_NONNULL_END

@@ -15,6 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @ brief  models:    ( 设置 数据 )
  */
-- (SelectModelsViewController *(^)(NSArray *models))models;
+- (SelectModelsViewController *(^)(NSArray *models, Class modelClass))models;
 @end
 NS_ASSUME_NONNULL_END

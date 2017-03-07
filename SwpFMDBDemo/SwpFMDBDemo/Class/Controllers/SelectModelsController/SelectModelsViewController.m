@@ -35,7 +35,8 @@
 
 #pragma mark - Data Propertys
 /*! ---------------------- Data Property  ---------------------- !*/
-@property (nonatomic, copy) NSArray *datas;
+@property (nonatomic, copy  ) NSArray *datas;
+@property (nonatomic, assign) Class   modelClass;
 /*! ---------------------- Data Property  ---------------------- !*/
 
 @end
@@ -84,8 +85,13 @@
  */
 - (void)setUI {
 
-    self.view.backgroundColor             = [UIColor whiteColor];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+    self.view.backgroundColor               = [UIColor whiteColor];
+    self.navigationItem.backBarButtonItem   = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:nil action:nil];
+    
+    UIBarButtonItem *deleteRandomButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"删除随机数据" style:UIBarButtonItemStylePlain target:self action:@selector(deleteRandomData:)];
+    UIBarButtonItem *clearButtonItem        = [[UIBarButtonItem alloc] initWithTitle:@"清空数据" style:UIBarButtonItemStylePlain target:self action:@selector(clearData:)];
+    
+    self.navigationItem.rightBarButtonItems = @[clearButtonItem, deleteRandomButtonItem];
     
     [self setUpUI];
     
@@ -111,6 +117,47 @@
     [self.selectModelsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+}
+
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  deleteRandomData:  ( 删除随机, 数据按钮绑定方 )
+ *
+ *  @ param  button
+ */
+- (void)deleteRandomData:(UIButton *)button {
+    
+    
+    NSArray *models = [self createRandom:self.datas];
+    if (!models.count) {
+        [SVProgressHUD showInfoWithStatus:@"生成数据数为空，数据为空"];
+        return;
+    }
+    
+    [self deleteDataWihtModels:models];
+    self.datas = [self selelctDatasWihtModels:_modelClass];
+    [self setSelectModelsTableViewData:self.datas isAnimationReloadData:NO];
+    
+}
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  clearData: ( 清空数据，按钮绑定方法 )
+ *
+ *  @ param  button
+ */
+- (void)clearData:(UIButton *)button {
+    
+    if (!self.datas.count) {
+        [SVProgressHUD showInfoWithStatus:@"数据为空"];
+        return;
+    }
+    [self clearDataWihtModel:_modelClass];
+    self.datas = [self selelctDatasWihtModels:_modelClass];
+    [self setSelectModelsTableViewData:self.datas isAnimationReloadData:NO];
 }
 
 
@@ -146,25 +193,33 @@
     
     
     [selectModelsTableView selectModelsTableViewClicEditingkCell:^(SelectModelsTableView * _Nonnull selectModelsTableView, NSIndexPath * _Nonnull indexPath) {
-
         
         id model = vc.datas[indexPath.row];
-        if (![vc deleteDataWihtModelClass:model]) {
+        if (![vc deleteDataWihtModel:model]) {
             [SVProgressHUD showInfoWithStatus:@"删除数据失败"];
             return;
         }
         
         [SVProgressHUD showInfoWithStatus:@"删除数据成功"];
         
-        vc.datas = [vc selelctDatasWihtModelClass:[model class]];
+        vc.datas = [vc selelctDatasWihtModels:[model class]];
         
         // isAnimationReloadData NO
         [vc setSelectModelsTableViewData:vc.datas isAnimationReloadData:NO];
     }];
 }
 
-
-- (BOOL)deleteDataWihtModelClass:(id)model {
+#pragma mark - SwpFMDB Methods
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  deleteDataWihtModel:   ( 删除 单条 数据 )
+ *
+ *  @ param  model
+ *
+ *  @ return BOOL
+ */
+- (BOOL)deleteDataWihtModel:(id)model {
     __block BOOL result = NO;
     [[SwpFMDB shareManager] swpFMDBDelegateModel:model swpFMDBExecutionUpdateComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus) {
         result = executionStatus;
@@ -176,18 +231,86 @@
 /**!
  *  @ author swp_song
  *
- *  @ brief  selelctDatasWihtModelClass: ( 查询 全部 数据  )
+ *  @ brief  deleteDataWihtModels:  ( 删除，一组数据 )
  *
- *  @ param modelClass
+ *  @ param  models
+ *
+ *  @ return BOOL
+ */
+- (BOOL)deleteDataWihtModels:(NSArray *)models {
+
+    __block BOOL result = NO;
+    [[SwpFMDB shareManager] swpFMDBDelegateModels:models swpFMDBExecutionUpdateComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus) {
+        result = executionStatus;
+        NSLog(@"%@", result ? @"删除数据成功" : @"删除数据失败");
+    }];
+    return result;
+}
+
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  deleteDataWihtModels:  ( 清除 全部 数据 )
+ *
+ *  @ param  modelClass
+ *
+ *  @ return BOOL
+ */
+- (BOOL)clearDataWihtModel:(Class)modelClass {
+    
+    __block BOOL result = NO;
+    [[SwpFMDB shareManager] swpFMDBClearModel:modelClass swpFMDBExecutionUpdateComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus) {
+        result = executionStatus;
+        NSLog(@"%@", result ? @"删除数据成功" : @"删除数据失败");
+    }];
+    return result;
+}
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  selelctDatasWihtModels: ( 查询 全部 数据  )
+ *
+ *  @ param  modelClass
  *
  *  @ return NSArray
  */
-- (NSArray *)selelctDatasWihtModelClass:(Class)modelClass {
+- (NSArray *)selelctDatasWihtModels:(Class)modelClass {
     __block NSArray *selectModels = [NSArray array];
     [[SwpFMDB shareManager] swpFMDBSelectModels:modelClass swpFMDBExecutionSelectModelsComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus, NSArray * _Nonnull models) {
         selectModels = models;
     }];
     return selectModels;
+}
+
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  createRandom:  ( 生成一组随机数据  )
+ v
+ *  @ param  datas
+ *
+ *  @ return NSArray
+ */
+- (NSArray *)createRandom:(NSArray *)datas {
+    
+    if (!datas.count) return [NSArray array];
+    //随机数从这里边产生
+    NSMutableArray *startArray  = [NSMutableArray arrayWithArray:datas];
+    
+    //随机数产生结果
+    NSMutableArray *resultArray = [NSMutableArray array];
+    
+    //随机数个数
+    for (int i = 0; i < arc4random() % datas.count; i++) {
+        int type = arc4random() % startArray.count;
+        resultArray[i]    = startArray[type];
+        startArray[type]  = [startArray lastObject]; //为更好的乱序，故交换下位置
+        [startArray removeLastObject];
+    }
+    return resultArray;
 }
 
 
@@ -197,10 +320,11 @@
  *
  *  @ brief  models:    ( 设置 数据 )
  */
-- (SelectModelsViewController *(^)(NSArray *models))models {
+- (SelectModelsViewController *(^)(NSArray *models, Class modelClass))models {
     
-    return ^SelectModelsViewController *(NSArray *models) {
-        _datas = models;
+    return ^SelectModelsViewController *(NSArray *models, Class modelClass) {
+        _datas      = models;
+        _modelClass = modelClass;
         return self;
     };
 }

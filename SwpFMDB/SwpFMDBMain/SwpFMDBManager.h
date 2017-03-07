@@ -154,7 +154,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**!
  *  @ author swp_song
  *
- *  @ brief  delegateModel:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 删除 表中 指定数据 )
+ *  @ brief  delegateModel:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 删除指定数据 )
  *
  *  @ param  model
  *
@@ -167,6 +167,40 @@ NS_ASSUME_NONNULL_BEGIN
  *  @ param  executionUpdateComplete
  */
 + (void)delegateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  delegateModels:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 删除 表中 一组 数据 )
+ *
+ *  @ param  models
+ *
+ *  @ param  swpFMDB
+ *
+ *  @ param  dataBase
+ *
+ *  @ param  isCloseDB
+ *
+ *  @ param  executionUpdateComplete
+ */
++ (void)delegateModels:(NSArray *)models swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  clearModels:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 删除 一组 数据 )
+ *
+ *  @ param  modelClass
+ *
+ *  @ param  swpFMDB
+ *
+ *  @ param  dataBase
+ *
+ *  @ param  isCloseDB
+ *
+ *  @ param  executionUpdateComplete
+ */
++ (void)clearModels:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
 
 @end
 NS_ASSUME_NONNULL_END

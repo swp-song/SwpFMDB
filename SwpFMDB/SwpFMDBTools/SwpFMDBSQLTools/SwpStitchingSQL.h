@@ -117,7 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**!
  *  @ author swp_song
  *
- *  @ brief  swpStitchingDeleteModelsSQL:key:value: ( 删除 单条 数据 SQL < 单条数据 > )
+ *  @ brief  swpStitchingDeleteModelSQL:key:value: ( 删除 单条 数据 SQL < 单条数据 > )
  *
  *  @ param  modelClass
  *
@@ -127,12 +127,12 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @ return NSString
  */
-+ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass key:(NSString *)key value:(NSString *)value;
++ (NSString *)swpStitchingDeleteModelSQL:(Class)modelClass key:(NSString *)key value:(NSString *)value;
 
 /**!
  *  @ author swp_song
  *
- *  @ brief  swpStitchingDeleteModelsSQL:swpDBID:   ( 删除 单条 数据 SQL 根据 swpDBID < 单条数据 > )
+ *  @ brief  swpStitchingDeleteModelSQL:swpDBID:   ( 删除 单条 数据 SQL 根据 swpDBID < 单条数据 > )
  *
  *  @ param  modelClass
  *
@@ -140,7 +140,31 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @ return NSString
  */
-+ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass swpDBID:(NSString *)swpDBID;
++ (NSString *)swpStitchingDeleteModelSQL:(Class)modelClass swpDBID:(NSString *)swpDBID;
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpStitchingDeleteModelsSQL:models:    ( 删除 一组 数据 SQL 根据 swpDBID < 删除一组数据 > )
+ *
+ *  @ param  modelClass
+ *
+ *  @ param  models
+ *
+ *  @ return NSString
+ */
++ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass models:(NSArray *)models;
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpStitchingClearModelsSQL:    ( 清空表数据 )
+ *
+ *  @ param  modelClass
+ *
+ *  @ return NSString
+ */
++ (NSString *)swpStitchingClearModelsSQL:(Class)modelClass;
 
 @end
 NS_ASSUME_NONNULL_END

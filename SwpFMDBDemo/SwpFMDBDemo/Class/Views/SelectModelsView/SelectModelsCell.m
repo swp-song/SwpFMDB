@@ -25,6 +25,7 @@
 @property (nonatomic, strong) UILabel *titleView;
 /*! 显示 副标题 view !*/
 @property (nonatomic, strong) UILabel *subTitleView;
+@property (nonatomic, weak) UITableView *tableView;
 /*! ---------------------- UI   Property  ---------------------- !*/
 
 @end
@@ -38,7 +39,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 
@@ -201,6 +201,7 @@
  */
 + (instancetype)selectModelsCellWithTableView:(UITableView *)tableView forCellReuseIdentifier:(NSString *)identifier {
     SelectModelsCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    cell.tableView = tableView;
     return cell;
 }
 

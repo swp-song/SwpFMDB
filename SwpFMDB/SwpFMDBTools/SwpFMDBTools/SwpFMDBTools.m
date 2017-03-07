@@ -192,5 +192,32 @@
     NSAssert(![model isKindOfClass:[UIResponder class]], @" Model 必须是 NSObject 或 NSObject 子类, Model 必须不是响应事件");
 }
 
++ (void)swpFMDBToolsVerifyArray:(NSArray *)models verificationMessage:(void(^)(BOOL verificationResult, id verificationModel))verificationMessage {
+    
+    __block BOOL result = YES;
+    __block id   model  = nil;
+    if (!models.count || !models) {
+        if (verificationMessage) verificationMessage(NO, model);
+        return;
+    }
+    
+    [models enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (!obj) {
+            * stop = YES;
+            result = NO;
+            return;
+        }
+        model = obj;
+        
+        if (![obj isKindOfClass:[model class]]){
+            * stop = YES;
+            result = NO;
+            return;
+        }
+    }];
+    
+    if (verificationMessage) verificationMessage(result, model);
+}
+
 @end
 

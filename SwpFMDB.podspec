@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SwpFMDB"
-  s.version      = "1.0.3"
-  s.summary      = " 封装 FMDB 避免 开发者写繁琐的SQL 语句 "
+  s.version      = "1.1.2"
+  s.summary      = " 封装 FMDB 避免 开发者写繁琐的SQL 语句, 使用简单粗暴 "
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?

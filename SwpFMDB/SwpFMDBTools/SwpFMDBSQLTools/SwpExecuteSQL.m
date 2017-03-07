@@ -194,11 +194,60 @@
     
     __block BOOL executionStatus = NO;
     if (![[self class] swpExecuteDBOperation:dataBase dbOpenBlock:^{
-
-        executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingDeleteModelsSQL:[model class] swpDBID:[model valueForKey:@"swpDBID"]]];
+        
+        executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingDeleteModelSQL:[model class] swpDBID:[model valueForKey:@"swpDBID"]]];
         
     } isCloseDB:isCloseDB]) return executionStatus;
 
+    return executionStatus;
+}
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpExecuteDeleteModelsSQL:modelsClass:models:isCloseDB: ( 执行 删除 一组 数据 SQL )
+ *
+ *  @ param  dataBase
+ *
+ *  @ param  modelsClass
+ *
+ *  @ param  models
+ *
+ *  @ param  isCloseDB
+ *
+ *  @ return BOOL
+ */
++ (BOOL)swpExecuteDeleteModelsSQL:(FMDatabase *)dataBase modelsClass:(Class)modelsClass models:(NSArray *)models isCloseDB:(BOOL)isCloseDB {
+    
+    __block BOOL executionStatus = NO;
+    if (![[self class] swpExecuteDBOperation:dataBase dbOpenBlock:^{
+        executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingDeleteModelsSQL:modelsClass models:models]];
+    } isCloseDB:isCloseDB]) return executionStatus;
+    return executionStatus;
+}
+
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpExecuteClearModelSQL:modelsClass:isCloseDB:  ( 执行清空表内所有数据, SQL )
+ *
+ *  @ param  dataBase
+ *
+ *  @ param  modelsClass
+ *
+ *  @ param  isCloseDB
+ *
+ *  @ return BOOL
+ */
++ (BOOL)swpExecuteClearModelSQL:(FMDatabase *)dataBase modelsClass:(Class)modelsClass isCloseDB:(BOOL)isCloseDB {
+    
+    __block BOOL executionStatus = NO;
+    
+    if (![[self class] swpExecuteDBOperation:dataBase dbOpenBlock:^{
+        executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingClearModelsSQL:modelsClass]];
+    } isCloseDB:isCloseDB]) return executionStatus;
+    
     return executionStatus;
 }
 

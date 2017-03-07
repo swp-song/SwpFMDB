@@ -112,6 +112,22 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)swpExecuteDeleteModelSQL:(FMDatabase *)dataBase model:(id)model isCloseDB:(BOOL)isCloseDB;
 
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpExecuteDeleteModelsSQL:modelsClass:models:isCloseDB: ( 执行 删除 一组 数据 SQL )
+ *
+ *  @ param  dataBase
+ *
+ *  @ param  modelsClass
+ *
+ *  @ param  models
+ *
+ *  @ param  isCloseDB
+ *
+ *  @ return BOOL
+ */
++ (BOOL)swpExecuteDeleteModelsSQL:(FMDatabase *)dataBase modelsClass:(Class)modelsClass models:(NSArray *)models isCloseDB:(BOOL)isCloseDB;
 
 #pragma mark -
 /**!
@@ -142,6 +158,21 @@ NS_ASSUME_NONNULL_BEGIN
  *  @ return BOOL
  */
 + (BOOL)swpExecuteVerifyThatTheTableExistsSQL:(FMDatabase *)dataBase table:(Class)modelClass isCloseDB:(BOOL)isCloseDB;
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpExecuteClearModelSQL:modelsClass:isCloseDB:  ( 执行清空表内所有数据, SQL )
+ *
+ *  @ param  dataBase
+ *
+ *  @ param  modelsClass
+ *
+ *  @ param  isCloseDB
+ *
+ *  @ return BOOL
+ */
++ (BOOL)swpExecuteClearModelSQL:(FMDatabase *)dataBase modelsClass:(Class)modelsClass isCloseDB:(BOOL)isCloseDB;
 
 
 

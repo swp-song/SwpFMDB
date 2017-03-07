@@ -60,6 +60,7 @@ static NSString * const kSelectModelsCellID = @" Select Models Cell ID ";
         self.dataSource     = self;
         self.delegate       = self;
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
+        self.allowsMultipleSelectionDuringEditing = YES;
         self.rowHeight      = 50.f;
     }
     return self;
@@ -121,7 +122,17 @@ static NSString * const kSelectModelsCellID = @" Select Models Cell ID ";
  *  @ param  indexPath
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+//    SelectModelsCell *cell = (SelectModelsCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if (tableView.isEditing) {
+        
+//        cell.selectionStyle   = UITableViewCellSelectionStyleDefault;
+        return;
+    }
+    
     if (self.selectModelsTableViewClickCell) self.selectModelsTableViewClickCell(self, indexPath);
+
+//    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 
@@ -172,6 +183,10 @@ static NSString * const kSelectModelsCellID = @" Select Models Cell ID ";
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         if (self.selectModelsTableViewClicEditingkCell) self.selectModelsTableViewClicEditingkCell(self, indexPath);
     }
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath;
 }
 
 #pragma mark - Public Methods

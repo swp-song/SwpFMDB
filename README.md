@@ -53,7 +53,7 @@ pod 'SwpFMDB'
 2. SwpFMDB.h          核心类文件
 
 // 单利创建
-+ (instancetype)shareManager; 
++ (instancetype)shareManager;
 
 // 创建 数据库表, modelClass 模型类 Class，swpFMDBExecutionUpdateComplete 执行完成回调
 - (void)swpFMDBCreateTable:(Class)modelClassswpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
@@ -81,16 +81,30 @@ pod 'SwpFMDB'
 ---
 
 ##### 版本记录
+
 ```
+1. 版本版本: 1.1.2
 
-1. 版本版本 	1.0.3
-
-2. 更新时间	2017-03-03 18:14:26
+2. 更新时间: 2017-03-07 16:20:26
 
 3. 更新内容:
-	// 删除 单条 数据方法
-	* - (void)swpFMDBDelegateModel:(id)model swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+	* 删除, 一组数据
+	* - (void)swpFMDBDelegateModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+  
+	* 清除，全部数据
+	* - (void)swpFMDBClearModel:(Class)modelsClass swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+```
 
+---
+
+```
+1. 版本版本: 1.1.2
+
+2. 更新时间: 2017-03-03 18:14:26
+
+3. 更新内容:
+	*  删除，单条 数据: 
+	*  - (void)swpFMDBDelegateModel:(id)model swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
 ```
 
 ---

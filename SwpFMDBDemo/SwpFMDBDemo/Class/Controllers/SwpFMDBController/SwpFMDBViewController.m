@@ -164,7 +164,7 @@
         
         if (!swpFMDB.swpFMDBJumpContriller) return;
         
-        [vc jumpSelectModelViewController:swpFMDB.swpFMDBData swpFMDBViewController:vc];
+        [vc jumpSelectModelViewController:swpFMDB.swpFMDBData modelClass:swpFMDB.swpFMDBSelectModelClass swpFMDBViewController:vc];
 
     }];
 }
@@ -214,13 +214,15 @@
 /**!
  *  @ author swp_song
  *
- *  @ brief  showAlertViewControllerWihtModels:swpFMDBViewController:    ( 弹出 多条数据显示 alert )
+ *  @ brief  showAlertViewControllerWihtModels:modelClass:swpFMDBViewController:    ( 弹出 多条数据显示 alert )
  *
  *  @ param  datas
  *
+ *  @ param  modelClass
+ *
  *  @ param  vc
  */
-- (void)showAlertViewControllerWihtModels:(NSArray *)datas swpFMDBViewController:(SwpFMDBViewController *)vc {
+- (void)showAlertViewControllerWihtModels:(NSArray *)datas modelClass:(Class)modelClass swpFMDBViewController:(SwpFMDBViewController *)vc {
     
     if (!datas || datas.count == 0) {
         [SwpFMDBDemoTools swpFMDBDemoToolsShowDataIsEmptyDataAlert:vc.navigationController];
@@ -228,22 +230,24 @@
     }
     
     [SwpFMDBDemoTools swpFMDBDemoToolsShowDatabaseOperationCompletedAlert:vc.navigationController clickSeeBlock:^{
-        [vc jumpSelectModelViewController:datas swpFMDBViewController:vc];
+        [vc jumpSelectModelViewController:datas modelClass:modelClass swpFMDBViewController:vc];
     }];
 }
 
 /**!
  *  @ author swp_song
  *
- *  @ brief  jumpSelectModelViewController:swpFMDBViewController:   ( 跳转 SelectModelsViewController 控制器 )
+ *  @ brief  jumpSelectModelViewController:modelClass:swpFMDBViewController:   ( 跳转 SelectModelsViewController 控制器 )
  *
  *  @ param  datas
  *
+ *  @ param  modelClass
+ *
  *  @ param  vc
  */
-- (void)jumpSelectModelViewController:(NSArray *)datas swpFMDBViewController:(SwpFMDBViewController *)vc {
+- (void)jumpSelectModelViewController:(NSArray *)datas modelClass:(Class)modelClass swpFMDBViewController:(SwpFMDBViewController *)vc {
     SelectModelsViewController *selectModelsViewController = [SelectModelsViewController new];
-    [vc.navigationController pushViewController:selectModelsViewController.models(datas) animated:YES];
+    [vc.navigationController pushViewController:selectModelsViewController.models(datas, modelClass) animated:YES];
 }
 
 
@@ -394,7 +398,7 @@
         }
         [vc showAlertViewControllerWihtModel:[vc selelctDataWihtModelClass:[CustomModel class] bySwpDBID:@"100"] swpFMDBViewController:vc];
         
-    } setSwpFMDBJumpContriller:nil];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[CustomModel class]];
     
     
     // CustomModel 插入一组数据
@@ -404,9 +408,9 @@
             return;
         }
         
-        [vc showAlertViewControllerWihtModels:[vc selelctDatasWihtModelClass:[CustomModel class]] swpFMDBViewController:vc];
+        [vc showAlertViewControllerWihtModels:[vc selelctDatasWihtModelClass:swpFMDBModel.swpFMDBSelectModelClass] modelClass:swpFMDBModel.swpFMDBSelectModelClass swpFMDBViewController:vc];
         
-    } setSwpFMDBJumpContriller:nil];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[CustomModel class]];
     
     
     // CustomModel 更新单条数据
@@ -417,7 +421,7 @@
             return;
         }
         [vc showAlertViewControllerWihtModel:[vc selelctDataWihtModelClass:[CustomModel class] bySwpDBID:@"100"] swpFMDBViewController:vc];
-    } setSwpFMDBJumpContriller:nil];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[CustomModel class]];
     
     
     // CustomModel 更新一组数据
@@ -428,18 +432,18 @@
             return;
         }
         
-        [vc showAlertViewControllerWihtModels:[vc selelctDatasWihtModelClass:[CustomModel class]] swpFMDBViewController:vc];
-    } setSwpFMDBJumpContriller:nil];
+        [vc showAlertViewControllerWihtModels:[vc selelctDatasWihtModelClass:[CustomModel class]] modelClass:swpFMDBModel.swpFMDBSelectModelClass swpFMDBViewController:vc];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[CustomModel class]];
     
     // CustomModel 查询单条数据
     SwpFMDBModel *customSelectModel     = [SwpFMDBModel swpFMDBWithTitle:@"CustomModel 查询单条数据  " setSwpFMDBSubTitle:@" Select CustomModel Data " setSwpFMDBOption:^(SwpFMDBModel * _Nonnull swpFMDBModel) {
         [vc showSwpDataDisplayViewWihtModel:[vc selelctDataWihtModelClass:[CustomModel class] bySwpDBID:@"100"] swpFMDBViewController:vc];
-    } setSwpFMDBJumpContriller:nil];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[CustomModel class]];
     
     // CustomModel 查询全部数据
     SwpFMDBModel *customSelectModels    = [SwpFMDBModel swpFMDBWithTitle:@"CustomModel 查询全部数据 " setSwpFMDBSubTitle:@" Select a set of CustomModels " setSwpFMDBOption:^(SwpFMDBModel * _Nonnull swpFMDBModel) {
         swpFMDBModel.swpFMDBData = [vc selelctDatasWihtModelClass:[CustomModel class]];
-    } setSwpFMDBJumpContriller:[SelectModelsViewController class]];
+    } setSwpFMDBJumpContriller:[SelectModelsViewController class] setSelectModelClass:[CustomModel class]];
     
     
     // InheritModel 插入单条数据
@@ -449,7 +453,7 @@
             return;
         }
         [vc showAlertViewControllerWihtModel:[vc selelctDataWihtModelClass:[InheritModel class] bySwpDBID:@"200"] swpFMDBViewController:vc];
-    } setSwpFMDBJumpContriller:nil];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[InheritModel class]];
     
     // InheritModel 插入一组数据
     SwpFMDBModel *inheritInsterModels    = [SwpFMDBModel swpFMDBWithTitle:@" InheritModel 插入一组数据 " setSwpFMDBSubTitle:@" Insert a set of InheritModel "  setSwpFMDBOption:^(SwpFMDBModel * _Nonnull swpFMDBModel) {
@@ -458,9 +462,9 @@
             return;
         }
         
-        [vc showAlertViewControllerWihtModels:[vc selelctDatasWihtModelClass:[InheritModel class]] swpFMDBViewController:vc];
+        [vc showAlertViewControllerWihtModels:[vc selelctDatasWihtModelClass:[InheritModel class]] modelClass:swpFMDBModel.swpFMDBSelectModelClass swpFMDBViewController:vc];
     
-    } setSwpFMDBJumpContriller:nil];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[InheritModel class]];
     
     // InheritModel 更新单条数据
     SwpFMDBModel *inheritUpdateModel     = [SwpFMDBModel swpFMDBWithTitle:@" InheritModel 更新单条数据 " setSwpFMDBSubTitle:@" Update InheritModel Data "  setSwpFMDBOption:^(SwpFMDBModel * _Nonnull swpFMDBModel) {
@@ -471,7 +475,7 @@
         }
         [vc showAlertViewControllerWihtModel:[vc selelctDataWihtModelClass:[InheritModel class] bySwpDBID:@"200"] swpFMDBViewController:vc];
         
-    } setSwpFMDBJumpContriller:nil];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[InheritModel class]];
     
     // InheritModel 更新一组数据
     SwpFMDBModel *inheritUpdateModels    = [SwpFMDBModel swpFMDBWithTitle:@" InheritModel 更新一组数据 " setSwpFMDBSubTitle:@" Update a set of InheritModel " setSwpFMDBOption:^(SwpFMDBModel * _Nonnull swpFMDBModel) {
@@ -481,19 +485,19 @@
             return;
         }
         
-        [vc showAlertViewControllerWihtModels:[vc selelctDatasWihtModelClass:[InheritModel class]] swpFMDBViewController:vc];
-    } setSwpFMDBJumpContriller:nil];
+        [vc showAlertViewControllerWihtModels:[vc selelctDatasWihtModelClass:[InheritModel class]] modelClass:swpFMDBModel.swpFMDBSelectModelClass swpFMDBViewController:vc];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[InheritModel class]];
     
     
     // InheritModel 查询单条数据
     SwpFMDBModel *inheritSelectModel     = [SwpFMDBModel swpFMDBWithTitle:@" InheritModel 查询单条数据 " setSwpFMDBSubTitle:@" elect InheritModel Data  "  setSwpFMDBOption:^(SwpFMDBModel * _Nonnull swpFMDBModel) {
         [vc showSwpDataDisplayViewWihtModel:[vc selelctDataWihtModelClass:[InheritModel class] bySwpDBID:@"200"] swpFMDBViewController:vc];
-    } setSwpFMDBJumpContriller:nil];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[InheritModel class]];
     
     // InheritModel 查询全部数据
     SwpFMDBModel *inheritSelectModels    = [SwpFMDBModel swpFMDBWithTitle:@" InheritModel 查询全部数据 " setSwpFMDBSubTitle:@" Select a set of InheritModel  "  setSwpFMDBOption:^(SwpFMDBModel * _Nonnull swpFMDBModel) {
         swpFMDBModel.swpFMDBData = [vc selelctDatasWihtModelClass:[InheritModel class]];
-    } setSwpFMDBJumpContriller:[SelectModelsViewController class]];
+    } setSwpFMDBJumpContriller:[SelectModelsViewController class] setSelectModelClass:[InheritModel class]];
     
     return @[customInsterModel, customInsterModels, customUpdateModel, customUpdateModels, customSelectModel,customSelectModels, inheritInsterModel, inheritInsterModels, inheritUpdateModel, inheritUpdateModels, inheritSelectModel, inheritSelectModels];
 }

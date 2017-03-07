@@ -328,6 +328,39 @@ static id _swpFMDB;
 /**!
  *  @ author swp_song
  *
+ *  @ brief  swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:   ( 删除 一组 数据 )
+ *
+ *  @ param  models
+ *
+ *  @ param  swpFMDBExecutionUpdateComplete
+ */
+- (void)swpFMDBDelegateModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete {
+    
+    [self swpFMDBInTransaction:self.databaseQueue block:^(SwpFMDB *swpFMDB, FMDatabase *dataBase, BOOL *rollback) {
+        [SwpFMDBManager delegateModels:models swpFMDB:swpFMDB dataBase:dataBase isCloseDB:YES executionUpdateComplete:swpFMDBExecutionUpdateComplete];
+    }];
+}
+
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  swpFMDBClearModel:swpFMDBExecutionUpdateComplete:  ( 删除 一组 数据 )
+ *
+ *  @ param  modelsClass
+ *
+ *  @ param  swpFMDBExecutionUpdateComplete
+ */
+- (void)swpFMDBClearModel:(Class)modelsClass swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete {
+    
+    [self swpFMDBInTransaction:self.databaseQueue block:^(SwpFMDB *swpFMDB, FMDatabase *dataBase, BOOL *rollback) {
+        [SwpFMDBManager clearModels:modelsClass swpFMDB:swpFMDB dataBase:dataBase isCloseDB:YES executionUpdateComplete:swpFMDBExecutionUpdateComplete];
+    }];
+}
+
+
+/**!
+ *  @ author swp_song
+ *
  *  @ brief  swpFMDBSelectTest: ( 测试方法 )
  */
 - (void)swpFMDBSelectTest  {
