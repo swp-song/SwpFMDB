@@ -14,12 +14,6 @@
 
 ---
 
-##### 效果：
-
-![(图片轮播效果)](https://raw.githubusercontent.com/swp-song/SwpFMDB/master/Screenshot/InsterData.gif)![(图片轮播效果)](https://raw.githubusercontent.com/swp-song/SwpFMDB/master/Screenshot/UpdateData.gif)![(图片轮播效果)](https://raw.githubusercontent.com/swp-song/SwpFMDB/master/Screenshot/SelectData.gif)![(图片轮播效果)](https://raw.githubusercontent.com/swp-song/SwpFMDB/master/Screenshot/DeleteData.gif)
-
----
-
 
 ##### 导入:
 
@@ -83,16 +77,12 @@ pod 'SwpFMDB'
 ##### 版本记录
 
 ```
-1. 版本版本: 1.1.2
+1. 版本版本: 1.1.3
 
-2. 更新时间: 2017-03-07 16:20:26
+2. 更新时间: 2017-03-08 09:01:23
 
 3. 更新内容:
-	* 删除, 一组数据
-	* - (void)swpFMDBDelegateModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
-  
-	* 清除，全部数据
-	* - (void)swpFMDBClearModel:(Class)modelsClass swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+	* 更新 .md 文件, 修改小一些版本记录信息
 ```
 
 ---
@@ -100,10 +90,25 @@ pod 'SwpFMDB'
 ```
 1. 版本版本: 1.1.2
 
+2. 更新时间: 2017-03-07 16:20:26
+
+3. 更新内容:
+	* 删除, 一组数据
+	* - (void)swpFMDBDelegateModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+
+	* 清除，全部数据
+	* - (void)swpFMDBClearModel:(Class)modelsClass swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+```
+
+---
+
+```
+1. 版本版本: 1.0.3
+
 2. 更新时间: 2017-03-03 18:14:26
 
 3. 更新内容:
-	*  删除，单条 数据: 
+	*  删除，单条 数据:
 	*  - (void)swpFMDBDelegateModel:(id)model swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
 ```
 
@@ -112,8 +117,8 @@ pod 'SwpFMDB'
 ##### PS:
 
 ```
-1. 近期更新, 删除多条数据, 删除表, 清空数据库
 持续更新...
+	1. 下次更新删除表
 ```
 
 ---
