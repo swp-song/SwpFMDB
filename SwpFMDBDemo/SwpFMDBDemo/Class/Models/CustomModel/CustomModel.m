@@ -138,7 +138,7 @@
         [models addObject:custom];
     }
     
-    return [NSMutableArray arrayWithArray:models];
+    return [NSMutableArray arrayWithArray:models].copy;
 }
 
 

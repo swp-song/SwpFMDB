@@ -14,165 +14,167 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SwpExecuteSQL : NSObject
 
-
 #pragma mark - SwpExecuteSQL Execute Create Table SQL Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpExecuteCreateTableSQL:table:isCloseDB:  ( 执行 创表 SQL 语句 )
+ *  @brief  swpExecuteCreateTableSQL:table:isCloseDB:   ( 执行创表 SQL 语句 )
  *
- *  @ param  dataBase           数据库
+ *  @param  dataBase    dataBase    < 数据库 >
  *
- *  @ param  modelClass         数据模型
+ *  @param  table       table       < 表名称 >
  *
- *  @ param  isCloseDB          是否关闭数据库
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
  *
- *  @ return BOOL
+ *  @return BOOL
  */
-+ (BOOL)swpExecuteCreateTableSQL:(FMDatabase *)dataBase table:(Class)modelClass isCloseDB:(BOOL)isCloseDB;
++ (BOOL)swpExecuteCreateTableSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB;
 
 #pragma mark - SwpExecuteSQL Execute Insert SQL Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpExecuteInsertModelSQL:model:isCloseDB:  ( 执行 插入数据 SQL 语句 )
+ *  @brief  swpExecuteInsertModelSQL:model:isCloseDB:   ( 执行插入数据 SQL 语句 )
  *
- *  @ param  dataBase
+ *  @param  dataBase    dataBase    < 数据库 >
  *
- *  @ param  model
+ *  @param  model       model       < 数据源 >
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 + (BOOL)swpExecuteInsertModelSQL:(FMDatabase *)dataBase model:(id)model isCloseDB:(BOOL)isCloseDB;
 
 #pragma mark - SwpExecuteSQL Execute Update SQL Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpExecuteUpdateModelSQL:model:isCloseDB:  ( 执行 更新数据 SQL 语句 )
+ *  @brief  swpExecuteUpdateModelSQL:model:isCloseDB:  ( 执行更新数据 SQL 语句 )
  *
- *  @ param  dataBase
+ *  @param  dataBase    dataBase    < 数据库 >
  *
- *  @ param  model
+ *  @param  model       model       < 数据源 >
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 + (BOOL)swpExecuteUpdateModelSQL:(FMDatabase *)dataBase model:(id)model isCloseDB:(BOOL)isCloseDB;
 
+
 #pragma mark - SwpExecuteSQL Execute Select SQL Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpExecuteSelectModelSQL:table:bySwpDBID:isCloseDB:    ( 执行 根据 主键 swpDBDI 查询单条数据 SQL 语句 )
- 
- *  @ param  dataBase
+ *  @brief  swpExecuteSelectModelSQL:table:bySwpDBID:isCloseDB:    ( 执行查询 SQL 语句，根据主键 swpDBDI 查询单条数据 )
  *
- *  @ param  modelClass
+ *  @param  dataBase    dataBase    < 数据库 >
  *
- *  @ param  swpDBID
+ *  @param  modelClass  modelClass  < 创建表名称 >
  *
- *  @ param  isCloseDB
+ *  @param  swpDBID     swpDBID     < 主键 >
  *
- *  @ return id
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return id
  */
 + (id)swpExecuteSelectModelSQL:(FMDatabase *)dataBase table:(Class)modelClass bySwpDBID:(NSString *)swpDBID isCloseDB:(BOOL)isCloseDB;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpExecuteSelectModelsSQL:table:isCloseDB: ( 执行 查询 全部 数据 SQL )
- 
- *  @ param  dataBase
+ *  @brief  swpExecuteSelectModelsSQL:table:isCloseDB:  ( 执行查询全部数据 SQL 语句 )
  *
- *  @ param  modelClass
+ *  @param  dataBase    dataBase    < 数据库 >
  *
- *  @ param  isCloseDB
+ *  @param  modelClass  modelClass  < 创建表名称 >
  *
- *  @ return NSArray
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return NSArray
  */
 + (NSArray *)swpExecuteSelectModelsSQL:(FMDatabase *)dataBase table:(Class)modelClass isCloseDB:(BOOL)isCloseDB;
 
 #pragma mark - SwpExecuteSQL Execute Delete SQL Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpExecuteDeleteModelSQL:model:isCloseDB: ( 执行 删除 单条  数据 SQL )
+ *  @brief  swpExecuteDeleteModelSQL:model:isCloseDB:   ( 执行删除单条数据 SQL 语句 )
  *
- *  @ param  dataBase
+ *  @param  dataBase    dataBase    < 数据库 >
  *
- *  @ param  model
+ *  @param  model       model       < 数据源 >
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 + (BOOL)swpExecuteDeleteModelSQL:(FMDatabase *)dataBase model:(id)model isCloseDB:(BOOL)isCloseDB;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpExecuteDeleteModelsSQL:modelsClass:models:isCloseDB: ( 执行 删除 一组 数据 SQL )
+ *  @brief  swpExecuteDeleteModelsSQL:table:models:isCloseDB:   ( 执行删除一组数据 SQL 语句 )
  *
- *  @ param  dataBase
+ *  @param  dataBase    dataBase    < 数据库 >
  *
- *  @ param  modelsClass
+ *  @param  table       table       < 表名称 >
  *
- *  @ param  models
+ *  @param  models      models      < 数据源 >
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
  *
- *  @ return BOOL
+ *  @return BOOL
  */
-+ (BOOL)swpExecuteDeleteModelsSQL:(FMDatabase *)dataBase modelsClass:(Class)modelsClass models:(NSArray *)models isCloseDB:(BOOL)isCloseDB;
++ (BOOL)swpExecuteDeleteModelsSQL:(FMDatabase *)dataBase table:(Class)table models:(NSArray *)models isCloseDB:(BOOL)isCloseDB;
+
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteClearModelSQL:table:isCloseDB:    ( 执行清空表内所有数据, SQL )
+ *
+ *  @param  dataBase    dataBase    < 数据库 >
+ *
+ *  @param  table       table       < 表名称 >
+ *
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return BOOL
+ */
++ (BOOL)swpExecuteClearModelSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB;
+
 
 #pragma mark -
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpExecuteVerifyThatTheTableExistsSQL:table:   ( 执行 验证 表是否 存在 SQL )
+ *  @brief  swpExecuteVerifyThatTheTableExistsSQL:table:    ( 执行验证表是否存在 SQL 语句 )
  *
- *  @ param  dataBase           数据库
+ *  @param  dataBase    dataBase    < 数据库 >
  *
- *  @ param  modelClass         数据模型
+ *  @param  table       table       < 表名称 >
  *
- *  @ return BOOL
+ *  @return BOOL
  */
-+ (BOOL)swpExecuteVerifyThatTheTableExistsSQL:(FMDatabase *)dataBase table:(Class)modelClass;
++ (BOOL)swpExecuteVerifyThatTheTableExistsSQL:(FMDatabase *)dataBase table:(Class)table;
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpExecuteVerifyThatTheTableExistsSQL:table:isCloseDB: ( 执行 验证 表是否 存在 SQL )
+ *  @brief  swpExecuteVerifyThatTheTableExistsSQL:table:isCloseDB: ( 执行验证表是否存在 SQL 语句 )
  *
- *  @ param dataBase
+ *  @param  dataBase    dataBase    < 数据库 >
  *
- *  @ param modelClass
+ *  @param  table       table       < 表名称 >
  *
- *  @ param isCloseDB
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
  *
- *  @ return BOOL
+ *  @return BOOL
  */
-+ (BOOL)swpExecuteVerifyThatTheTableExistsSQL:(FMDatabase *)dataBase table:(Class)modelClass isCloseDB:(BOOL)isCloseDB;
-
-/**!
- *  @ author swp_song
- *
- *  @ brief  swpExecuteClearModelSQL:modelsClass:isCloseDB:  ( 执行清空表内所有数据, SQL )
- *
- *  @ param  dataBase
- *
- *  @ param  modelsClass
- *
- *  @ param  isCloseDB
- *
- *  @ return BOOL
- */
-+ (BOOL)swpExecuteClearModelSQL:(FMDatabase *)dataBase modelsClass:(Class)modelsClass isCloseDB:(BOOL)isCloseDB;
++ (BOOL)swpExecuteVerifyThatTheTableExistsSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB;
 
 
 

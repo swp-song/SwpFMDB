@@ -6,155 +6,149 @@
 //  Copyright © 2017年 swp_song. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-#import "SwpFMDBDataTypes.h"
+#import "SwpFMDBBase.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface SwpFMDB : NSObject
+@interface SwpFMDB : SwpFMDBBase
 
+#pragma mark - SwpFMDB Verify Table Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  shareManager   ( 单利 方法 创建 SwpFMDB  )
+ *  @brief  swpFMDBExecuteVerifyThatTheTableExists: ( 验证数据库中 '表' 是否存在 )
  *
- *  @ return SwpFMDB
- */
-+ (instancetype)shareManager;
-
-/**!
- *  @ author swp_song
+ *  @param  modelClass  modelClass
  *
- *  @ brief  swpFMDBExecuteVerifyThatTheTableExists:    ( 验证数据库中 '表' 是否存在 )
- *
- *  @ param  modelClass
- *
- *  @ return BOOL
+ *  @return BOOL
  */
 - (BOOL)swpFMDBExecuteVerifyThatTheTableExists:(Class)modelClass;
 
 #pragma mark - SwpFMDB Create Table Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBCreateTable:swpFMDBExecutionComplete:   ( 创建 数据库表 )
+ *  @brief  swpFMDBCreateTable:swpFMDBExecutionUpdateComplete:  ( 创建数据库中 '表' )
  *
- *  @ param  modelClass
+ *  @param  modelClass  modelClass          modelClass
  *
- *  @ param  swpFMDBExecutionComplete
+ *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
  */
-- (void)swpFMDBCreateTable:(Class)modelClass swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+- (void)swpFMDBCreateTable:(Class)modelClass swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+
 
 #pragma mark - SwpFMDB Insert Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBInsertModel:swpFMDBExecutionUpdateComplete: ( 插入 单条 数据 )
+ *  @brief  swpFMDBInsertModel:swpFMDBExecutionUpdateComplete: ( 插入单条数据 )
  *
- *  @ param  model
+ *  @param  model                           model
  *
- *  @ param  swpFMDBExecutionUpdateComplete
+ *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
  */
-- (void)swpFMDBInsertModel:(id)model swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+- (void)swpFMDBInsertModel:(id)model swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBInsertModels:swpFMDBExecutionUpdateComplete:    ( 插入 一组 数据 )
+ *  @brief  swpFMDBInsertModels:swpFMDBExecutionUpdateComplete: ( 插入一组数据 )
  *
- *  @ param  models
+ *  @param  models                          models
  *
- *  @ param  swpFMDBExecutionUpdateComplete
+ *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
  */
-- (void)swpFMDBInsertModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+- (void)swpFMDBInsertModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+
 
 #pragma mark - SwpFMDB Update Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBUpdateModel:swpFMDBExecutionUpdateComplete: ( 更新 单条 数据 )
+ *  @brief  swpFMDBUpdateModel:swpFMDBExecutionUpdateComplete:  ( 更新单条数据 )
  *
- *  @ param  model
+ *  @param  model                           model
  *
- *  @ param  swpFMDBExecutionUpdateComplete
+ *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
  */
-- (void)swpFMDBUpdateModel:(id)model swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+- (void)swpFMDBUpdateModel:(id)model swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBUpdateModels:swpFMDBExecutionUpdateComplete:    ( 更新 一组 数据 )
+ *  @brief  swpFMDBUpdateModels:swpFMDBExecutionUpdateComplete: ( 更新一组数据 )
  *
- *  @ param  models
+ *  @param  models                          models
  *
- *  @ param  swpFMDBExecutionUpdateComplete
+ *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
  */
-- (void)swpFMDBUpdateModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+- (void)swpFMDBUpdateModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+
 
 #pragma mark - SwpFMDB Select Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBSelectModel:bySwpDBID:swpFMDBExecutionSelectModelComplete: ( 查询 单条 数据 )
+ *  @brief  swpFMDBSelectModel:bySwpDBID:swpFMDBExecutionSelectModelComplete:   ( 查询单条数据 )
  *
- *  @ param  modelClass
+ *  @param  modelClass                          modelClass
  *
- *  @ param  swpDBID
+ *  @param  swpDBID                             swpDBID
  *
- *  @ param  swpFMDBExecutionSelectModelComplete
+ *  @param  swpFMDBExecutionSelectModelComplete swpFMDBExecutionSelectModelComplete
  */
-- (void)swpFMDBSelectModel:(Class)modelClass bySwpDBID:(NSString *)swpDBID swpFMDBExecutionSelectModelComplete:(nullable SwpFMDBExecutionSelectModelComplete)swpFMDBExecutionSelectModelComplete;
+- (void)swpFMDBSelectModel:(Class)modelClass bySwpDBID:(NSString *)swpDBID swpFMDBExecutionSelectModelComplete:(SwpFMDBExecutionSelectModelComplete)swpFMDBExecutionSelectModelComplete;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBSelectModels:swpFMDBExecutionSelectModelsComplete:   ( 查询 全部 数据 )
+ *  @brief  swpFMDBSelectModels:swpFMDBExecutionSelectModelsComplete:   ( 查询全部数据 )
  *
- *  @ param  modelClass
+ *  @param  modelClass                              modelClass
  *
- *  @ param  swpFMDBExecutionSelectModelsComplete
+ *  @param  swpFMDBExecutionSelectModelsComplete    swpFMDBExecutionSelectModelsComplete
  */
-- (void)swpFMDBSelectModels:(Class)modelClass swpFMDBExecutionSelectModelsComplete:(nullable SwpFMDBExecutionSelectModelsComplete)swpFMDBExecutionSelectModelsComplete;
+- (void)swpFMDBSelectModels:(Class)modelClass swpFMDBExecutionSelectModelsComplete:(SwpFMDBExecutionSelectModelsComplete)swpFMDBExecutionSelectModelsComplete;
 
 #pragma mark - SwpFMDB Delete Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:   ( 删除 单条 数据 )
+ *  @brief  swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:    ( 删除单条数据 )
  *
- *  @ param  model
+ *  @param  model                           model
  *
- *  @ param  swpFMDBExecutionUpdateComplete
+ *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
  */
-- (void)swpFMDBDelegateModel:(id)model swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+- (void)swpFMDBDelegateModel:(id)model swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)swpFMDBExecutionUpdateComplete;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:   ( 删除 一组 数据 )
+ *  @brief  swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:   ( 删除一组数据 )
  *
- *  @ param  models
+ *  @param  models                          models
  *
- *  @ param  swpFMDBExecutionUpdateComplete
+ *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
  */
-- (void)swpFMDBDelegateModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+- (void)swpFMDBDelegateModels:(NSArray *)models swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)swpFMDBExecutionUpdateComplete;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBClearModel:swpFMDBExecutionUpdateComplete:  ( 删除 一组 数据 )
+ *  @brief  swpFMDBClearModel:swpFMDBExecutionUpdateComplete:  ( 清空全部数据 )
  *
- *  @ param  modelsClass
+ *  @param  modelsClass                     modelsClass
  *
- *  @ param  swpFMDBExecutionUpdateComplete
+ *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
  */
-- (void)swpFMDBClearModel:(Class)modelsClass swpFMDBExecutionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
+- (void)swpFMDBClearModel:(Class)modelsClass swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)swpFMDBExecutionUpdateComplete;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBSelectTest: ( 测试方法 )
+ *  @brief  swpFMDBSelectTest:  ( 测试方法 )
  */
 - (void)swpFMDBSelectTest;
 

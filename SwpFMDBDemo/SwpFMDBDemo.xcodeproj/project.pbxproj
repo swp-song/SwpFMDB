@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15B45F6E7D05E05A01E4B8DF /* libPods-SwpFMDBDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB6CD7DCF0B8430D3305B79 /* libPods-SwpFMDBDemo.a */; };
+		2D36BCF21F2EDE2E009EB9FA /* SwpFMDBBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D36BCF11F2EDE2E009EB9FA /* SwpFMDBBase.m */; };
 		2D885FED1E68192F006E0819 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D885FEC1E68192F006E0819 /* main.m */; };
 		2D885FF01E68192F006E0819 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D885FEF1E68192F006E0819 /* AppDelegate.m */; };
 		2D885FF21E68192F006E0819 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D885FF11E68192F006E0819 /* Assets.xcassets */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D36BCF01F2EDE2E009EB9FA /* SwpFMDBBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBBase.h; sourceTree = "<group>"; };
+		2D36BCF11F2EDE2E009EB9FA /* SwpFMDBBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBBase.m; sourceTree = "<group>"; };
 		2D885FE81E68192F006E0819 /* SwpFMDBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwpFMDBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D885FEC1E68192F006E0819 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2D885FEE1E68192F006E0819 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 				2DD4DA021E6A834400694D00 /* SwpFMDB.m */,
 				2DD4DA031E6A834400694D00 /* SwpFMDBManager.h */,
 				2DD4DA041E6A834400694D00 /* SwpFMDBManager.m */,
+				2D36BCF01F2EDE2E009EB9FA /* SwpFMDBBase.h */,
+				2D36BCF11F2EDE2E009EB9FA /* SwpFMDBBase.m */,
 			);
 			path = SwpFMDBMain;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 				2D8860291E681A43006E0819 /* SelectModelsCell.m in Sources */,
 				2D88602C1E681A43006E0819 /* SwpFMDBCell.m in Sources */,
 				2DD4DA191E6A834400694D00 /* SwpStitchingSQL.m in Sources */,
+				2D36BCF21F2EDE2E009EB9FA /* SwpFMDBBase.m in Sources */,
 				2D88602B1E681A43006E0819 /* SwpDataDisplayView.m in Sources */,
 				2DD4DA1A1E6A834400694D00 /* SwpFMDBTools.m in Sources */,
 				2D8860271E681A43006E0819 /* TestModel.m in Sources */,

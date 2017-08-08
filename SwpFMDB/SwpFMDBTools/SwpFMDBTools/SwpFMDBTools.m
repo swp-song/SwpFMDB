@@ -18,11 +18,11 @@
 @implementation SwpFMDBTools
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsGetSqlFilePath ( 获取 创建 数据库 路径 )
+ *  @brief  swpFMDBToolsGetSqlFilePath  ( 获取创建数据库路径 )
  *
- *  @ return NSString
+ *  @return NSString
  */
 + (NSString *)swpFMDBToolsGetSqlFilePath {
     NSString      *sandboxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
@@ -37,13 +37,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsGetAllPropertysNames: ( 获取 全部 属性 < 包括 继承 SwpBDModel 数据模型 > )
+ *  @brief  swpFMDBToolsGetAllPropertysNames:   ( 获取全部属性 < 包括继承 SwpBDModel 数据模型 > )
  *
- *  @ param  modelClass
+ *  @param  modelClass  modelClass
  *
- *  @ return NSArray
+ *  @return NSArray
  */
 + (NSArray *)swpFMDBToolsGetAllPropertysNames:(Class)modelClass {
     
@@ -58,28 +58,28 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsGetPropertysNames: ( 获取 对象中 所有 属性名称 )
+ *  @brief  swpFMDBToolsGetPropertysNames:  ( 获取对象中所有属性名称 )
  *
- *  @ param  modelClass         类名称
+ *  @param  modelClass  modelClass
  *
- *  @ return NSArray
+ *  @return NSArray
  */
 + (NSArray *)swpFMDBToolsGetPropertysNames:(Class)modelClass {
     return [[self class] swpFMDBToolsGetPropertysNames:modelClass interception_:YES];
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsGetPropertysNames:interception_:  ( 获取 对象中 所有 属性名称 )
+ *  @brief  swpFMDBToolsGetPropertysNames:interception_:   ( 获取对象中所有属性名称 )
  *
- *  @ param  modelClass         类名称
+ *  @param  modelClass      modelClass      < 类名称 >
  *
- *  @ param  isInterception_    是否截取 _
+ *  @param  isInterception_ isInterception_ < 是否截取 _ >
  *
- *  @ return NSArray
+ *  @return NSArray
  */
 + (NSArray *)swpFMDBToolsGetPropertysNames:(Class)modelClass interception_:(BOOL)isInterception_ {
     NSMutableArray *array = [NSMutableArray array];
@@ -102,13 +102,13 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsVerifySystemCollectionType:    ( 验证 数据 是否是 系统 集合类型 )
+ *  @brief  swpFMDBToolsVerifySystemCollectionType: ( 验证数据是否是系统集合类型 )
  *
- *  @ param  value
+ *  @param  value   value
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 + (BOOL)swpFMDBToolsVerifySystemCollectionType:(id)value {
     if ([value isKindOfClass:[NSDictionary class]] || [value isKindOfClass:[NSMutableDictionary class]] || [value isKindOfClass:[NSArray class]] || [value isKindOfClass:[NSMutableArray class]]) {
@@ -118,13 +118,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsSplicingPropertyName:  ( 拼接 属性名称 <, 拼接> )
+ *  @brief  swpFMDBToolsSplicingPropertyName:   ( 拼接属性名称 <, 拼接> )
  *
- *  @ param  modelClass
+ *  @param  modelClass  modelClass
  *
- *  @ return NSString
+ *  @return NSString
  */
 + (NSString *)swpFMDBToolsSplicingPropertyName:(Class)modelClass {
     NSMutableString *propertyName = [NSMutableString string];
@@ -136,13 +136,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsSetConversionJSONSting:    ( 数组 | 字典 转换成 json 字符串 )
+ *  @brief  swpFMDBToolsSetConversionJSONSting: ( 数组 | 字典转换成 json 字符串 )
  *
- *  @ param  object
+ *  @param  object  object
  *
- *  @ return NSString
+ *  @return NSString
  */
 + (NSString *)swpFMDBToolsSetConversionJSONSting:(id)object {
     NSData   *jsonData   = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:nil];
@@ -151,13 +151,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsConversionSet: ( json 转换成 对应的 集合 )
+ *  @brief  swpFMDBToolsConversionSet:  ( json 转换成对应的集合 )
  *
- *  @ param  jsonString
+ *  @param  jsonString  jsonString
  *
- *  @ return id
+ *  @return id
  */
 + (id)swpFMDBToolsConversionSet:(NSString *)jsonString {
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
@@ -165,13 +165,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsPackingData:   ( 包装对应数据 )
+ *  @brief  swpFMDBToolsPackingData:    ( 包装对应数据 )
  *
- *  @ param  value
+ *  @param  value   value
  *
- *  @ return id
+ *  @return id
  */
 + (id)swpFMDBToolsPackingData:(id)value {
     if ([[self class] swpFMDBToolsConversionSet:value]) return [[self class] swpFMDBToolsConversionSet:value];
@@ -180,11 +180,11 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsVerifySystemDataTypesAssert:   ( 验证 数据 类型, 断言  )
+ *  @brief  swpFMDBToolsVerifySystemDataTypesAssert:   ( 验证数据类型的断言 )
  *
- *  @ param  model
+ *  @param  model   model
  */
 + (void)swpFMDBToolsVerifySystemDataTypesAssert:(id)model {
     
@@ -192,7 +192,17 @@
     NSAssert(![model isKindOfClass:[UIResponder class]], @" Model 必须是 NSObject 或 NSObject 子类, Model 必须不是响应事件");
 }
 
-+ (void)swpFMDBToolsVerifyArray:(NSArray *)models verificationMessage:(void(^)(BOOL verificationResult, id verificationModel))verificationMessage {
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpFMDBToolsVerifyArrayInSameTypeOfData:    ( 验证数组中数据是否为 Null, 是否是相同类型数据 )
+ *
+ *  @param  models              models
+ *
+ *  @param verificationMessage  verificationMessage
+ */
++ (void)swpFMDBToolsVerifyArrayInSameTypeOfData:(NSArray *)models verificationMessage:(void(^)(BOOL verificationResult, id verificationModel))verificationMessage {
     
     __block BOOL result = YES;
     __block id   model  = nil;

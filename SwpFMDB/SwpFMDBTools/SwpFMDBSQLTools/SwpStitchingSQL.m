@@ -14,34 +14,35 @@
 
 @implementation SwpStitchingSQL
 
+#pragma mark - Swp Stitching Verify Table SQL Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingVerifyThatTheTableExistsSQL:   ( 验证 表 是否存 SQL )
+ *  @brief  swpStitchingVerifyThatTheTableExistsSQL:    ( 验证表是否存 SQL )
  *
- *  @ param  modelClass
+ *  @param  table   table    < 表名称 >
  *
- *  @ return NSString
+ *  @return NSString
  */
-+ (NSString *)swpStitchingVerifyThatTheTableExistsSQL:(Class)modelClass {
-    return [NSString stringWithFormat:@"select count(*) as 'count' from sqlite_master where type ='table' and name = '%@'", NSStringFromClass(modelClass)];
++ (NSString *)swpStitchingVerifyThatTheTableExistsSQL:(Class)table {
+    return [NSString stringWithFormat:@"select count(*) as 'count' from sqlite_master where type ='table' and name = '%@'", NSStringFromClass(table)];
 }
 
-#pragma mark - Swp Stitching  Create Table SQL Methods
+#pragma mark - Swp Stitching Create Table SQL Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingCreateTableSQL ( 拼接 创表 语句 )
+ *  @brief  swpStitchingCreateTableSQL: ( 拼接创建表 SQL 语句 )
  *
- *  @ param  modelClass
+ *  @param  table   table   < 表名称 >
  *
- *  @ return NSString
+ *  @return NSString
  */
-+ (NSString *)swpStitchingCreateTableSQL:(Class)modelClass {
++ (NSString *)swpStitchingCreateTableSQL:(Class)table {
     
-    NSMutableString *createTableSQL = [NSMutableString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (ID INTEGER PRIMARY KEY AUTOINCREMENT ,", NSStringFromClass(modelClass)];
+    NSMutableString *createTableSQL = [NSMutableString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (ID INTEGER PRIMARY KEY AUTOINCREMENT ,", NSStringFromClass(table)];
     
-    NSArray<NSString *> *properties = [SwpFMDBTools swpFMDBToolsGetAllPropertysNames:modelClass];
+    NSArray<NSString *> *properties = [SwpFMDBTools swpFMDBToolsGetAllPropertysNames:table];
     
     [properties enumerateObjectsUsingBlock:^(NSString * _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
         
@@ -56,13 +57,13 @@
 
 #pragma mark - Swp Stitching Inster SQL Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingInsertSQL: ( 拼接 插入数据 SQL )
+ *  @brief  swpStitchingInsertSQL:  ( 拼接插入数据 SQL 语句 )
  *
- *  @ param  model
+ *  @param  model   model   < 数据源 >
  *
- *  @ return NSString
+ *  @return NSString
  */
 + (NSString *)swpStitchingInsertSQL:(id)model {
     
@@ -95,30 +96,30 @@
 
 #pragma mark - Swp Stitching Update SQL Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingUpdateSQLConditionSwpDBID: ( 拼接 修改数据 SQL )
+ *  @brief  swpStitchingUpdateSQLConditionSwpDBID:  ( 拼接修改数据 SQL 语句，根据 swpDBID 修改数据 )
  *
- *  @ param  model
+ *  @param  model   model   < 数据源 >
  *
- *  @ return NSString
+ *  @return NSString
  */
 + (NSString *)swpStitchingUpdateSQLConditionSwpDBID:(id)model {
-    return [[self class] swpStitchingUpdateSQL:model conditionKey:@"swpDBID" conditionValue:[model valueForKey:@"swpDBID"]];
+    return [self.class swpStitchingUpdateSQL:model conditionKey:@"swpDBID" conditionValue:[model valueForKey:@"swpDBID"]];
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingUpdateSQL:conditionKey:conditionValue: ( 拼接 修改数据 SQL )
+ *  @brief  swpStitchingUpdateSQL:conditionKey:conditionValue:  ( 拼接修改数据 SQL 语句，根据 SQL 条件修改 )
  *
- *  @ param  model
+ *  @param  model   model   < 数据源 >
  *
- *  @ param  key
+ *  @param  key     key     < 条件 key >
  *
- *  @ param  value
+ *  @param  value   value   < 条件 value >
  *
- *  @ return NSString
+ *  @return NSString
  */
 + (NSString *)swpStitchingUpdateSQL:(id)model conditionKey:(NSString *)key conditionValue:(NSString *)value {
     
@@ -144,98 +145,99 @@
 #pragma mark - Swp Stitching Select SQL Methods
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingSelectDataSQL:key:value:   ( 根据 主键 查询 数据 )
+ *  @brief  swpStitchingSelectModelSQL:swpDBID: ( 拼接查询单条数据 SQL 语句，根据 swpDBID 查询 )
  *
- *  @ param  modelClass
+ *  @param  table   table   < 表名称 >
  *
- *  @ param  key
+ *  @param  swpDBID swpDBID < swpDBID 主键  >
  *
- *  @ param  value
- *
- *  @ return NSString
+ *  @return NSString
  */
-+ (NSString *)swpStitchingSelectDataSQL:(Class)modelClass key:(NSString *)key value:(NSString *)value {
-    return [NSString stringWithFormat:@"SELECT * FROM %@ WHERE %@ = '%@';", NSStringFromClass(modelClass), key, value];
++ (NSString *)swpStitchingSelectModelSQL:(Class)table swpDBID:(NSString *)swpDBID {
+    return [[self class] swpStitchingSelectDataSQL:table key:@"swpDBID" value:swpDBID];
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingSelectModelSQL:swpBDID:    ( 查询 根据 swpBDID 数据 SQL < 单条数据 > )
+ *  @brief  swpStitchingSelectDataSQL:key:value:    ( 拼接查询单条数据 SQL 语句, 根据查询条件 )
  *
- *  @ param  modelClass
+ *  @param  table   table   < 表名称 >
  *
- *  @ param  swpBDID
+ *  @param  key     key     < 条件 key >
  *
- *  @ return NSString
+ *  @param  value   value   < 条件 value >
+ *
+ *  @return NSString
  */
-+ (NSString *)swpStitchingSelectModelSQL:(Class)modelClass swpDBID:(NSString *)swpDBID {
-    return [[self class] swpStitchingSelectDataSQL:modelClass key:@"swpDBID" value:swpDBID];
++ (NSString *)swpStitchingSelectDataSQL:(Class)table key:(NSString *)key value:(NSString *)value {
+    return [NSString stringWithFormat:@"SELECT * FROM %@ WHERE %@ = '%@';", NSStringFromClass(table), key, value];
 }
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingSelectDataSQL:key:value:   ( 查询 全部 数据 SQL < 单条数据 > )
+ *  @brief  swpStitchingSelectModelsSQL:    ( 拼接查询全部数据 SQL 语句 )
  *
- *  @ param  modelClass
+ *  @param  table   table   < 表名称 >
  *
- *  @ return NSString
+ *  @return NSString
  */
-+ (NSString *)swpStitchingSelectModelsSQL:(Class)modelClass {
-    return [NSString stringWithFormat:@"SELECT * FROM %@;", NSStringFromClass(modelClass)];
++ (NSString *)swpStitchingSelectModelsSQL:(Class)table {
+    return [NSString stringWithFormat:@"SELECT * FROM %@;", NSStringFromClass(table)];
 }
 
 #pragma mark - Swp Stitching Delete SQL Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingDeleteModelSQL:key:value: ( 删除 单条 数据 SQL < 单条数据 > )
+ *  @brief  swpStitchingDeleteModelSQL:swpDBID: ( 拼接删除单条数据 SQL 语句, 根据 swpDBID 删除 )
  *
- *  @ param  modelClass
+ *  @param  table   table   < 表名称 >
  *
- *  @ param  key
+ *  @param  swpDBID swpDBID < swpDBID 主键  >
  *
- *  @ param  value
- *
- *  @ return NSString
+ *  @return NSString
  */
-+ (NSString *)swpStitchingDeleteModelSQL:(Class)modelClass key:(NSString *)key value:(NSString *)value {
-    return [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ = '%@';", NSStringFromClass(modelClass), key, value];
++ (NSString *)swpStitchingDeleteModelSQL:(Class)table swpDBID:(NSString *)swpDBID {
+    return [[self class] swpStitchingDeleteModelSQL:table key:@"swpDBID" value:swpDBID];
+}
+
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpStitchingDeleteModelSQL:key:value:   ( 拼接删除单条数据 SQL 语句, 根据查询条件 )
+ *
+ *  @param  table   table   < 表名称 >
+ *
+ *  @param  key     key     < 条件 key >
+ *
+ *  @param  value   value   < 条件 value >
+ *
+ *  @return NSString
+ */
++ (NSString *)swpStitchingDeleteModelSQL:(Class)table key:(NSString *)key value:(NSString *)value {
+    return [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ = '%@';", NSStringFromClass(table), key, value];
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingDeleteModelSQL:swpDBID:   ( 删除 单条 数据 SQL 根据 swpDBID < 单条数据 > )
+ *  @brief  swpStitchingDeleteModelsSQL:models: ( 拼接删除一组数据 SQL 语句 )
  *
- *  @ param  modelClass
+ *  @param  table   table   < 表名称 >
  *
- *  @ param  swpDBID
+ *  @param  models  models  < 数据源 >
  *
- *  @ return NSString
+ *  @return NSString
  */
-+ (NSString *)swpStitchingDeleteModelSQL:(Class)modelClass swpDBID:(NSString *)swpDBID {
-    return [[self class] swpStitchingDeleteModelSQL:modelClass key:@"swpDBID" value:swpDBID];
-}
-
-/**!
- *  @ author swp_song
- *
- *  @ brief  swpStitchingDeleteModelsSQL:models:    ( 删除 一组 数据 SQL 根据 swpDBID < 删除一组数据 > )
- *
- *  @ param  modelClass
- *
- *  @ param  models
- *
- *  @ return NSString
- */
-+ (NSString *)swpStitchingDeleteModelsSQL:(Class)modelClass models:(NSArray *)models {
++ (NSString *)swpStitchingDeleteModelsSQL:(Class)table models:(NSArray *)models {
     
-    NSMutableString *deleteSQL = [NSMutableString stringWithFormat:@"DELETE FROM %@ WHERE swpDBID IN ( ", [modelClass class]];
+    NSMutableString *deleteSQL = [NSMutableString stringWithFormat:@"DELETE FROM %@ WHERE swpDBID IN ( ", [table class]];
     [models enumerateObjectsUsingBlock:^(id _Nonnull model, NSUInteger idx, BOOL * _Nonnull stop) {
         NSLog(@"%@", [model valueForKey:@"swpDBID"]);
         [deleteSQL appendFormat:@"'%@', ", [model valueForKey:@"swpDBID"]];
@@ -247,16 +249,16 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpStitchingClearModelsSQL:    ( 清空表数据 )
+ *  @brief  swpStitchingClearModelsSQL: ( 拼接清空表中所有数据 SQL 语句 )
  *
- *  @ param  modelClass
+ *  @param  table   table   < 表名称 >
  *
- *  @ return NSString
+ *  @return NSString
  */
-+ (NSString *)swpStitchingClearModelsSQL:(Class)modelClass {
-    return [NSString stringWithFormat:@"DELETE FROM %@", NSStringFromClass(modelClass)];
++ (NSString *)swpStitchingClearModelsSQL:(Class)table {
+    return [NSString stringWithFormat:@"DELETE FROM %@", NSStringFromClass(table)];
 }
 
 

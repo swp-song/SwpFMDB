@@ -1,6 +1,6 @@
 //
 //  SwpFMDBManager.h
-//  FMDBDemo
+//  swp_song
 //
 //  Created by swp_song on 2017/2/21.
 //  Copyright © 2017年 swp_song. All rights reserved.
@@ -17,190 +17,188 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - SwpFMDBManager Verify Table Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  executeVerifyThatTheTableExists:   ( 验证表是否存在 )
+ *  @brief  executeVerifyThatTheTableExists:    ( 验证表是否存在 )
  *
- *  @ param  modelClass
+ *  @param  modelClass  modelClass
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 + (BOOL)executeVerifyThatTheTableExists:(Class)modelClass dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB;
 
 #pragma mark - SwpFMDBManager Create Table Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  createTable:isCloseDB:executionUpdateComplete: ( 创建表 )
+ *  @brief  createTable:isCloseDB:executionUpdateComplete:  ( 创建表 )
  *
- *  @ param  modelClass
+ *  @param  modelClass              modelClass
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB               isCloseDB
  *
- *  @ param  executionUpdateComplete
+ *  @param  executionUpdateComplete executionUpdateComplete
  */
 + (void)createTable:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
 
 #pragma mark - SwpFMDBManager Insert Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  insertModel:swpFMDB:dataBase:isCloseDB:executionUpdateComplete:    ( 插入 单条 数据 )
+ *  @brief  insertModel:swpFMDB:dataBase:isCloseDB:executionUpdateComplete: ( 插入单条数据 )
  *
- *  @ param  model
+ *  @param  model                   model
  *
- *  @ param  swpFMDB
+ *  @param  swpFMDB                 swpFMDB
  *
- *  @ param  dataBase
+ *  @param  dataBase                dataBase
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB               isCloseDB
  *
- *  @ param  executionUpdateComplete
+ *  @param  executionUpdateComplet  executionUpdateComplet
  */
-+ (void)insertModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplet;
++ (void)insertModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplet;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  insertModels:swpFMDB:dataBase:isCloseDB:executionUpdateComplete:   ( 插入 多条 数据 )
+ *  @brief  insertModels:swpFMDB:dataBase:isCloseDB:executionUpdateComplete:    ( 插入多条数据 )
  *
- *  @ param  models
+ *  @param  models                  models
  *
- *  @ param  swpFMDB
+ *  @param  swpFMDB                 swpFMDB
  *
- *  @ param  dataBase
+ *  @param  dataBase                dataBase
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB               isCloseDB
  *
- *  @ param  executionUpdateComplete
+ *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)insertModels:(NSArray *)models swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
++ (void)insertModels:(NSArray *)models swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
 
 #pragma mark - SwpFMDBManager Update Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  updateModel:swpFMDB:dataBase:isCloseDB:executionUpdateComplete:    ( 更新 单条数据 数据 )
+ *  @brief  updateModel:swpFMDB:dataBase:isCloseDB:executionUpdateComplete: ( 更新单条数据 )
  *
- *  @ param  model
+ *  @param  model                   model
  *
- *  @ param  swpFMDB
+ *  @param  swpFMDB                 swpFMDB
  *
- *  @ param  dataBase
+ *  @param  dataBase                dataBase
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB               isCloseDB
  *
- *  @ param  executionUpdateComplete
+ *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)updateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
++ (void)updateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  updateModels:swpFMDB:dataBase:isCloseDB:executionUpdateComplete:    ( 更新 一组 数据 )
+ *  @brief  updateModels:swpFMDB:dataBase:isCloseDB:executionUpdateComplete:    ( 更新一组数据 )
  *
- *  @ param  models
+ *  @param  models                  models
  *
- *  @ param  swpFMDB
+ *  @param  swpFMDB                 swpFMDB
  *
- *  @ param  dataBase
+ *  @param  dataBase                dataBase
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB               isCloseDB
  *
- *  @ param  executionUpdateComplete
+ *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)updateModels:(NSArray *)models swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
++ (void)updateModels:(NSArray *)models swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
 
 #pragma mark - SwpFMDBManager Select Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selectModel:bySwpDBID:swpFMDB:dataBase:isCloseDB:executionSelectModelComplete: ( 查询 单条 数据 )
+ *  @brief  selectModel:bySwpDBID:swpFMDB:dataBase:isCloseDB:executionSelectModelComplete:  ( 查询单条数据 )
  *
- *  @ param modelClass
+ *  @param  modelClass                      modelClass
  *
- *  @ param swpDBID
+ *  @param  swpDBID                         swpDBID
  *
- *  @ param swpFMDB
+ *  @param  swpFMDB                         swpFMDB
  *
- *  @ param dataBase
+ *  @param  dataBase                        dataBase
  *
- *  @ param isCloseDB
+ *  @param  isCloseDB                       isCloseDB
  *
- *  @ param executionSelectModelComplete
+ *  @param  executionSelectModelComplete    executionSelectModelComplete
  */
-+ (void)selectModel:(Class)modelClass bySwpDBID:(NSString *)swpDBID swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionSelectModelComplete:(nullable SwpFMDBExecutionSelectModelComplete)executionSelectModelComplete;
++ (void)selectModel:(Class)modelClass bySwpDBID:(NSString *)swpDBID swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionSelectModelComplete:(SwpFMDBExecutionSelectModelComplete)executionSelectModelComplete;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selectModels:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 查询 全部 数据 )
+ *  @brief  selectModels:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete:  ( 查询全部数据 )
  *
- *  @ param  modelClass
+ *  @param  modelClass                      modelClass
  *
- *  @ param  swpDBID
+ *  @param  swpFMDB                         swpFMDB
  *
- *  @ param  swpFMDB
+ *  @param  dataBase                        dataBase
  *
- *  @ param  dataBase
+ *  @param  isCloseDB                       isCloseDB
  *
- *  @ param  isCloseDB
- *
- *  @ param  executionSelectModelComplete
+ *  @param  executionSelectModelsComplete   executionSelectModelsComplete
  */
-+ (void)selectModels:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionSelectModelsComplete:(nullable SwpFMDBExecutionSelectModelsComplete)executionSelectModelsComplete;
++ (void)selectModels:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionSelectModelsComplete:(SwpFMDBExecutionSelectModelsComplete _Nullable)executionSelectModelsComplete;
 
 #pragma mark - SwpFMDBManager Delegate Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  delegateModel:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 删除指定数据 )
+ *  @brief  delegateModel:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 删除指定数据 )
  *
- *  @ param  model
+ *  @param  model                   model
  *
- *  @ param  swpFMDB
+ *  @param  swpFMDB                 swpFMDB
  *
- *  @ param  dataBase
+ *  @param  dataBase                dataBase
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB               isCloseDB
  *
- *  @ param  executionUpdateComplete
+ *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)delegateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
++ (void)delegateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  delegateModels:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 删除 表中 一组 数据 )
+ *  @brief  delegateModels:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete:    ( 删除一组数据 )
  *
- *  @ param  models
+ *  @param  models                  models
  *
- *  @ param  swpFMDB
+ *  @param  swpFMDB                 swpFMDB
  *
- *  @ param  dataBase
+ *  @param  dataBase                dataBase
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB               isCloseDB
  *
- *  @ param  executionUpdateComplete
+ *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)delegateModels:(NSArray *)models swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(nullable SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
++ (void)delegateModels:(NSArray *)models swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  clearModels:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete: ( 删除 一组 数据 )
+ *  @brief  clearModels:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete:   ( 清空全部数据 )
  *
- *  @ param  modelClass
+ *  @param  modelClass              modelClass
  *
- *  @ param  swpFMDB
+ *  @param  swpFMDB                 swpFMDB
  *
- *  @ param  dataBase
+ *  @param  dataBase                dataBase
  *
- *  @ param  isCloseDB
+ *  @param  isCloseDB               isCloseDB
  *
- *  @ param  executionUpdateComplete
+ *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)clearModels:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete;
++ (void)clearModels:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
 
 @end
 NS_ASSUME_NONNULL_END
