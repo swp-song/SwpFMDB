@@ -1,83 +1,78 @@
-# SwpTools
+# SwpToolsiOS封装一些常用方法
 
 
-#####尝试静态库打 封装一些 常用的工具方法
----
-
-#####导入：
-```ruby
-手动导入：
-
-SwpTools 文件夹 导入 项目 中
-
-// 常用 工具类
-#import "SwpTools"
-
-// 消除Block 循环引用
-#import "SwpWeakifyHeader"
-
-// 新增打印宏
-#import "SwpLog.h"
-
-// 新增 坐标 高德 百度 坐标 互转
-#import "SwpCoordinateTransform.h"
+#### SwpTools (简介):
 
 ```
----
+1. 封装一些常用方法, 开发更简便，效率.
+```
 
-```ruby
+-------
 
-CocoaPods 导入:
 
-pod search SwpTools
+#### 导入：
 
-pod 'SwpTools'
+```rub
 
-// 获取 手机IP
-#import <SwpTools/SwpGetIp.h>		     
+1. 手动导入：
 
-// 常用 工具类
-#import <SwpTools/SwpTools.h>		     
+ 	* SwpTools 文件夹 导入 项目 中
 
-//消除Block 循环引用
-#import <SwpTools/SwpWeakifyHeader.h>
+	* #import "SwpTools" 			// 常用 工具类
 
-// 新增打印宏头文件
-#import <SwpTools/SwpLog.h>
 
-// 新增 坐标 高德 百度 坐标 互转
-#import <SwpTools/SwpCoordinateTransform.h>
+2. CocoaPods 导入:
 
-// 新增 获取手机系统信息
-#import <SwpTools/SwpGetSystemInformation.h>
+	* pod search SwpTools
+
+	* pod 'SwpTools'
+
+	* #import <SwpTools/SwpTools.h>	// 常用 工具类
+```
+**...更多工具请查看 Demo**
+
+-------
+
+
+##### 版本记录
+
+
+-------
+
+```
+1. 版本版本: 3.3.1
+
+2. 更新时间: 2017-08-03 10:14:58
+
+3. 更新内容:
+    1. 修复发方法名称
 
 ```
 
----
+-------
+```
+1. 版本版本: 3.3.0
 
-##### 2.0.1 更新:
-```Objective-C
+2. 更新时间: 2017-08-03 10:09:30
 
-  1. 2017-01-13 13:09:37
-  2. 优化内部方法
+3. 更新内容:
+    1. 新增方法 swpToolCharacterStringContainsEmoji  ( 验证字符串中是否含有 < Emoji > )
 
 ```
 
----
+-------
 
-##### 2.0.0 更新:
-```Objective-C
 
-  1. 2017-01-13 11:20:46
 
-  2. 更新 SwpGetSystemInformation.h 类文件
-
+#### 备注：
+```
+持续更新, 如果喜欢, 欢迎 Star
 ```
 
----
+-------
 
-##### 备注：
-```
-持续更新..
-```
----
+#### 声明:
+
+**著作权归 ©swp_song, 如需转载请标明出处**
+
+-------

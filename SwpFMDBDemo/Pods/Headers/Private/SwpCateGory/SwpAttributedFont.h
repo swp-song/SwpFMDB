@@ -1,1 +1,1 @@
-../../../SwpCateGory/SwpCateGory/SwpAttributeCateGory/SwpAttributedFont.h
+../../../SwpCateGory/SwpCateGory/Other/SwpAttributeCateGory/SwpAttributedFont.h

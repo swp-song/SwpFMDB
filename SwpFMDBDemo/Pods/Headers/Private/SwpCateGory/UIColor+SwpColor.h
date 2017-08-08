@@ -1,1 +1,1 @@
-../../../SwpCateGory/SwpCateGory/UIColorCateGory/UIColor+SwpColor.h
+../../../SwpCateGory/SwpCateGory/UIKit/UIColorCateGory/UIColor+SwpColor.h

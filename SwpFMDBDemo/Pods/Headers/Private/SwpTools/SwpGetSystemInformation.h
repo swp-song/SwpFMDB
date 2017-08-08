@@ -1,1 +1,1 @@
-../../../SwpTools/SwpTools/Header/SwpGetSystemInformation.h
+../../../SwpTools/SwpTools/SwpTools/SwpGetSystemInformation.h

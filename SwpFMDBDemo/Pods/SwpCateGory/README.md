@@ -1,171 +1,79 @@
 # SwpCateGory
 
-##### 封装 分类 常用一些工具
----
-##### 导入：
+
+#### SwpCateGory (简介):
+
 ```
-手动导入：
-
-SwpCateGory 文件夹 导入 项目 中
-
-引入需要用的分类 :
-
-#import "UIColor+SwpColor.h"
+封装一个常用分类, 开发使用简单方便
 ```
 ---
+
+
+#### 导入：
+
+-------
 
 ```ruby
 
-CocoaPods 导入:
+1. 手动导入：
 
-pod search SwpCateGory
+ 	* SwpCateGory 文件夹导入项目中
 
-pod 'SwpCateGory'
+    * #import "UIColor+SwpColor.h"               //  请自行引入需要使用的类目
 
-#import <SwpCateGory/UIColor+SwpColor.h>
+  2. CocoaPods 导入:
 
-```
----
+    * pod search SwpCateGory
 
-##### 介绍:
+    * pod 'SwpRequest'
 
-```Objective-C
-
-// 颜色 一些操作
-#import <SwpCateGory/UIColor+SwpColor.h>   
-
-// View fram 属性一些操作
-#import <SwpCateGory/UIView+SwpExtension.h>  
-
-// 快速设置 TextField 一些常用的属性
-#import <SwpCateGory/UITextField+SwpSetTextField.h>  
-
-// 快速设置 button 一些常用的样式
-#import <SwpCateGory/UIButton+SwpSetButton.h>     
-
-// 快速设置 barButtonItem 一些常用的样式
-#import <SwpCateGory/UIBarButtonItem+SwpSetNavigationBarItem.h>
-
-// 简单对 userDefaults 操作
-#import <SwpCateGory/NSUserDefaults+SwpUserDefaults.h>
-
-// 字体常用方法封装
-#import <SwpCateGory/UIFont+SwpFont.h>
-
-// Attributed 分类 快速 设置 Attributed 字体, 颜色
-#import <SwpCateGory/SwpAttributedHeader.h>
-
-// 新增 字典 分类
-#import <SwpCateGory/NSDictionary+SwpGenerateProperty.h>
-```
-
----
-
-##### 1.2.0 更新:
-```Objective-C
-  1. 2016-11-24
-
-  2. 更新 字典 一个分类, < 根据 后台 json 自动创建 属性打印 >
-
-```
----
-
-##### 1.1.2 更新:
-```Objective-C
-  1. 2016-11-24
-
-  2. 修复一些备注 信息
+    * #import <SwpCateGory/UIColor+SwpColor.h>   //  请自行引入需要使用的类目
 
 ```
 
----
-##### 1.0.8 更新:
-```Objective-C
-  修复一些BUG
+**...更多工具请查看 Demo**
+
+-------
+
+#### 版本记录
+
+-------
 ```
+  1. 版本版本: 1.3.1
 
----
-##### 1.0.7 更新:
-```Objective-C
+  2. 更新时间: 2017-06-20 22:31:54
 
-  新增 UIImage CateGory 分类, 生成 二维码 Or 条形码
+  3. 更新内容:
 
-  1. UIImage+SwpQrCodeImage.h  ---> 生成二维码
-  2. UIImage+SwpBarCodeImage.h ---> 生成条形码
-
-  代码:
-  1. 二维码:
-  UIImage *image = [UIImage swpQrCodeImageWithString:@"http://swp-song.github.io" size:500];
-
-  2. 条形码:
-  UIImage *image = [UIImage swpBarCodeImageCreateWithString:@"66612663612631" size:CGSizeMake(300, 60)];
-  .... 详细 请见 代码
+    * 修改文件未上传成功问题
 
 ```
+-------
 
----
-##### 1.0.6 更新:
-```Objective-C
+-------
+```
+  1. 版本版本: 1.3.0
 
-  新增 Attributed 分类
-  #import "SwpAttributedHeader.h"
+  2. 更新时间: 2017-06-20 22:08:22
 
-  // 设置 字体
-  SwpAttributedFont *swpAttributedFont       = [SwpAttributedFont new];
-  swpAttributedFont.swpAttributedFont        = [UIFont swpFontHeitiSCWithFontSize:16.f];
-  swpAttributedFont.swpAttributedEffectRange = NSMakeRange(0, richString.length);
-  [richString addStringAttribute:swpAttributedFont];
+  3. 更新内容:
 
-  // 设置 颜色
-  SwpAttributedColor *swpAttributedColor      = [SwpAttributedColor new];
-  swpAttributedColor.swpAttributedColor       = [[UIColor blackColor] colorWithAlphaComponent:0.65f];
-  swpAttributedColor.swpAttributedEffectRange = NSMakeRange(0, richString.length);
-  [richString addStringAttribute:swpAttributedColor];
+    * 新增 NSArray+SwpOrderByCharacter 类目.
 
-
-
-  .... 详细 请见 代码
+    * 按字符分组顺序 < 通讯类分组排序 >
 
 ```
----
-##### 1.0.5 更新:
-```Objective-C
+-------
 
-  新增 字体 分类
-  #import "UIFont+SwpFont.h"
-
-
-  加载 系统 字体
-
-  + (UIFont *)swpFontAppleSDGothicNeoThinWithFontSize:(CGFloat)size;
-
-  .... 详细 请见 代码
-
+#### 备注：
 ```
----
-
-##### 1.0.4 更新:
-```Objective-C
-  UIButton+SwpSetButton.h 分类中
-
-  方法:
-
-  + (UIButton *)swpSetNavigationButtonWithTitle:(NSString *)title setFontColot:(UIColor *)fontColot setFontSize:(CGFloat)fontSize setTag:(NSInteger)tag setLeftButton:(BOOL)leftBarButton setTarget:(id)target setAction:(SEL)action;
-
-  替换成:
-
-  + (UIButton *)swpSetNavigationButtonWithTitle:(NSString *)title setFontColot:(UIColor *)fontColot setFontSize:(CGFloat)fontSize setTag:(NSInteger)tag setLeftButton:(BOOL)leftBarButton setTarget:(nullable id)target setAction:(nullable SEL)action;
-
+持续更新, 如果喜欢, 欢迎 Star
 ```
----
 
-##### 1.0.3 更新 :
-```Objective-C
-// 字符串 16 进制 颜色 设置 颜色  ( 0XF4B711 or 0xF4B711 or #F4B711 )
-+ (UIColor *)swpColorWithHexadecimalString:(NSString *)hexadecimalStringValue;
+-------
 
-// 字符串 16 进制 颜色 设置 颜色 alpha ( 0XF4B711 or 0xF4B711 or #F4B711 )
-+ (UIColor *)swpColorWithHexadecimalString:(NSString *)hexadecimalStringValue alpha:(CGFloat)alpha
+#### 声明:
 
-```
----
+**著作权归 ©swp_song, 如需转载请标明出处**
+
+-------
