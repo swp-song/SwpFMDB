@@ -395,7 +395,7 @@
         
         [[SwpFMDBTools swpFMDBToolsGetAllPropertysNames:table] enumerateObjectsUsingBlock:^(NSString * _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
             //  取出数据, 包装数据, 放入模型
-            [model setValue:[SwpFMDBTools swpFMDBToolsPackingData:[resultSet objectForColumnName:key]] forKey:key];
+            [model setValue:[SwpFMDBTools swpFMDBToolsPackingData:[resultSet objectForColumn:key]] forKey:key];
         }];
     }
 
@@ -423,7 +423,7 @@
         id model = [table new];
         [[SwpFMDBTools swpFMDBToolsGetAllPropertysNames:table] enumerateObjectsUsingBlock:^(NSString * _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
             //  取出数据, 包装数据, 放入模型
-            [model setValue:[SwpFMDBTools swpFMDBToolsPackingData:[resultSet objectForColumnName:key]] forKey:key];
+            [model setValue:[SwpFMDBTools swpFMDBToolsPackingData:[resultSet objectForColumn:key]] forKey:key];
         }];
         
         [models addObject:model];

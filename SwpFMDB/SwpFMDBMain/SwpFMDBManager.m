@@ -47,7 +47,7 @@
     // 断言 验证
     [SwpFMDBTools swpFMDBToolsVerifySystemDataTypesAssert:[[modelClass class] new]];
     
-    if ([[self class] executeVerifyThatTheTableExists:modelClass dataBase:dataBase isCloseDB:isCloseDB]) {
+    if ([self.class executeVerifyThatTheTableExists:modelClass dataBase:dataBase isCloseDB:isCloseDB]) {
         // 表存在
         if (executionUpdateComplete) executionUpdateComplete(swpFMDB, YES);
         return;
@@ -73,9 +73,10 @@
  *
  *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)insertModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete {
++ (void)insertModel:(NSObject *)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete {
     
-    [[self class] createTable:[model class] swpFMDB:swpFMDB dataBase:dataBase isCloseDB:isCloseDB executionUpdateComplete:nil];
+    [self.class createTable:model.class swpFMDB:swpFMDB dataBase:dataBase isCloseDB:isCloseDB executionUpdateComplete:nil];
+    
     BOOL executionStatus  = [SwpExecuteSQL swpExecuteInsertModelSQL:dataBase model:model isCloseDB:isCloseDB];
     if (executionUpdateComplete) executionUpdateComplete(swpFMDB, executionStatus);
 }
@@ -97,7 +98,7 @@
  */
 + (void)insertModels:(NSArray *)models swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete {
     
-    [[self class] createTable:[models.firstObject class] swpFMDB:swpFMDB dataBase:dataBase isCloseDB:isCloseDB executionUpdateComplete:nil];
+    [self.class createTable:[models.firstObject class] swpFMDB:swpFMDB dataBase:dataBase isCloseDB:isCloseDB executionUpdateComplete:nil];
     
     [models enumerateObjectsUsingBlock:^(id  _Nonnull model, NSUInteger idx, BOOL * _Nonnull stop) {
         // 最后一条数据
@@ -127,10 +128,10 @@
  *
  *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)updateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete {
++ (void)updateModel:(NSObject *)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete {
     
 
-    if (![[self class] executeVerifyThatTheTableExists:[model class] dataBase:dataBase isCloseDB:isCloseDB]) {
+    if (![self.class executeVerifyThatTheTableExists:model.class dataBase:dataBase isCloseDB:isCloseDB]) {
         // 不存在
         if (executionUpdateComplete) executionUpdateComplete(swpFMDB, NO);
         return;
@@ -163,7 +164,7 @@
     [models enumerateObjectsUsingBlock:^(id  _Nonnull model, NSUInteger idx, BOOL * _Nonnull stop) {
         [SwpFMDBTools swpFMDBToolsVerifySystemDataTypesAssert:model];
         
-        if (![[self class] executeVerifyThatTheTableExists:[model class] dataBase:dataBase isCloseDB:isCloseDB]) {
+        if (![self.class executeVerifyThatTheTableExists:[model class] dataBase:dataBase isCloseDB:isCloseDB]) {
             // 不存在
             if (executionUpdateComplete) executionUpdateComplete(swpFMDB, NO);
             return;
@@ -201,7 +202,7 @@
  */
 + (void)selectModel:(Class)modelClass bySwpDBID:(NSString *)swpDBID swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionSelectModelComplete:(SwpFMDBExecutionSelectModelComplete)executionSelectModelComplete {
     
-    if (![[self class] executeVerifyThatTheTableExists:modelClass dataBase:dataBase isCloseDB:isCloseDB]) {
+    if (![self.class executeVerifyThatTheTableExists:modelClass dataBase:dataBase isCloseDB:isCloseDB]) {
         // 表不存在
         id model = nil;
         if (executionSelectModelComplete) executionSelectModelComplete(swpFMDB, NO, model);
@@ -228,7 +229,7 @@
  */
 + (void)selectModels:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionSelectModelsComplete:(SwpFMDBExecutionSelectModelsComplete)executionSelectModelsComplete {
     
-    if (![[self class] executeVerifyThatTheTableExists:modelClass dataBase:dataBase isCloseDB:isCloseDB]) {
+    if (![self.class executeVerifyThatTheTableExists:modelClass dataBase:dataBase isCloseDB:isCloseDB]) {
         // 表不存在
         id model = nil;
         if (executionSelectModelsComplete) executionSelectModelsComplete(swpFMDB, NO, model);
@@ -255,9 +256,9 @@
  *
  *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)delegateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete {
++ (void)delegateModel:(NSObject *)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete {
     
-    if (![[self class] executeVerifyThatTheTableExists:[model class] dataBase:dataBase isCloseDB:isCloseDB]) {
+    if (![self.class executeVerifyThatTheTableExists:model.class dataBase:dataBase isCloseDB:isCloseDB]) {
         // 不存在
         if (executionUpdateComplete) executionUpdateComplete(swpFMDB, NO);
         return;
@@ -300,7 +301,7 @@
     }
     
     // 验证表
-    if (![[self class] executeVerifyThatTheTableExists:[model class] dataBase:dataBase isCloseDB:isCloseDB]) {
+    if (![self.class executeVerifyThatTheTableExists:[model class] dataBase:dataBase isCloseDB:isCloseDB]) {
         // 不存在
         if (executionUpdateComplete) executionUpdateComplete(swpFMDB, NO);
         return;
@@ -329,7 +330,7 @@
 + (void)clearModels:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete {
     
     // 验证表
-    if (![[self class] executeVerifyThatTheTableExists:modelClass dataBase:dataBase isCloseDB:isCloseDB]) {
+    if (![self.class executeVerifyThatTheTableExists:modelClass dataBase:dataBase isCloseDB:isCloseDB]) {
         // 不存在
         if (executionUpdateComplete) executionUpdateComplete(swpFMDB, NO);
         return;

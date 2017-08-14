@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param  executionUpdateComplet  executionUpdateComplet
  */
-+ (void)insertModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplet;
++ (void)insertModel:(NSObject *)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplet;
 
 /**!
  *  @author swp_song
@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)updateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
++ (void)updateModel:(NSObject *)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
 
 /**!
  *  @author swp_song
@@ -164,7 +164,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param  executionUpdateComplete executionUpdateComplete
  */
-+ (void)delegateModel:(id)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
++ (void)delegateModel:(NSObject *)model swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
 
 /**!
  *  @author swp_song
