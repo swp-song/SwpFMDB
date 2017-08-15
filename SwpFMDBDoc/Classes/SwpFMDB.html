@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SwpFMDB Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">SwpFMDB </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">swp-song</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/swpFMDBClearModel:swpFMDBExecutionUpdateComplete:">- swpFMDBClearModel:swpFMDBExecutionUpdateComplete:</option>
+		
+		<option value="//api/name/swpFMDBCreateTable:swpFMDBExecutionUpdateComplete:">- swpFMDBCreateTable:swpFMDBExecutionUpdateComplete:</option>
+		
+		<option value="//api/name/swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:">- swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:</option>
+		
+		<option value="//api/name/swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:">- swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:</option>
+		
+		<option value="//api/name/swpFMDBDeleteTable:swpFMDBExecutionUpdateComplete:">- swpFMDBDeleteTable:swpFMDBExecutionUpdateComplete:</option>
+		
+		<option value="//api/name/swpFMDBExecuteVerifyThatTheTableExists:">- swpFMDBExecuteVerifyThatTheTableExists:</option>
+		
+		<option value="//api/name/swpFMDBInTransaction:">- swpFMDBInTransaction:</option>
+		
+		<option value="//api/name/swpFMDBInsertModel:swpFMDBExecutionUpdateComplete:">- swpFMDBInsertModel:swpFMDBExecutionUpdateComplete:</option>
+		
+		<option value="//api/name/swpFMDBInsertModels:swpFMDBExecutionUpdateComplete:">- swpFMDBInsertModels:swpFMDBExecutionUpdateComplete:</option>
+		
+		<option value="//api/name/swpFMDBSelectModel:bySwpDBID:swpFMDBExecutionSelectModelComplete:">- swpFMDBSelectModel:bySwpDBID:swpFMDBExecutionSelectModelComplete:</option>
+		
+		<option value="//api/name/swpFMDBSelectModels:swpFMDBExecutionSelectModelsComplete:">- swpFMDBSelectModels:swpFMDBExecutionSelectModelsComplete:</option>
+		
+		<option value="//api/name/swpFMDBSelectTest">- swpFMDBSelectTest</option>
+		
+		<option value="//api/name/swpFMDBUpdateModel:swpFMDBExecutionUpdateComplete:">- swpFMDBUpdateModel:swpFMDBExecutionUpdateComplete:</option>
+		
+		<option value="//api/name/swpFMDBUpdateModels:swpFMDBExecutionUpdateComplete:">- swpFMDBUpdateModels:swpFMDBExecutionUpdateComplete:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SwpFMDB Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/SwpFMDBBase.html">SwpFMDBBase</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SwpFMDB.h<br />SwpFMDB.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- Tool       &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/swpFMDBExecuteVerifyThatTheTableExists:" title="swpFMDBExecuteVerifyThatTheTableExists:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBExecuteVerifyThatTheTableExists:">&ndash;&nbsp;swpFMDBExecuteVerifyThatTheTableExists:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBExecuteVerifyThatTheTableExists:    ( 验证数据库中 &lsquo;表&rsquo; 是否存在 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)swpFMDBExecuteVerifyThatTheTableExists:(Class)<em>modelClass</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>modelClass</code></th>
+						<td><p>modelClass</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>BOOL</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBCreateTable:swpFMDBExecutionUpdateComplete:" title="swpFMDBCreateTable:swpFMDBExecutionUpdateComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBCreateTable:swpFMDBExecutionUpdateComplete:">&ndash;&nbsp;swpFMDBCreateTable:swpFMDBExecutionUpdateComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBCreateTable:swpFMDBExecutionUpdateComplete:  ( 创建数据库中 &lsquo;表&rsquo; )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBCreateTable:(Class)<em>modelClass</em> swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)<em>swpFMDBExecutionUpdateComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>modelClass</code></th>
+						<td><p>modelClass          modelClass</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionUpdateComplete</code></th>
+						<td><p>swpFMDBExecutionUpdateComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBInsertModel:swpFMDBExecutionUpdateComplete:" title="swpFMDBInsertModel:swpFMDBExecutionUpdateComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBInsertModel:swpFMDBExecutionUpdateComplete:">&ndash;&nbsp;swpFMDBInsertModel:swpFMDBExecutionUpdateComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBInsertModel:swpFMDBExecutionUpdateComplete: ( 插入单条数据 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBInsertModel:(id)<em>model</em> swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)<em>swpFMDBExecutionUpdateComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>model</code></th>
+						<td><p>model</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionUpdateComplete</code></th>
+						<td><p>swpFMDBExecutionUpdateComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBInsertModels:swpFMDBExecutionUpdateComplete:" title="swpFMDBInsertModels:swpFMDBExecutionUpdateComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBInsertModels:swpFMDBExecutionUpdateComplete:">&ndash;&nbsp;swpFMDBInsertModels:swpFMDBExecutionUpdateComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBInsertModels:swpFMDBExecutionUpdateComplete: ( 插入一组数据 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBInsertModels:(NSArray *)<em>models</em> swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)<em>swpFMDBExecutionUpdateComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>models</code></th>
+						<td><p>models</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionUpdateComplete</code></th>
+						<td><p>swpFMDBExecutionUpdateComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBUpdateModel:swpFMDBExecutionUpdateComplete:" title="swpFMDBUpdateModel:swpFMDBExecutionUpdateComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBUpdateModel:swpFMDBExecutionUpdateComplete:">&ndash;&nbsp;swpFMDBUpdateModel:swpFMDBExecutionUpdateComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBUpdateModel:swpFMDBExecutionUpdateComplete:  ( 更新单条数据 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBUpdateModel:(id)<em>model</em> swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)<em>swpFMDBExecutionUpdateComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>model</code></th>
+						<td><p>model</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionUpdateComplete</code></th>
+						<td><p>swpFMDBExecutionUpdateComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBUpdateModels:swpFMDBExecutionUpdateComplete:" title="swpFMDBUpdateModels:swpFMDBExecutionUpdateComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBUpdateModels:swpFMDBExecutionUpdateComplete:">&ndash;&nbsp;swpFMDBUpdateModels:swpFMDBExecutionUpdateComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBUpdateModels:swpFMDBExecutionUpdateComplete: ( 更新一组数据 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBUpdateModels:(NSArray *)<em>models</em> swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)<em>swpFMDBExecutionUpdateComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>models</code></th>
+						<td><p>models</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionUpdateComplete</code></th>
+						<td><p>swpFMDBExecutionUpdateComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBSelectModel:bySwpDBID:swpFMDBExecutionSelectModelComplete:" title="swpFMDBSelectModel:bySwpDBID:swpFMDBExecutionSelectModelComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBSelectModel:bySwpDBID:swpFMDBExecutionSelectModelComplete:">&ndash;&nbsp;swpFMDBSelectModel:bySwpDBID:swpFMDBExecutionSelectModelComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBSelectModel:bySwpDBID:swpFMDBExecutionSelectModelComplete:   ( 查询单条数据 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBSelectModel:(Class)<em>modelClass</em> bySwpDBID:(NSString *)<em>swpDBID</em> swpFMDBExecutionSelectModelComplete:(SwpFMDBExecutionSelectModelComplete)<em>swpFMDBExecutionSelectModelComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>modelClass</code></th>
+						<td><p>modelClass</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpDBID</code></th>
+						<td><p>swpDBID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionSelectModelComplete</code></th>
+						<td><p>swpFMDBExecutionSelectModelComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBSelectModels:swpFMDBExecutionSelectModelsComplete:" title="swpFMDBSelectModels:swpFMDBExecutionSelectModelsComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBSelectModels:swpFMDBExecutionSelectModelsComplete:">&ndash;&nbsp;swpFMDBSelectModels:swpFMDBExecutionSelectModelsComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBSelectModels:swpFMDBExecutionSelectModelsComplete:   ( 查询全部数据 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBSelectModels:(Class)<em>modelClass</em> swpFMDBExecutionSelectModelsComplete:(SwpFMDBExecutionSelectModelsComplete)<em>swpFMDBExecutionSelectModelsComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>modelClass</code></th>
+						<td><p>modelClass</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionSelectModelsComplete</code></th>
+						<td><p>swpFMDBExecutionSelectModelsComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:" title="swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:">&ndash;&nbsp;swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:    ( 删除单条数据 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBDelegateModel:(id)<em>model</em> swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)<em>swpFMDBExecutionUpdateComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>model</code></th>
+						<td><p>model</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionUpdateComplete</code></th>
+						<td><p>swpFMDBExecutionUpdateComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:" title="swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:">&ndash;&nbsp;swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:   ( 删除一组数据 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBDelegateModels:(NSArray *)<em>models</em> swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)<em>swpFMDBExecutionUpdateComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>models</code></th>
+						<td><p>models</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionUpdateComplete</code></th>
+						<td><p>swpFMDBExecutionUpdateComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBClearModel:swpFMDBExecutionUpdateComplete:" title="swpFMDBClearModel:swpFMDBExecutionUpdateComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBClearModel:swpFMDBExecutionUpdateComplete:">&ndash;&nbsp;swpFMDBClearModel:swpFMDBExecutionUpdateComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBClearModel:swpFMDBExecutionUpdateComplete:  ( 清空全部数据 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBClearModel:(Class)<em>modelsClass</em> swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)<em>swpFMDBExecutionUpdateComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>modelsClass</code></th>
+						<td><p>modelsClass</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionUpdateComplete</code></th>
+						<td><p>swpFMDBExecutionUpdateComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBDeleteTable:swpFMDBExecutionUpdateComplete:" title="swpFMDBDeleteTable:swpFMDBExecutionUpdateComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBDeleteTable:swpFMDBExecutionUpdateComplete:">&ndash;&nbsp;swpFMDBDeleteTable:swpFMDBExecutionUpdateComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBDeleteTable:swpFMDBExecutionUpdateComplete:  ( 删除表 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBDeleteTable:(Class)<em>table</em> swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)<em>swpFMDBExecutionUpdateComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>table</code></th>
+						<td><p>table</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>swpFMDBExecutionUpdateComplete</code></th>
+						<td><p>swpFMDBExecutionUpdateComplete</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swpFMDBSelectTest" title="swpFMDBSelectTest"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBSelectTest">&ndash;&nbsp;swpFMDBSelectTest</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBSelectTest:  ( 测试方法 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBSelectTest</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/swpFMDBInTransaction:" title="swpFMDBInTransaction:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swpFMDBInTransaction:">&ndash;&nbsp;swpFMDBInTransaction:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>swpFMDBInTransaction:block  ( 开启事务 )</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)swpFMDBInTransaction:(void ( ^ ) ( SwpFMDB *swpFMDB , FMDatabase *dataBase , BOOL *rollback ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>block</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@author swp_song</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SwpFMDB.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 swp-song. All rights reserved. Updated: 2017-08-15</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

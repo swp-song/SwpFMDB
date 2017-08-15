@@ -24,7 +24,7 @@
 static id _swpFMDBBase;
 
 #pragma mark - Override Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  allocWithZone:  ( Override  allocWithZone )
@@ -41,7 +41,7 @@ static id _swpFMDBBase;
     return _swpFMDBBase;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  copyWithZone:   ( Override  copyWithZone )
@@ -55,7 +55,7 @@ static id _swpFMDBBase;
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  copyWithZone:   ( Override  copyWithZone )
@@ -68,7 +68,7 @@ static id _swpFMDBBase;
     return  _swpFMDBBase;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  mutableCopyWithZone:    ( Override  mutableCopyWithZone )
@@ -81,7 +81,7 @@ static id _swpFMDBBase;
     return _swpFMDBBase;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  mutableCopyWithZone:    ( Override  mutableCopyWithZone )
@@ -94,7 +94,7 @@ static id _swpFMDBBase;
     return _swpFMDBBase;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  init    ( Override init )
@@ -111,7 +111,7 @@ static id _swpFMDBBase;
 
 
 #pragma mark - Public Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  shareManager   ( 单利方法, 快速初始化 )
@@ -123,7 +123,7 @@ static id _swpFMDBBase;
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  shareManagerChain   ( 单利方法, 快速初始化 )
@@ -135,7 +135,7 @@ static id _swpFMDBBase;
     };
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBInTransaction:   ( 开启事务 )

@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SwpBDModel : NSObject
 
-/*! 主键 ID !*/
+/** 主键 ID */
 @property (nonatomic, copy) NSString *swpDBID;
 
 @end

@@ -15,7 +15,7 @@
 @implementation SwpStitchingSQL
 
 #pragma mark - Swp Stitching Verify Table SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingVerifyThatTheTableExistsSQL:    ( 验证表是否存 SQL )
@@ -29,7 +29,7 @@
 }
 
 #pragma mark - Swp Stitching Create Table SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingCreateTableSQL: ( 拼接创建表 SQL 语句 )
@@ -42,7 +42,7 @@
     return [self.class swpStitchingCreateTableSQL:table fields:nil];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingCreateTableSQL:fields:  ( 拼接创建表 SQL 语句, 可自定义字段 )
@@ -70,7 +70,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingCreateTemporaryTableSQL:fields: ( 拼接创建临时表表 SQL 语句, 可自定义字段 )
@@ -96,7 +96,7 @@
     return createTableSQL.copy;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingDataMigrationSQL:toMigrationTable:fields:   ( 拼接数据迁移 SQL 语句 )
@@ -125,7 +125,7 @@
 }
 
 #pragma mark - Swp Stitching Inster SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingInsertSQL:  ( 拼接插入数据 SQL 语句 )
@@ -164,7 +164,7 @@
 }
 
 #pragma mark - Swp Stitching Update SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingUpdateSQLConditionSwpDBID:  ( 拼接修改数据 SQL 语句，根据 swpDBID 修改数据 )
@@ -177,7 +177,7 @@
     return [self.class swpStitchingUpdateSQL:model conditionKey:@"swpDBID" conditionValue:[model valueForKey:@"swpDBID"]];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingUpdateSQL:conditionKey:conditionValue:  ( 拼接修改数据 SQL 语句，根据 SQL 条件修改 )
@@ -213,7 +213,7 @@
 
 #pragma mark - Swp Stitching Select SQL Methods
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingSelectModelSQL:swpDBID: ( 拼接查询单条数据 SQL 语句，根据 swpDBID 查询 )
@@ -228,7 +228,7 @@
     return [[self class] swpStitchingSelectDataSQL:table key:@"swpDBID" value:swpDBID];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingSelectDataSQL:key:value:    ( 拼接查询单条数据 SQL 语句, 根据查询条件 )
@@ -246,7 +246,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingSelectModelsSQL:    ( 拼接查询全部数据 SQL 语句 )
@@ -260,7 +260,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingSelectPropertysSQL: ( 拼接查询全部字段 SQL 语句 )
@@ -274,7 +274,7 @@
 }
 
 #pragma mark - Swp Stitching Delete Data SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingDeleteModelSQL:swpDBID: ( 拼接删除单条数据 SQL 语句, 根据 swpDBID 删除 )
@@ -290,7 +290,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingDeleteModelSQL:key:value:   ( 拼接删除单条数据 SQL 语句, 根据查询条件 )
@@ -307,7 +307,7 @@
     return [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@ = '%@';", NSStringFromClass(table), key, value];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingDeleteModelsSQL:models: ( 拼接删除一组数据 SQL 语句 )
@@ -331,7 +331,7 @@
     return [NSString stringWithFormat:@"%@", deleteSQL];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingClearModelsSQL: ( 拼接清空表中所有数据 SQL 语句 )
@@ -346,7 +346,7 @@
 
 
 #pragma mark - Swp Stitching Delete Table SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingDeleteTaleSQL:  ( 拼接删除表 SQL 语句 )
@@ -360,7 +360,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpStitchingDeleteTaleSQLString:    ( 拼接删除表 SQL 语句 )

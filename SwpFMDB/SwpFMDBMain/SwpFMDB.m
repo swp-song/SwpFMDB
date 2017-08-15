@@ -8,9 +8,9 @@
 
 #import "SwpFMDB.h"
 
-/*! ---------------------- Tool       ---------------------- !*/
+/** ---------------------- Tool       ---------------------- */
 #import "SwpFMDBManager.h"              //  SwpFMDBManager
-/*! ---------------------- Tool       ---------------------- !*/
+/** ---------------------- Tool       ---------------------- */
 
 @interface SwpFMDB ()
 
@@ -20,14 +20,12 @@
 
 
 #pragma mark - Private
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpFMDBInTransaction:block   ( 单利 方法 创建 SwpFMDB  )
+ *  @brief  swpFMDBInTransaction:block  ( 开启事务 )
  *
- *  @ param  databaseQueue
- *
- *  @ param  block
+ *  @param  block block
  */
 - (void)swpFMDBInTransaction:(void(^)(SwpFMDB *swpFMDB, FMDatabase *dataBase, BOOL *rollback))block {
 
@@ -41,8 +39,8 @@
 
 
 #pragma mark - SwpFMDB Verify Table Methods
-/**!
- *  @author swp_song
+/**
+ *  swp_song
  *
  *  @brief  swpFMDBExecuteVerifyThatTheTableExists: ( 验证数据库中 '表' 是否存在 )
  *
@@ -61,7 +59,7 @@
 }
 
 #pragma mark - SwpFMDB Create Table Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBCreateTable:swpFMDBExecutionUpdateComplete:  ( 创建数据库中 '表' )
@@ -79,7 +77,7 @@
 }
 
 #pragma mark - SwpFMDB Insert Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBInsertModel:swpFMDBExecutionUpdateComplete: ( 插入单条数据 )
@@ -98,7 +96,7 @@
     
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBInsertModels:swpFMDBExecutionUpdateComplete: ( 插入一组数据 )
@@ -117,7 +115,7 @@
 }
 
 #pragma mark - SwpFMDB Update Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBUpdateModel:swpFMDBExecutionUpdateComplete:  ( 更新单条数据 )
@@ -136,7 +134,7 @@
     
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBUpdateModels:swpFMDBExecutionUpdateComplete: ( 更新一组数据 )
@@ -154,7 +152,7 @@
 }
 
 #pragma mark - SwpFMDB Select Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBSelectModel:bySwpDBID:swpFMDBExecutionSelectModelComplete:   ( 查询单条数据 )
@@ -174,7 +172,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBSelectModels:swpFMDBExecutionSelectModelsComplete:   ( 查询全部数据 )
@@ -192,7 +190,7 @@
 }
 
 #pragma mark - SwpFMDB Delete Data Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBDelegateModel:swpFMDBExecutionUpdateComplete:    ( 删除单条数据 )
@@ -208,7 +206,7 @@
     }];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBDelegateModels:swpFMDBExecutionUpdateComplete:   ( 删除一组数据 )
@@ -223,7 +221,7 @@
     }];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBClearModel:swpFMDBExecutionUpdateComplete:  ( 清空全部数据 )
@@ -240,7 +238,7 @@
 }
 
 #pragma mark - SwpFMDB Delete Table Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBDeleteTable:swpFMDBExecutionUpdateComplete:  ( 删除表 )
@@ -257,7 +255,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBSelectTest:  ( 测试方法 )

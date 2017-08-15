@@ -17,7 +17,7 @@
 @implementation SwpExecuteSQL
 
 #pragma mark - SwpExecuteSQL Execute Create Table SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteCreateTableSQL:table:isCloseDB:   ( 执行创建表 SQL 语句 )
@@ -34,7 +34,7 @@
     return [self.class swpExecuteCreateTableSQL:dataBase table:table fields:nil isCloseDB:isCloseDB];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteCreateTableSQL:table:fields:isCloseDB:    ( 执行创建表 SQL 语句, 可自定义字段 )
@@ -60,7 +60,7 @@
     return executionStatus;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteUpdateFields:table:isCloseDB: ( 执行字段更新 SQL 语句 )
@@ -97,7 +97,7 @@
 }
 
 #pragma mark - SwpExecuteSQL Execute Insert SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteInsertModelSQL:model:isCloseDB:   ( 执行插入数据 SQL 语句 )
@@ -139,7 +139,7 @@
 }
 
 #pragma mark - SwpExecuteSQL Execute Update SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteUpdateModelSQL:model:isCloseDB:  ( 执行更新数据 SQL 语句 )
@@ -176,7 +176,7 @@
 
 
 #pragma mark - SwpExecuteSQL Execute Select SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteSelectModelSQL:table:bySwpDBID:isCloseDB:    ( 执行查询 SQL 语句，根据主键 swpDBDI 查询单条数据 )
@@ -204,7 +204,7 @@
     return model;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteSelectModelsSQL:table:isCloseDB:  ( 执行查询全部数据 SQL 语句 )
@@ -231,7 +231,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteSelectPropertySQL:table:isCloseDB:    ( 执行查询表中全部字段 SQL 语句 )
@@ -257,7 +257,7 @@
 
 
 #pragma mark - SwpExecuteSQL Execute Delete Data SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteDeleteModelSQL:model:isCloseDB:   ( 执行删除单条数据 SQL 语句 )
@@ -282,7 +282,7 @@
     return executionStatus;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteDeleteModelsSQL:table:models:isCloseDB:   ( 执行删除一组数据 SQL 语句 )
@@ -307,7 +307,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteClearModelSQL:table:isCloseDB:    ( 执行清空表内所有数据, SQL )
@@ -332,7 +332,7 @@
 }
 
 #pragma mark - SwpExecuteSQL Execute Delete Table SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteDeleteTaleSQL:table:isCloseDB:    ( 执行删除表, SQL )
@@ -356,7 +356,7 @@
 }
 
 #pragma mark - SwpFMDB Execute Verify Table SQL Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteVerifyThatTheTableExistsSQL:table:    ( 执行验证表是否存在 SQL 语句 )
@@ -371,7 +371,7 @@
     return [dataBase tableExists:NSStringFromClass(table)];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteVerifyThatTheTableExistsSQL:table:isCloseDB: ( 执行验证表是否存在 SQL 语句 )
@@ -410,7 +410,7 @@
 }
 
 #pragma mark - SwpExecuteSQL Execute Operation Methods - Private
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteDBOperation:dbOpenBlock:isCloseDB:   ( 数据库 操作 打开 - 关闭 数据库 )
@@ -436,7 +436,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteOpenDB:   ( 打开数据库 )
@@ -450,7 +450,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteOpenDB:   ( 关闭数据库 )
@@ -461,7 +461,7 @@
     [dataBase close];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteCloseDB:isCloseDB:    ( 关闭数据库 )
@@ -476,7 +476,7 @@
 
 
 #pragma makr -
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteGetQueryDataPackagingModel:table: ( 查询单条数据，包装数据 )
@@ -507,7 +507,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteGetQueryDataPackagingModels:table:    ( 查询多条数据，包装数据 )
@@ -537,7 +537,7 @@
 
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteGetQueryPropertys:    ( 查询数据库表中所有字段，包装数据 )
@@ -558,7 +558,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteTableAddFields:table:fields:  ( 表中添加新字段 )
@@ -583,7 +583,7 @@
 
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpExecuteTableDropFields:table:dbFields:updateFields:  ( 表中去除字段 )

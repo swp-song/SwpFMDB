@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SwpFMDBBase : NSObject
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  shareManager    ( 单利方法, 快速初始化  )
@@ -25,14 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)shareManager;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  shareManagerChain   ( 单利方法, 快速初始化 )
  */
 + (__kindof SwpFMDBBase * _Nonnull (^)())shareManagerChain;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBInTransaction:   ( 开启事务 )

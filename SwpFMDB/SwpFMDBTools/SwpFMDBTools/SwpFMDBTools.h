@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SwpFMDBTools : NSObject
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsGetSqlFilePath  ( 获取创建数据库路径 )
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)swpFMDBToolsGetSqlFilePath;
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsGetAllPropertysNames:   ( 获取全部属性 < 包括继承 SwpBDModel 数据模型 > )
@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSArray *)swpFMDBToolsGetAllPropertysNames:(Class)modelClass;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsGetPropertysNames:  ( 获取对象中所有属性名称 )
@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray *)swpFMDBToolsGetPropertysNames:(Class)modelClass;
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsGetPropertysNames:interception_:   ( 获取对象中所有属性名称 )
@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSArray *)swpFMDBToolsGetPropertysNames:(Class)modelClass interception_:(BOOL)isInterception_;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsVerifySystemCollectionType: ( 验证数据是否是系统集合类型 )
@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)swpFMDBToolsVerifySystemCollectionType:(id)value;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsSplicingPropertyName:   ( 拼接属性名称 <, 拼接> )
@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)swpFMDBToolsSplicingPropertyName:(Class)modelClass;
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsSetConversionJSONSting: ( 数组 | 字典转换成 json 字符串 )
@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)swpFMDBToolsSetConversionJSONSting:(id)object;
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsConversionSet:  ( json 转换成对应的集合 )
@@ -103,7 +103,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (id)swpFMDBToolsConversionSet:(NSString *)jsonString;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsPackingData:    ( 包装对应数据 )
@@ -114,7 +114,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (id)swpFMDBToolsPackingData:(id)value;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsVerifySystemDataTypesAssert:   ( 验证数据类型的断言 )
@@ -123,7 +123,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)swpFMDBToolsVerifySystemDataTypesAssert:(id)model;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsVerifyArrayInSameTypeOfData:    ( 验证数组中数据是否为 Null, 是否是相同类型数据 )
@@ -134,7 +134,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)swpFMDBToolsVerifyArrayInSameTypeOfData:(NSArray *)models verificationMessage:(void(^)(BOOL verificationResult, id verificationModel))verificationMessage;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsVerifyTableWhetherAddField: ( 验证表是否添加字段 )
@@ -148,7 +148,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray *)swpFMDBToolsVerifyTableWhetherAddField:(Class)table dbPropertys:(NSArray *)dbPropertys;
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsVerifyTableWhetherDeleteField:  ( 验证表是否删除字段 )

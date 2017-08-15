@@ -17,7 +17,7 @@
 
 @implementation SwpFMDBTools
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsGetSqlFilePath  ( 获取创建数据库路径 )
@@ -36,7 +36,7 @@
     return sqlFilePath;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsGetAllPropertysNames:   ( 获取全部属性 < 包括继承 SwpBDModel 数据模型 > )
@@ -57,7 +57,7 @@
 
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsGetPropertysNames:  ( 获取对象中所有属性名称 )
@@ -70,7 +70,7 @@
     return [[self class] swpFMDBToolsGetPropertysNames:modelClass interception_:YES];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsGetPropertysNames:interception_:   ( 获取对象中所有属性名称 )
@@ -101,7 +101,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsVerifySystemCollectionType: ( 验证数据是否是系统集合类型 )
@@ -117,7 +117,7 @@
     return NO;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsSplicingPropertyName:   ( 拼接属性名称 <, 拼接> )
@@ -135,7 +135,7 @@
     return propertyName.copy;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsSetConversionJSONSting: ( 数组 | 字典转换成 json 字符串 )
@@ -150,7 +150,7 @@
     return jsonString;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsConversionSet:  ( json 转换成对应的集合 )
@@ -165,7 +165,7 @@
     return [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsPackingData:    ( 包装对应数据 )
@@ -180,7 +180,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsVerifySystemDataTypesAssert:   ( 验证数据类型的断言 )
@@ -194,7 +194,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsVerifyArrayInSameTypeOfData:    ( 验证数组中数据是否为 Null, 是否是相同类型数据 )
@@ -231,7 +231,7 @@
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsVerifyTableWhetherAddField: ( 验证表是否添加字段 )
@@ -247,7 +247,7 @@
     return [modelPropertys filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"NOT (SELF IN %@)", dbPropertys]];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpFMDBToolsVerifyTableWhetherDeleteField:  ( 验证表是否删除字段 )
