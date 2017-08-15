@@ -49,6 +49,8 @@
     
     if ([self.class executeVerifyThatTheTableExists:modelClass dataBase:dataBase isCloseDB:isCloseDB]) {
         // 表存在
+        [SwpExecuteSQL swpExecuteUpdateFields:dataBase table:modelClass isCloseDB:NO];
+
         if (executionUpdateComplete) executionUpdateComplete(swpFMDB, YES);
         return;
     }
@@ -101,7 +103,7 @@
     [self.class createTable:[models.firstObject class] swpFMDB:swpFMDB dataBase:dataBase isCloseDB:isCloseDB executionUpdateComplete:nil];
     
     [models enumerateObjectsUsingBlock:^(id  _Nonnull model, NSUInteger idx, BOOL * _Nonnull stop) {
-        // 最后一条数据
+        //  最后一条数据
         if (idx == models.count - 1) {
             BOOL executionStatus  = [SwpExecuteSQL swpExecuteInsertModelSQL:dataBase model:model isCloseDB:isCloseDB];
             if (executionUpdateComplete) executionUpdateComplete(swpFMDB, executionStatus);
@@ -368,6 +370,8 @@
     
     if (executionUpdateComplete) executionUpdateComplete(swpFMDB, executionStatus);
 }
+
+#pragma mark - Private Methods
 
 
 

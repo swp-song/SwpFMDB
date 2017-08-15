@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SwpFMDB"
-  s.version      = "1.3.0"
+  s.version      = "2.0.1"
   s.summary      = " 封装 FMDB 避免 开发者写繁琐的SQL 语句, 使用简单粗暴 "
 
   # This description is used to generate tags and improve search results.
@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
-   s.ios.deployment_target = "7.0"
+   s.ios.deployment_target = "8.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"

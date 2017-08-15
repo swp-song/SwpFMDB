@@ -20,8 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy  ) NSArray             *arrayI;
 @property (nonatomic, strong) NSMutableArray      *arrayM;
 @property (nonatomic, copy  ) NSDictionary        *dictionaryI;
-@property (nonatomic, strong) NSMutableDictionary *dictionaryM;
+//@property (nonatomic, strong) NSMutableDictionary *dictionaryM;
 //@property (nonatomic, strong) NSMutableDictionary *dictionaryM2;
+//@property (nonatomic, strong) NSMutableDictionary *dictionaryM3;
 
 /**!
  *  @author swp_song

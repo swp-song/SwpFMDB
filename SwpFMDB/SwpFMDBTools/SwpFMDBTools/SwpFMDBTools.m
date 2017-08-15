@@ -160,6 +160,7 @@
  *  @return id
  */
 + (id)swpFMDBToolsConversionSet:(NSString *)jsonString {
+    if (!jsonString) return nil;
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     return [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
 }

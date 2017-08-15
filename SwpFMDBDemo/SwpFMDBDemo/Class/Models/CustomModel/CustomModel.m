@@ -175,7 +175,9 @@
     custom.arrayI       = arrayI;
     custom.arrayM       = arrayM;
     custom.dictionaryI  = dictionaryI;
-    custom.dictionaryM  = dictionaryM;
+//    custom.dictionaryM  = dictionaryM;
+//    custom.dictionaryM2 = dictionaryM;
+//    custom.dictionaryM3 = dictionaryM;
     
     return custom;
 }

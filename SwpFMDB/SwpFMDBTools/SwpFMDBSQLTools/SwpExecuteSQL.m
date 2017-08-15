@@ -20,7 +20,7 @@
 /**!
  *  @author swp_song
  *
- *  @brief  swpExecuteCreateTableSQL:table:isCloseDB:   ( 执行创表 SQL 语句 )
+ *  @brief  swpExecuteCreateTableSQL:table:isCloseDB:   ( 执行创建表 SQL 语句 )
  *
  *  @param  dataBase    dataBase    < 数据库 >
  *
@@ -31,14 +31,69 @@
  *  @return BOOL
  */
 + (BOOL)swpExecuteCreateTableSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB {
+    return [self.class swpExecuteCreateTableSQL:dataBase table:table fields:nil isCloseDB:isCloseDB];
+}
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteCreateTableSQL:table:fields:isCloseDB:    ( 执行创建表 SQL 语句, 可自定义字段 )
+ *
+ *  @param  dataBase    dataBase    < 数据库 >
+ *
+ *  @param  table       table       < 表名称 >
+ *
+ *  @param  fields      fields      < 字段数组 >
+ *
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return BOOL
+ */
++ (BOOL)swpExecuteCreateTableSQL:(FMDatabase *)dataBase table:(Class)table fields:(NSArray *)fields isCloseDB:(BOOL)isCloseDB {
+    
     __block BOOL executionStatus = NO;
     if (![self.class swpExecuteDBOperation:dataBase dbOpenBlock:^{
         // 创建表
-        executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingCreateTableSQL:table]];
+        executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingCreateTableSQL:table fields:fields]];
     } isCloseDB:isCloseDB]) return NO;
     
     return executionStatus;
+}
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteUpdateFields:table:isCloseDB: ( 执行字段更新 SQL 语句 )
+ *
+ *  @param  dataBase    dataBase    < 数据库 >
+ *
+ *  @param  table       table       < 表名称 >
+ *
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return BOOL
+ */
++ (BOOL)swpExecuteUpdateFields:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB {
+    __block BOOL executionStatus = NO;
     
+    if (![self.class swpExecuteDBOperation:dataBase dbOpenBlock:^{
+        
+        NSArray *dbFields       = [SwpExecuteSQL swpExecuteSelectPropertysSQL:dataBase table:table isCloseDB:isCloseDB];
+        NSArray *updateFields   = [SwpFMDBTools swpFMDBToolsGetPropertysNames:table];
+        
+        if ([dbFields isEqualToArray:updateFields]) return;
+        
+        //  增加字段
+        NSArray *addFields  = [updateFields filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"NOT (SELF in %@)", dbFields]];
+        executionStatus     = [self.class swpExecuteTableAddFields:dataBase table:table fields:addFields];
+        if (executionStatus) return;
+        
+        //  减少字段
+        executionStatus     = [self.class swpExecuteTableDropFields:dataBase table:table dbFields:dbFields updateFields:updateFields];
+        
+    } isCloseDB:isCloseDB]) return NO;
+    
+    return executionStatus;
 }
 
 #pragma mark - SwpExecuteSQL Execute Insert SQL Methods
@@ -192,7 +247,6 @@
 + (NSArray *)swpExecuteSelectPropertysSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB {
     
     __block NSArray *models = [NSArray array];
-    
     if (![self.class swpExecuteDBOperation:dataBase dbOpenBlock:^{
         FMResultSet *resultSet = [dataBase executeQuery:[SwpStitchingSQL swpStitchingSelectPropertysSQL:table]];
         models = [self.class swpExecuteGetQueryPropertys:resultSet];
@@ -295,7 +349,7 @@
     
     __block BOOL executionStatus = NO;
     if (![self.class swpExecuteDBOperation:dataBase dbOpenBlock:^{
-        executionStatus = [dataBase executeUpdate:[NSString stringWithFormat:@"DROP TABLE %@", table]];
+        executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingDeleteTaleSQL:table]];
     } isCloseDB:isCloseDB]) return executionStatus;
     
     return executionStatus;
@@ -502,6 +556,79 @@
     }
     return propertys.copy;
 }
+
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteTableAddFields:table:fields:  ( 表中添加新字段 )
+ *
+ *  @param dataBase dataBase
+ *
+ *  @param table    table
+ *
+ *  @param fields   fields
+ *
+ *  @return BOOL
+ */
++ (BOOL)swpExecuteTableAddFields:(FMDatabase *)dataBase table:(Class)table fields:(NSArray<NSString *> *)fields  {
+    __block BOOL executionStatus = NO;
+    [fields enumerateObjectsUsingBlock:^(NSString * _Nonnull field, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (![dataBase columnExists:field inTableWithName:NSStringFromClass(table)]) {
+            executionStatus = [dataBase executeUpdate:[NSString stringWithFormat:@"ALTER TABLE %@ ADD COLUMN %@ DEFAULT '' ", NSStringFromClass(table), field]];
+        }
+    }];
+    return executionStatus;
+}
+
+
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteTableDropFields:table:dbFields:updateFields:  ( 表中去除字段 )
+ *
+ *  @param  dataBase        dataBase
+ *
+ *  @param  table           table
+ *
+ *  @param  dbFields        dbFields
+ *
+ *  @param  updateFields    updateFields
+ *
+ *  @return BOOL
+ */
++ (BOOL)swpExecuteTableDropFields:(FMDatabase *)dataBase table:(Class)table dbFields:(NSArray<NSString *> *)dbFields updateFields:(NSArray<NSString *> *)updateFields {
+    
+    BOOL executionStatus        = NO;
+    
+    //  创建临时表名
+    NSString *temporaryTable    = [NSString stringWithFormat:@"%@Temporary", NSStringFromClass(table)];
+    
+    //  取出相同字段名
+    NSArray  *sameFields        = [dbFields filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF in %@", updateFields]];
+    
+    //  创建临时表
+    executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingCreateTemporaryTableSQL:table fields:updateFields]];
+    
+    //  未修改字段的表中数据迁移到, 临时表中
+    executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingDataMigrationSQL:NSStringFromClass(table) toMigrationTable:temporaryTable fields:sameFields]];
+    
+    //  删除未修改字段的表
+    executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingDeleteTaleSQL:table]];
+    
+    //  创建更新字段表
+    executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingCreateTableSQL:table]];
+    
+    //  临时表中数据迁移到, 更新字段表中
+    executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingDataMigrationSQL:temporaryTable toMigrationTable:NSStringFromClass(table)  fields:sameFields]];
+    
+    //  删除临时表
+    executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingDeleteTaleSQLString:temporaryTable]];
+    
+    return executionStatus;
+}
+
 
 
 

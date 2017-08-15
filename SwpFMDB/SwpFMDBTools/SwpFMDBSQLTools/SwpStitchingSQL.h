@@ -36,6 +36,47 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)swpStitchingCreateTableSQL:(Class)table;
 
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpStitchingCreateTableSQL:fields:  ( 拼接创建表 SQL 语句, 可自定义字段 )
+ *
+ *  @param  table   table   < 表名称 >
+ *
+ *  @param  fields  fields  < 字段数组 >
+ *
+ *  @return NSString
+ */
++ (NSString *)swpStitchingCreateTableSQL:(Class)table fields:(NSArray * _Nullable)fields;
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpStitchingCreateTemporaryTableSQL:fields: ( 拼接创建临时表表 SQL 语句, 可自定义字段 )
+ *
+ *  @param  table   table   < 表名称 >
+ *
+ *  @param  fields  fields  < 字段数组 >
+ *
+ *  @return NSString
+ */
++ (NSString *)swpStitchingCreateTemporaryTableSQL:(Class)table fields:(NSArray * _Nullable)fields;
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpStitchingDataMigrationSQL:toMigrationTable:fields:   ( 拼接数据迁移 SQL 语句 )
+ *
+ *  @param  table   table   < 表名称 >
+ *
+ *  @param  migrationTable  < 迁移表名称 >
+ *
+ *  @param  fields          < 迁移数据的字段 >
+ *
+ *  @return NSString
+ */
++ (NSString *)swpStitchingDataMigrationSQL:(NSString *)table toMigrationTable:(NSString *)migrationTable fields:(NSArray *)fields;
+
 #pragma mark - Swp Stitching Inster SQL Methods
 /**!
  *  @author swp_song
@@ -127,8 +168,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)swpStitchingSelectPropertysSQL:(Class)table;
 
-#pragma mark - Swp Stitching Delete SQL Methods
-
+#pragma mark - Swp Stitching Delete Data SQL Methods
 /**!
  *  @author swp_song
  *
@@ -180,5 +220,29 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return NSString
  */
 + (NSString *)swpStitchingClearModelsSQL:(Class)table;
+
+#pragma mark - Swp Stitching Delete Table SQL Methods
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpStitchingDeleteTaleSQL:  ( 拼接删除表 SQL 语句 )
+ *
+ *  @param  table   table   < 表名称 >
+ *
+ *  @return NSString
+ */
++ (NSString *)swpStitchingDeleteTaleSQL:(Class)table;
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpStitchingDeleteTaleSQLString:    ( 拼接删除表 SQL 语句 )
+ *
+ *  @param  table   table   < 表名称 >
+ *
+ *  @return NSString
+ */
++ (NSString *)swpStitchingDeleteTaleSQLString:(NSString *)table;
+
 @end
 NS_ASSUME_NONNULL_END

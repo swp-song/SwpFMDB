@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**!
  *  @author swp_song
  *
- *  @brief  swpExecuteCreateTableSQL:table:isCloseDB:   ( 执行创表 SQL 语句 )
+ *  @brief  swpExecuteCreateTableSQL:table:isCloseDB:   ( 执行创建表 SQL 语句 )
  *
  *  @param  dataBase    dataBase    < 数据库 >
  *
@@ -29,6 +29,39 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return BOOL
  */
 + (BOOL)swpExecuteCreateTableSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB;
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteCreateTableSQL:table:fields:isCloseDB:    ( 执行创建表 SQL 语句, 可自定义字段 )
+ *
+ *  @param  dataBase    dataBase    < 数据库 >
+ *
+ *  @param  table       table       < 表名称 >
+ *
+ *  @param  fields      fields      < 字段数组 >
+ *
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return BOOL
+ */
++ (BOOL)swpExecuteCreateTableSQL:(FMDatabase *)dataBase table:(Class)table fields:(NSArray * _Nullable)fields isCloseDB:(BOOL)isCloseDB;
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteUpdateFields:table:isCloseDB: ( 执行字段更新 SQL 语句 )
+ *
+ *  @param  dataBase    dataBase    < 数据库 >
+ *
+ *  @param  table       table       < 表名称 >
+ *
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return BOOL
+ */
++ (BOOL)swpExecuteUpdateFields:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB;
+
 
 #pragma mark - SwpExecuteSQL Execute Insert SQL Methods
 /**!
