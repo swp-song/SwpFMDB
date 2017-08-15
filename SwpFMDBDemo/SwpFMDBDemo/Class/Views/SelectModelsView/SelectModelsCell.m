@@ -25,7 +25,7 @@
 @property (nonatomic, strong) UILabel *titleView;
 /*! 显示 副标题 view !*/
 @property (nonatomic, strong) UILabel *subTitleView;
-@property (nonatomic, weak) UITableView *tableView;
+//@property (nonatomic, weak) UITableView *tableView;
 /*! ---------------------- UI   Property  ---------------------- !*/
 
 @end
@@ -43,15 +43,15 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  initWithStyle:reuseIdentifier:  ( Override Init )
+ *  @brief  initWithStyle:reuseIdentifier: ( Override Init )
  *
- *  @ param  style
+ *  @param  style           style
  *
- *  @ param  reuseIdentifier
+ *  @param  reuseIdentifier reuseIdentifier
  *
- *  @ return SelectModelsCell
+ *  @return UITableViewCell
  */
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
@@ -65,14 +65,15 @@
     return self;
 }
 
+
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setHighlighted
+ *  @brief  setHighlighted:animated:    ( Override setHighlighted:animated )
  *
- *  @ param  highlighted
+ *  @param  highlighted highlighted
  *
- *  @ param  animated
+ *  @param  animated    animated
  */
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
     [super setHighlighted:highlighted animated:animated];
@@ -96,9 +97,9 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setUpUI ( 添加控件 )
+ *  @brief  setUpUI ( 添加控件 )
  */
 - (void)setUpUI {
     [self.contentView addSubview:self.titleView];
@@ -106,9 +107,9 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setUIAutoLayout ( 设置控件的自动布局 )
+ *  @brief  setUIAutoLayout ( 设置控件的自动布局 )
  */
 - (void)setUIAutoLayout {
     
@@ -126,13 +127,13 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setAttributedText: ( 设置 AttributedString )
+ *  @brief  setAttributedText:  ( 设置 AttributedString )
  *
- *  @ param  text
+ *  @param  text    text
  *
- *  @ return NSAttributedString
+ *  @return NSAttributedString
  */
 - (NSAttributedString *)setAttributedText:(NSString *)text  {
     NSArray *array = [text componentsSeparatedByString:@"-"];
@@ -143,13 +144,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setData:indexPath: ( 设置 控件 显示 数据 )
+ *  @brief  setData:indexPath:  ( 设置控件显示数据 )
  *
- *  @ param  model
+ *  @param  model       model
  *
- *  @ param  indexPath
+ *  @param  indexPath   indexPath
  */
 - (void)setData:(id)model indexPath:(NSIndexPath *)indexPath {
     self.titleView.attributedText = [self setAttributedText:[NSString stringWithFormat:@"%02ld.   -swpDBID = %@", indexPath.row + 1, [model valueForKey:@"swpDBID"]]];
@@ -159,17 +160,17 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setAttributedString:setFontSize:setTextFontColor: ( 设置 attributedString )
+ *  @brief  setAttributedString:setFont:setTextFontColor:   ( 设置 attributedString )
  *
- *  @ param  text
+ *  @param  text        text
  *
- *  @ param  fontSize
+ *  @param  font        font
  *
- *  @ param  fontColor
+ *  @param  fontColor   fontColor
  *
- *  @ return NSAttributedString
+ *  @return NSAttributedString
  */
 - (NSAttributedString *)setAttributedString:(NSString *)text setFont:(UIFont *)font setTextFontColor:(UIColor *)fontColor {
     
@@ -188,31 +189,41 @@
 }
 
 #pragma mark - Public Methods
+
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selectModelsCellWithTableView:forCellReuseIdentifier:  ( 快速 初始化 一个 cell )
- *
- *  @ param  tableView
- *
- *  @ param  identifier
- *
- *  @ return SelectModelsCell
+ *  @brief  selectModelsCellInit  ( 快速初始化一个 Cell )
  */
-+ (instancetype)selectModelsCellWithTableView:(UITableView *)tableView forCellReuseIdentifier:(NSString *)identifier {
-    SelectModelsCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    cell.tableView = tableView;
-    return cell;
++ (__kindof SelectModelsCell * _Nonnull (^)(UITableView * _Nonnull, NSString * _Nonnull))selectModelsCellInit {
+    return ^(UITableView *tableView, NSString *identifier) {
+        return [self.class selectModelsCellWithTableView:tableView forCellReuseIdentifier:identifier];
+    };
 }
 
+/**!
+ *  @author swp_song
+ *
+ *  @brief  selectModelsCellWithTableView:forCellReuseIdentifier:   ( 快速初始化一个 Cell )
+ *
+ *  @param  tableView   tableView
+ *
+ *  @param  identifier  identifier
+ *
+ *  @return UITableViewCell
+ */
++ (instancetype)selectModelsCellWithTableView:(UITableView *)tableView forCellReuseIdentifier:(NSString *)identifier {
+    return [tableView dequeueReusableCellWithIdentifier:identifier];
+}
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  model: ( 设置 数据 )
+ *  @brief  model   ( 设置数据 )
  */
-- (SelectModelsCell *(^)(id model, NSIndexPath *indexPath))model {
+- (SelectModelsCell * _Nonnull (^)(id _Nonnull, NSIndexPath * _Nonnull))model {
     return ^SelectModelsCell *(id model, NSIndexPath *indexPath) {
+        if (!model) return self;
         [self setData:model indexPath:indexPath];
         return self;
     };
@@ -221,8 +232,7 @@
 #pragma mark - Init UI Methods
 - (UILabel *)titleView {
     return !_titleView ? _titleView = ({
-        UILabel *label = [UILabel new];
-        label;
+        [UILabel new];
     }) : _titleView;
 }
 

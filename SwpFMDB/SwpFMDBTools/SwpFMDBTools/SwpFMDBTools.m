@@ -229,5 +229,38 @@
     if (verificationMessage) verificationMessage(result, model);
 }
 
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpFMDBToolsVerifyTableWhetherAddField: ( 验证表是否添加字段 )
+ *
+ *  @param  table       table
+ *
+ *  @param  dbPropertys dbPropertys
+ *
+ *  @return NSArray
+ */
++ (NSArray *)swpFMDBToolsVerifyTableWhetherAddField:(Class)table dbPropertys:(NSArray *)dbPropertys  {
+    NSArray *modelPropertys = [self.class swpFMDBToolsGetPropertysNames:table];
+    return [modelPropertys filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"NOT (SELF IN %@)", dbPropertys]];
+}
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpFMDBToolsVerifyTableWhetherDeleteField:  ( 验证表是否删除字段 )
+ *
+ *  @param  table       table
+ *
+ *  @param  dbPropertys dbPropertys
+ *
+ *  @return NSArray
+ */
++ (NSArray *)swpFMDBToolsVerifyTableWhetherDeleteField:(Class)table dbPropertys:(NSArray *)dbPropertys {
+    NSArray *modelPropertys = [self.class swpFMDBToolsGetPropertysNames:table];
+    return [dbPropertys filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"NOT (SELF IN %@)", modelPropertys]];
+}
+
 @end
 

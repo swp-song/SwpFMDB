@@ -11,11 +11,11 @@
 @implementation InheritModel
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  inheritInsterModelData  ( InheritModel 单条数据插入测试 )
+ *  @brief  inheritInsterModelData  ( InheritModel 单条数据插入测试 )
  *
- *  @ return InheritModel
+ *  @return InheritModel
  */
 + (instancetype)inheritInsterModelData {
     
@@ -39,11 +39,11 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  inheritInsterModelDatas ( InheritModel 一组数据插入测试 )
+ *  @brief  inheritInsterModelDatas ( InheritModel 一组数据插入测试 )
  *
- *  @ return NSArray<InheritModel *> *
+ *  @return NSArray
  */
 + (NSArray<InheritModel *> *)inheritInsterModelDatas {
     
@@ -75,11 +75,11 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  inheritUpdateModelData ( InheritModel 单条数据修改测试 )
+ *  @brief  inheritUpdateModelData  ( InheritModel 单条数据修改测试 )
  *
- *  @ return InheritModel
+ *  @return InheritModel
  */
 + (instancetype)inheritUpdateModelData {
     
@@ -104,11 +104,11 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  inheritUpdateModelDatas    ( InheritModel 一组数据更新测试 )
+ *  @brief  inheritUpdateModelDatas    ( InheritModel 一组数据更新测试 )
  *
- *  @ return NSArray<InheritModel *>
+ *  @return NSArray
  */
 + (NSArray<InheritModel *> *)inheritUpdateModelDatas {
     
@@ -141,30 +141,28 @@
 
 
 
-
-
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  inheritWihtID:setInheritName:setIntegerType:setDoubleType:setArrayI:setArrayM:setDictionaryI:setDictionaryM  ( 工厂 )
+ *  @brief  inheritWihtID:setInheritName:setIntegerType:setDoubleType:setArrayI:setArrayM:setDictionaryI:setDictionaryM: ( 快速初始化 )
  *
- *  @ param  swpDBID
+ *  @param  swpDBID         swpDBID
  *
- *  @ param  inheritName
+ *  @param  inheritName     inheritName
  *
- *  @ param  integerType
+ *  @param  integerType     integerType
  *
- *  @ param  doubleType
+ *  @param  doubleType      doubleType
  *
- *  @ param  arrayI
+ *  @param  arrayI          arrayI
  *
- *  @ param  arrayM
+ *  @param  arrayM          arrayM
  *
- *  @ param  dictionaryI
+ *  @param  dictionaryI     dictionaryI
  *
- *  @ param  dictionaryM
+ *  @param  dictionaryM     dictionaryM
  *
- *  @ return InheritModel
+ *  @return InheritModel    InheritModel
  */
 + (instancetype)inheritWihtID:(NSString *)swpDBID setInheritName:(NSString *)inheritName setIntegerType:(NSInteger)integerType setDoubleType:(double)doubleType setArrayI:(NSArray *)arrayI setArrayM:(NSMutableArray *)arrayM setDictionaryI:(NSDictionary *)dictionaryI setDictionaryM:(NSMutableDictionary *)dictionaryM {
     

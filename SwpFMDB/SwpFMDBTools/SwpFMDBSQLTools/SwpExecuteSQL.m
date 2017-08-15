@@ -143,7 +143,6 @@
     if (![self.class swpExecuteDBOperation:dataBase dbOpenBlock:^{
         
         FMResultSet *resultSet = [dataBase executeQuery:[SwpStitchingSQL swpStitchingSelectModelSQL:modelClass swpDBID:swpDBID]];
-        
         model = [self.class swpExecuteGetQueryDataPackagingModel:resultSet table:modelClass];
     } isCloseDB:isCloseDB]) return nil;
     
@@ -169,14 +168,41 @@
     
     if (![self.class swpExecuteDBOperation:dataBase dbOpenBlock:^{
         FMResultSet *resultSet = [dataBase executeQuery:[SwpStitchingSQL swpStitchingSelectModelsSQL:modelClass]];
-        models                 = [[self class] swpExecuteGetQueryDataPackagingModels:resultSet table:modelClass];
+        models = [self.class swpExecuteGetQueryDataPackagingModels:resultSet table:modelClass];
         
     } isCloseDB:isCloseDB]) return models;
 
     return models;
 }
 
-#pragma mark - SwpExecuteSQL Execute Delete SQL Methods
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteSelectPropertySQL:table:isCloseDB:    ( 执行查询表中全部字段 SQL 语句 )
+ *
+ *  @param  dataBase    dataBase    < 数据库 >
+ *
+ *  @param  table       table       < 表名称 >
+ *
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return NSArray
+ */
++ (NSArray *)swpExecuteSelectPropertysSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB {
+    
+    __block NSArray *models = [NSArray array];
+    
+    if (![self.class swpExecuteDBOperation:dataBase dbOpenBlock:^{
+        FMResultSet *resultSet = [dataBase executeQuery:[SwpStitchingSQL swpStitchingSelectPropertysSQL:table]];
+        models = [self.class swpExecuteGetQueryPropertys:resultSet];
+    } isCloseDB:isCloseDB]) return models;
+    
+    return models;
+}
+
+
+#pragma mark - SwpExecuteSQL Execute Delete Data SQL Methods
 /**!
  *  @author swp_song
  *
@@ -246,6 +272,30 @@
     
     if (![self.class swpExecuteDBOperation:dataBase dbOpenBlock:^{
         executionStatus = [dataBase executeUpdate:[SwpStitchingSQL swpStitchingClearModelsSQL:table]];
+    } isCloseDB:isCloseDB]) return executionStatus;
+    
+    return executionStatus;
+}
+
+#pragma mark - SwpExecuteSQL Execute Delete Table SQL Methods
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteDeleteTaleSQL:table:isCloseDB:    ( 执行删除表, SQL )
+ *
+ *  @param  dataBase    dataBase    < 数据库 >
+ *
+ *  @param  table       table       < 表名称 >
+ *
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return BOOL
+ */
++ (BOOL)swpExecuteDeleteTaleSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB {
+    
+    __block BOOL executionStatus = NO;
+    if (![self.class swpExecuteDBOperation:dataBase dbOpenBlock:^{
+        executionStatus = [dataBase executeUpdate:[NSString stringWithFormat:@"DROP TABLE %@", table]];
     } isCloseDB:isCloseDB]) return executionStatus;
     
     return executionStatus;
@@ -416,7 +466,7 @@
  */
 + (NSArray *)swpExecuteGetQueryDataPackagingModels:(FMResultSet *)resultSet table:(Class)table {
 
-    NSMutableArray *models = [NSMutableArray array];
+    NSMutableArray *models = @[].mutableCopy;
     
     while ([resultSet next]) {
         
@@ -429,6 +479,28 @@
         [models addObject:model];
     }
     return models;
+}
+
+
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteGetQueryPropertys:    ( 查询数据库表中所有字段，包装数据 )
+ *
+ *  @param  resultSet   resultSet
+ *
+ *  @return NSArray
+ */
++ (NSArray *)swpExecuteGetQueryPropertys:(FMResultSet *)resultSet {
+    
+    NSMutableArray *propertys = @[].mutableCopy;
+    while ([resultSet next]) {
+        NSString *field = [resultSet objectForColumn:@"name"];
+        if ([field.uppercaseString isEqualToString:@"ID"]) continue;
+        [propertys addObject:field];
+    }
+    return propertys.copy;
 }
 
 

@@ -60,9 +60,9 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setData ( 设置 初始化 数据 )
+ *  @brief  setData ( 设置初始化数据 )
  */
 - (void)setData {
 
@@ -79,9 +79,9 @@
 
 #pragma mark - Set UI Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setUI ( 设置 UI 控件 )
+ *  @brief  setUI   ( 设置 UI 控件 )
  */
 - (void)setUI {
 
@@ -99,18 +99,18 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setUpUI ( 添加控件 )
+ *  @brief  setUpUI ( 添加控件 )
  */
 - (void)setUpUI {
     [self.view addSubview:self.selectModelsTableView];
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setUIAutoLayout ( 设置控件的自动布局 )
+ *  @brief  setUIAutoLayout ( 设置控件的自动布局 )
  */
 - (void)setUIAutoLayout {
  
@@ -121,11 +121,11 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  deleteRandomData:  ( 删除随机, 数据按钮绑定方 )
+ *  @brief  deleteRandomData:   ( 删除随机, 数据按钮绑定方 )
  *
- *  @ param  button
+ *  @param  button  button
  */
 - (void)deleteRandomData:(UIButton *)button {
     
@@ -143,11 +143,11 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  clearData: ( 清空数据，按钮绑定方法 )
+ *  @brief  clearData:  ( 清空数据，按钮绑定方法 )
  *
- *  @ param  button
+ *  @param  button  button
  */
 - (void)clearData:(UIButton *)button {
     
@@ -162,9 +162,9 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selectModelsViewControllerBlock    ( block 回调 )
+ *  @brief  selectModelsViewControllerBlock ( block 回调 )
  */
 - (void)selectModelsViewControllerBlock {
     [self selectModelsTableViewBlock:_selectModelsTableView];
@@ -176,11 +176,11 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selectModelsTableViewBlock:    ( 点击 cell 回调 )
+ *  @brief  selectModelsTableViewBlock: ( 点击 cell 回调 )
  *
- *  @ param  selectModelsTableView
+ *  @param  selectModelsTableView   selectModelsTableView
  */
 - (void)selectModelsTableViewBlock:(SelectModelsTableView *)selectModelsTableView {
     
@@ -211,13 +211,13 @@
 
 #pragma mark - SwpFMDB Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  deleteDataWihtModel:   ( 删除 单条 数据 )
+ *  @brief  deleteDataWihtModel:    ( 删除 单条 数据 )
  *
- *  @ param  model
+ *  @param  model   model
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 - (BOOL)deleteDataWihtModel:(id)model {
     __block BOOL result = NO;
@@ -229,13 +229,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  deleteDataWihtModels:  ( 删除，一组数据 )
+ *  @brief  deleteDataWihtModels:   ( 删除，一组数据 )
  *
- *  @ param  models
+ *  @param  models  models
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 - (BOOL)deleteDataWihtModels:(NSArray *)models {
 
@@ -249,13 +249,13 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  deleteDataWihtModels:  ( 清除 全部 数据 )
+ *  @brief  deleteDataWihtModels:   ( 清除全部数据 )
  *
- *  @ param  modelClass
+ *  @param  modelClass  modelClass
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 - (BOOL)clearDataWihtModel:(Class)modelClass {
     
@@ -268,13 +268,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selelctDatasWihtModels: ( 查询 全部 数据  )
+ *  @brief  selelctDatasWihtModels: ( 查询全部数据  )
  *
- *  @ param  modelClass
+ *  @param  modelClass  modelClass
  *
- *  @ return NSArray
+ *  @return NSArray
  */
 - (NSArray *)selelctDatasWihtModels:(Class)modelClass {
     __block NSArray *selectModels = [NSArray array];
@@ -286,13 +286,13 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  createRandom:  ( 生成一组随机数据  )
+ *  @brief  createRandom:   ( 生成一组随机数据  )
  v
- *  @ param  datas
+ *  @param  datas   datas
  *
- *  @ return NSArray
+ *  @return NSArray
  */
 - (NSArray *)createRandom:(NSArray *)datas {
     
@@ -316,12 +316,12 @@
 
 #pragma mark - Public Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  models:    ( 设置 数据 )
+ *  @brief  models: ( 设置数据 )
  */
-- (SelectModelsViewController *(^)(NSArray *models, Class modelClass))models {
-    
+- (SelectModelsViewController * _Nonnull (^)(NSArray * _Nonnull, Class  _Nonnull __unsafe_unretained))models {
+
     return ^SelectModelsViewController *(NSArray *models, Class modelClass) {
         _datas      = models;
         _modelClass = modelClass;

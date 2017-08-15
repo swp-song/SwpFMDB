@@ -55,13 +55,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-    
-//    [[SwpFMDB shareManager] swpFMDBDelegateModel:[CustomModel customInsterModelData] swpFMDBExecutionUpdateComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus) {
-//        
-//    }];
-//    return;
-    
     [self setUI];
     
     [self setData];
@@ -76,12 +69,12 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setData ( 设置 初始化 数据 )
+ *  @brief  setData ( 设置初始化数据 )
  */
 - (void)setData {
-    self.datas             = [self createDataSource];
+    self.datas  = [self createDataSource];
     __weak typeof(self) vc = self;
     [SwpFMDBDemoTools swpFMDBDemoToolsExecuteInMainQueue:^{
         vc.swpFMDBTableView.swpFMDBDatas(vc.datas);
@@ -90,9 +83,9 @@
 
 #pragma mark - Set UI Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setUI ( 设置 UI 控件 )
+ *  @brief  setUI   ( 设置 UI 控件 )
  */
 - (void)setUI {
     
@@ -112,18 +105,18 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setUpUI ( 添加控件 )
+ *  @brief  setUpUI ( 添加控件 )
  */
 - (void)setUpUI {
     [self.view addSubview:self.swpFMDBTableView];
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setUIAutoLayout ( 设置控件的自动布局 )
+ *  @brief  setUIAutoLayout ( 设置控件的自动布局 )
  */
 - (void)setUIAutoLayout {
     
@@ -134,9 +127,9 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBViewControllerBlock ( 回调 )
+ *  @brief  swpFMDBViewControllerBlock ( 回调 )
  */
 - (void)swpFMDBViewControllerBlock {
     
@@ -148,11 +141,11 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBTableViewBlock: ( cell 点击 回调 )
+ *  @brief  swpFMDBTableViewBlock:  ( cell 点击 回调 )
  *
- *  @ param  swpFMDBTableView
+ *  @param  swpFMDBTableView    swpFMDBTableView
  */
 - (void)swpFMDBTableViewBlock:(SwpFMDBTableView *)swpFMDBTableView {
     
@@ -172,13 +165,13 @@
 
 #pragma mark - Tools
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  showAlertViewControllerWihtModel:swpFMDBViewController:    ( 弹出 单条数据显示 alert )
+ *  @brief  showAlertViewControllerWihtModel:swpFMDBViewController:    ( 弹出单条数据显示 alert )
  *
- *  @ param  model
+ *  @param  model   model
  *
- *  @ param  vc
+ *  @param  vc      vc
  */
 - (void)showAlertViewControllerWihtModel:(id)model swpFMDBViewController:(SwpFMDBViewController *)vc {
     if (!model) {
@@ -192,13 +185,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  showSwpDataDisplayViewWihtModel:swpFMDBViewController: ( 显示 展示 单条数据 view )
+ *  @brief  showSwpDataDisplayViewWihtModel:swpFMDBViewController: ( 显示展示单条数据 view )
  *
- *  @ param  model
+ *  @param  model   model
  *
- *  @ param  vc
+ *  @param  vc      vc
  */
 - (void)showSwpDataDisplayViewWihtModel:(id)model swpFMDBViewController:(SwpFMDBViewController *)vc {
     
@@ -212,15 +205,15 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  showAlertViewControllerWihtModels:modelClass:swpFMDBViewController:    ( 弹出 多条数据显示 alert )
+ *  @brief  showAlertViewControllerWihtModels:modelClass:swpFMDBViewController:    ( 弹出多条数据显示 alert )
  *
- *  @ param  datas
+ *  @param  datas       datas
  *
- *  @ param  modelClass
+ *  @param  modelClass  modelClass
  *
- *  @ param  vc
+ *  @param  vc          vc
  */
 - (void)showAlertViewControllerWihtModels:(NSArray *)datas modelClass:(Class)modelClass swpFMDBViewController:(SwpFMDBViewController *)vc {
     
@@ -235,15 +228,15 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  jumpSelectModelViewController:modelClass:swpFMDBViewController:   ( 跳转 SelectModelsViewController 控制器 )
+ *  @brief  jumpSelectModelViewController:modelClass:swpFMDBViewController: ( 跳转 SelectModelsViewController 控制器 )
  *
- *  @ param  datas
+ *  @param  datas       datas
  *
- *  @ param  modelClass
+ *  @param  modelClass  modelClass
  *
- *  @ param  vc
+ *  @param  vc          vc
  */
 - (void)jumpSelectModelViewController:(NSArray *)datas modelClass:(Class)modelClass swpFMDBViewController:(SwpFMDBViewController *)vc {
     SelectModelsViewController *selectModelsViewController = [SelectModelsViewController new];
@@ -254,13 +247,13 @@
 
 #pragma mark - SwpFMDB
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  insterDataWithModel:   ( 插入 单条数据  )
+ *  @brief  insterDataWithModel:    ( 插入单条数据  )
  *
- *  @ param  model
+ *  @param  model   model
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 - (BOOL)insterDataWithModel:(id)model {
     __block BOOL result = NO;
@@ -272,13 +265,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  insterDataWithModels:   ( 插入 一组 数据  )
+ *  @brief  insterDataWithModels:   ( 插入一组数据  )
  *
- *  @ param  model
+ *  @param  models  models
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 - (BOOL)insterDataWithModels:(NSArray *)models {
     
@@ -292,13 +285,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  updateDataWithModel:   ( 修改 单条 数据  )
+ *  @brief  updateDataWithModel:    ( 修改单条数据 )
  *
- *  @ param  model
+ *  @param  model   model
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 - (BOOL)updateDataWithModel:(id)model {
     __block BOOL result = NO;
@@ -312,13 +305,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  updateDataWithModels:   ( 修改 一组 数据  )
+ *  @brief  updateDataWithModels:   ( 修改一组数据  )
  *
- *  @ param  model
+ *  @param  models  models
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 - (BOOL)updateDataWithModels:(NSArray *)models {
     __block BOOL result = NO;
@@ -333,15 +326,15 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selelctDataWihtModelClass: ( 查询 单条 数据  )
+ *  @brief  selelctDataWihtModelClass:  ( 查询单条数据 )
  *
- *  @ param modelClass
+ *  @param modelClass   modelClass
  *
- *  @ param swpDBID
+ *  @param swpDBID      swpDBID
  *
- *  @ return id
+ *  @return id
  */
 - (id)selelctDataWihtModelClass:(Class)modelClass bySwpDBID:(NSString *)swpDBID {
     __block id selectModel = nil;
@@ -352,13 +345,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selelctDatasWihtModelClass: ( 查询 全部 数据  )
+ *  @brief  selelctDatasWihtModelClass: ( 查询全部数据 )
  *
- *  @ param modelClass
+ *  @param  modelClass  modelClass
  *
- *  @ return NSArray
+ *  @return NSArray
  */
 - (NSArray *)selelctDatasWihtModelClass:(Class)modelClass {
     __block NSArray *selectModels = [NSArray array];
@@ -367,6 +360,25 @@
     }];
     return selectModels;
 }
+
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  delegteTable:   ( 删除表 )
+ *
+ *  @param  table   table
+ *
+ *  @return BOOL
+ */
+- (BOOL)delegteTable:(Class)table {
+    __block BOOL result = NO;
+    [[SwpFMDB shareManager] swpFMDBDeleteTable:table swpFMDBExecutionUpdateComplete:^(SwpFMDB * _Nonnull swpFMDB, BOOL executionStatus) {
+        result = executionStatus;
+    }];
+    return result;
+}
+
 
 #pragma mark - Init UI Methods
 - (SwpFMDBTableView *)swpFMDBTableView {
@@ -446,6 +458,16 @@
     } setSwpFMDBJumpContriller:[SelectModelsViewController class] setSelectModelClass:[CustomModel class]];
     
     
+    SwpFMDBModel *customDeleteTable    = [SwpFMDBModel swpFMDBWithTitle:@"CustomModel 删除表 " setSwpFMDBSubTitle:@" Delete a CustomModel Table " setSwpFMDBOption:^(SwpFMDBModel * _Nonnull swpFMDBModel) {
+        [SVProgressHUD dismiss];
+        if ([vc delegteTable:CustomModel.class]) {
+            [SVProgressHUD showInfoWithStatus:@"删除成功"];
+            return;
+        }
+        [SVProgressHUD showInfoWithStatus:@"删除失败, 该表不存在"];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[CustomModel class]];
+    
+    
     // InheritModel 插入单条数据
     SwpFMDBModel *inheritInsterModel     = [SwpFMDBModel swpFMDBWithTitle:@" InheritModel 插入单条数据 " setSwpFMDBSubTitle:@"Insert InheritModel Data"  setSwpFMDBOption:^(SwpFMDBModel * _Nonnull swpFMDBModel) {
         if (![vc insterDataWithModel:[InheritModel inheritInsterModelData]]) {
@@ -499,7 +521,17 @@
         swpFMDBModel.swpFMDBData = [vc selelctDatasWihtModelClass:[InheritModel class]];
     } setSwpFMDBJumpContriller:[SelectModelsViewController class] setSelectModelClass:[InheritModel class]];
     
-    return @[customInsterModel, customInsterModels, customUpdateModel, customUpdateModels, customSelectModel,customSelectModels, inheritInsterModel, inheritInsterModels, inheritUpdateModel, inheritUpdateModels, inheritSelectModel, inheritSelectModels];
+    
+    SwpFMDBModel *inheritDeleteTable    = [SwpFMDBModel swpFMDBWithTitle:@"InheritModel 删除表 " setSwpFMDBSubTitle:@" Delete a InheritModel Table " setSwpFMDBOption:^(SwpFMDBModel * _Nonnull swpFMDBModel) {
+        [SVProgressHUD dismiss];
+        if ([vc delegteTable:InheritModel.class]) {
+            [SVProgressHUD showInfoWithStatus:@"删除成功"];
+            return;
+        }
+        [SVProgressHUD showInfoWithStatus:@"删除失败, 该表不存在"];
+    } setSwpFMDBJumpContriller:nil setSelectModelClass:[InheritModel class]];
+    
+    return @[customInsterModel, customInsterModels, customUpdateModel, customUpdateModels, customSelectModel, customSelectModels, customDeleteTable, inheritInsterModel, inheritInsterModels, inheritUpdateModel, inheritUpdateModels, inheritSelectModel, inheritSelectModels, inheritDeleteTable];
 }
 
 

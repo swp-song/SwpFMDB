@@ -111,7 +111,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)swpFMDBSelectModels:(Class)modelClass swpFMDBExecutionSelectModelsComplete:(SwpFMDBExecutionSelectModelsComplete)swpFMDBExecutionSelectModelsComplete;
 
-#pragma mark - SwpFMDB Delete Methods
+#pragma mark - SwpFMDB Delete Data Methods
 /**!
  *  @author swp_song
  *
@@ -144,6 +144,19 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
  */
 - (void)swpFMDBClearModel:(Class)modelsClass swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)swpFMDBExecutionUpdateComplete;
+
+
+#pragma mark - SwpFMDB Delete Table Methods
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpFMDBDeleteTable:swpFMDBExecutionUpdateComplete:  ( 删除表 )
+ *
+ *  @param  table   table
+ *
+ *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
+ */
+- (void)swpFMDBDeleteTable:(Class)table swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete;
 
 /**!
  *  @author swp_song

@@ -13,13 +13,13 @@
 @implementation SwpFMDBDemoTools
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBDemoToolsObtainDataIndexPath:   ( 取出 数据 所有 的索引 )
+ *  @brief  swpFMDBDemoToolsObtainDataIndexPath:    ( 取出数据所有的索引 )
  *
- *  @ param  dataSource
+ *  @param  dataSource  dataSource
  *
- *  @ return NSArray<NSIndexPath *> *
+ *  @return NSArray
  */
 + (NSArray<NSIndexPath *> *)swpFMDBDemoToolsObtainDataIndexPath:(NSArray *)dataSource {
     NSMutableArray<NSIndexPath *> *indexPaths = [NSMutableArray array];
@@ -30,13 +30,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBToolsExecuteInMainQueue:afterDelaySecs: ( 主线程 延时 执行 )
+ *  @brief  swpFMDBToolsExecuteInMainQueue:afterDelaySecs:  ( 主线程延时执行 )
  *
- *  @ param  block
+ *  @param  block   block
  *
- *  @ param  sec
+ *  @param  sec sec
  */
 + (void)swpFMDBDemoToolsExecuteInMainQueue:(dispatch_block_t)block afterDelaySecs:(NSTimeInterval)sec  {
     NSParameterAssert(block);
@@ -44,24 +44,24 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBDemoToolsShowDatabaseOperationCompletedAlert:clickSeeBlock:    ( 显示 AlertViewController)
+ *  @brief  swpFMDBDemoToolsShowDatabaseOperationCompletedAlert:clickSeeBlock:  ( 显示 AlertViewController)
  *
- *  @ param  controller
+ *  @param  controller  controller
  *
- *  @ param  block
+ *  @param  block       block
  */
 + (void)swpFMDBDemoToolsShowDatabaseOperationCompletedAlert:(UIViewController *)controller clickSeeBlock:(void(^)())block {
     [[self class] swpFMDBDemoToolsShowAlertViewController:controller alertControllerWithTitle:@"数据库操作完毕" message:@"是否查看数据 ? " isShowSeeButton:YES clickSeeBlock:block];
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBDemoToolsShowDataIsEmptyDataAlert:  ( 显示 AlertViewController)
+ *  @brief  swpFMDBDemoToolsShowDataIsEmptyDataAlert:   ( 显示 AlertViewController )
  *
- *  @ param  controller
+ *  @param  controller  controller
  */
 + (void)swpFMDBDemoToolsShowDataIsEmptyDataAlert:(UIViewController *)controller  {
     [[self class] swpFMDBDemoToolsShowAlertViewController:controller alertControllerWithTitle:@"数据为空" message:nil isShowSeeButton:NO clickSeeBlock:nil];
@@ -69,19 +69,19 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDBDemoToolsShowAlertViewController:alertControllerWithTitle:message:isShowSeeButton:clickSeeBlock:    ( 显示 AlertViewController)
+ *  @brief  swpFMDBDemoToolsShowAlertViewController:alertControllerWithTitle:message:isShowSeeButton:clickSeeBlock: ( 显示 AlertViewController)
  *
- *  @ param  controller
+ *  @param  controller      controller
  *
- *  @ param  title
+ *  @param  title           title
  *
- *  @ param  message
+ *  @param  message         message
  *
- *  @ param  isShowSeeButton
+ *  @param  isShowSeeButton isShowSeeButton
  *
- *  @ param  block
+ *  @param  block           block
  */
 + (void)swpFMDBDemoToolsShowAlertViewController:(UIViewController *)controller alertControllerWithTitle:(NSString *)title message:(NSString *)message isShowSeeButton:(BOOL)isShowSeeButton clickSeeBlock:(void(^)())block {
     

@@ -21,40 +21,41 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray      *arrayM;
 @property (nonatomic, copy  ) NSDictionary        *dictionaryI;
 @property (nonatomic, strong) NSMutableDictionary *dictionaryM;
+//@property (nonatomic, strong) NSMutableDictionary *dictionaryM2;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  customInsterModelData  ( CustomModel 单条数据插入测试 )
+ *  @brief  customInsterModelData   ( CustomModel 单条数据插入测试 )
  *
- *  @ return CustomModel
+ *  @return CustomModel
  */
 + (instancetype)customInsterModelData;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  customInsterModelDatas ( CustomModel 一组数据插入测试 )
+ *  @brief  customInsterModelDatas ( CustomModel 一组数据插入测试 )
  *
- *  @ return NSArray<CustomModel *>
+ *  @return NSArray
  */
 + (NSArray<CustomModel *> *)customInsterModelDatas;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  customUpdateModelData  ( CustomModel 单条数据修改测试 )
+ *  @brief  customUpdateModelData  ( CustomModel 单条数据修改测试 )
  *
- *  @ return CustomModel
+ *  @return CustomModel
  */
 + (instancetype)customUpdateModelData;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  customUpdateModelDatas ( CustomModel 一组数据更新测试 )
+ *  @brief  customUpdateModelDatas ( CustomModel 一组数据更新测试 )
  *
- *  @ return NSArray<CustomModel *>
+ *  @return NSArray
  */
 + (NSArray<CustomModel *> *)customUpdateModelDatas;
 

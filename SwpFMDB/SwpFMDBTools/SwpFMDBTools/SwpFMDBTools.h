@@ -134,5 +134,32 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)swpFMDBToolsVerifyArrayInSameTypeOfData:(NSArray *)models verificationMessage:(void(^)(BOOL verificationResult, id verificationModel))verificationMessage;
 
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpFMDBToolsVerifyTableWhetherAddField: ( 验证表是否添加字段 )
+ *
+ *  @param  table       table
+ *
+ *  @param  dbPropertys dbPropertys
+ *
+ *  @return NSArray
+ */
++ (NSArray *)swpFMDBToolsVerifyTableWhetherAddField:(Class)table dbPropertys:(NSArray *)dbPropertys;
+
+
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpFMDBToolsVerifyTableWhetherDeleteField:  ( 验证表是否删除字段 )
+ *
+ *  @param  table       table
+ *
+ *  @param  dbPropertys dbPropertys
+ *
+ *  @return NSArray
+ */
++ (NSArray *)swpFMDBToolsVerifyTableWhetherDeleteField:(Class)table dbPropertys:(NSArray *)dbPropertys;
+
 @end
 NS_ASSUME_NONNULL_END

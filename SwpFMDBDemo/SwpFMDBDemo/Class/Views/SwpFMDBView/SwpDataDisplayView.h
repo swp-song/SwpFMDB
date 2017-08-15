@@ -11,16 +11,28 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SwpDataDisplayView : UIView
 
-- (SwpDataDisplayView *(^)())swpDataDisplayViewShow;
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpDataDisplayViewShow: ( SwpDataDisplayView 显示 )
+ */
+- (SwpDataDisplayView * _Nonnull (^)())swpDataDisplayViewShow;
 
-- (SwpDataDisplayView *(^)())swpDataDisplayViewHidden;
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpDataDisplayViewHidden:   ( swpDataDisplayViewHidden 隐藏 )
+ */
+- (SwpDataDisplayView * _Nonnull (^)())swpDataDisplayViewHidden;
 
 @property (nonatomic, copy) void(^swpDataDisplayViewClickEvent)(SwpDataDisplayView *swpDataDisplayView);
 
-//@property (nonatomic, assign) id model;
-
-
-- (SwpDataDisplayView *(^)(id model))model;
+/**!
+ *  @ author swp_song
+ *
+ *  @ brief  model: ( 设置数据 )
+ */
+- (SwpDataDisplayView * _Nonnull (^)(id _Nonnull))model;
 
 @end
 NS_ASSUME_NONNULL_END

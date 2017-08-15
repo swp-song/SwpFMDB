@@ -10,11 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface SelectModelsViewController : UIViewController
+
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  models:    ( 设置 数据 )
+ *  @brief  models: ( 设置数据 )
  */
-- (SelectModelsViewController *(^)(NSArray *models, Class modelClass))models;
+- (SelectModelsViewController * _Nonnull (^)(NSArray * _Nonnull, Class  _Nonnull __unsafe_unretained))models;
+
 @end
 NS_ASSUME_NONNULL_END

@@ -11,11 +11,11 @@
 @implementation CustomModel
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  customInsterModelData  ( CustomModel 单条数据插入测试 )
+ *  @brief  customInsterModelData   ( CustomModel 单条数据插入测试 )
  *
- *  @ return CustomModel
+ *  @return CustomModel
  */
 + (instancetype)customInsterModelData {
     
@@ -40,11 +40,11 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  customInsterModelDatas ( CustomModel 一组数据插入测试 )
+ *  @brief  customInsterModelDatas ( CustomModel 一组数据插入测试 )
  *
- *  @ return NSArray<CustomModel *>
+ *  @return NSArray
  */
 + (NSArray<CustomModel *> *)customInsterModelDatas {
     
@@ -77,11 +77,11 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  customUpdateModelData  ( CustomModel 单条数据修改测试 )
+ *  @brief  customUpdateModelData  ( CustomModel 单条数据修改测试 )
  *
- *  @ return CustomModel
+ *  @return CustomModel
  */
 + (instancetype)customUpdateModelData {
     
@@ -106,11 +106,11 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  customUpdateModelDatas ( CustomModel 一组数据更新测试 )
+ *  @brief  customUpdateModelDatas ( CustomModel 一组数据更新测试 )
  *
- *  @ return NSArray<CustomModel *>
+ *  @return NSArray
  */
 + (NSArray<CustomModel *> *)customUpdateModelDatas {
     
@@ -143,27 +143,27 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  customWihtID:setCustomName:setIntegerType:setDoubleType:setArrayI:setArrayM:setDictionaryI:setDictionaryM  ( 工厂 )
+ *  @brief  customWihtID:setCustomName:setIntegerType:setDoubleType:setArrayI:setArrayM:setDictionaryI:setDictionaryM:  ( 快速初始化 )
  *
- *  @ param  swpDBID
+ *  @param  swpDBID     swpDBID
  *
- *  @ param  customName
+ *  @param  customName  customName
  *
- *  @ param  integerType
+ *  @param  integerType integerType
  *
- *  @ param  doubleType
+ *  @param  doubleType  doubleType
  *
- *  @ param  arrayI
+ *  @param  arrayI      arrayI
  *
- *  @ param  arrayM
+ *  @param  arrayM      arrayM
  *
- *  @ param  dictionaryI
+ *  @param  dictionaryI dictionaryI
  *
- *  @ param  dictionaryM
+ *  @param  dictionaryM dictionaryM
  *
- *  @ return CustomModel
+ *  @return CustomModel
  */
 + (instancetype)customWihtID:(NSString *)swpDBID setCustomName:(NSString *)customName setIntegerType:(NSInteger)integerType setDoubleType:(double)doubleType setArrayI:(NSArray *)arrayI setArrayM:(NSMutableArray *)arrayM setDictionaryI:(NSDictionary *)dictionaryI setDictionaryM:(NSMutableDictionary *)dictionaryM {
     

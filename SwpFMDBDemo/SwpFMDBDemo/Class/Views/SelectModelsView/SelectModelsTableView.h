@@ -12,31 +12,31 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SelectModelsTableView : UITableView
 
-
 /**!
  *  @ author swp_song
  *
- *  @ brief  selectModels:  ( 设置 数据 )
+ *  @ brief  selectModels:  ( 设置数据 )
  */
-- (SelectModelsTableView *(^)(NSArray *selectModels, BOOL isAnimationReloadData))selectModels;
+- (SelectModelsTableView * _Nonnull (^)(NSArray * _Nonnull, BOOL))selectModels;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selectModelsTableViewClickCell:    ( 点击 cell 回调 )
+ *  @brief  selectModelsTableViewClickCell:    ( 点击 cell 回调 )
  *
- *  @ param  selectModelsTableViewClickCell
+ *  @param  selectModelsTableViewClickCell selectModelsTableViewClickCell
  */
-- (void)selectModelsTableViewClickCell:(void (^)(SelectModelsTableView *selectModelsTableView, NSIndexPath *indexPath))selectModelsTableViewClickCell;
+- (void)selectModelsTableViewClickCell:(void (^ _Nullable)(SelectModelsTableView * _Nonnull selectModelsTableView, NSIndexPath * _Nonnull indexPath))selectModelsTableViewClickCell;
+
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selectModelsTableViewClickCell:    ( 点击 编辑 cell )
+ *  @brief  selectModelsTableViewClicEditingkCell:  ( cell 进入编辑状态，点击删除按钮 )
  *
- *  @ param  selectModelsTableViewClicEditingkCell
+ *  @param  selectModelsTableViewClicEditingkCell   selectModelsTableViewClicEditingkCell
  */
-- (void)selectModelsTableViewClicEditingkCell:(void (^)(SelectModelsTableView *selectModelsTableView, NSIndexPath *indexPath))selectModelsTableViewClicEditingkCell;
+- (void)selectModelsTableViewClicEditingkCell:(void (^ _Nullable)(SelectModelsTableView * _Nonnull selectModelsTableView, NSIndexPath * _Nonnull indexPath))selectModelsTableViewClicEditingkCell;
 
 @end
 NS_ASSUME_NONNULL_END;

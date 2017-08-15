@@ -1,4 +1,4 @@
- //
+//
 //  SwpFMDB.m
 //  swp_song
 //
@@ -191,7 +191,7 @@
     }];
 }
 
-#pragma mark - SwpFMDB Delete Methods
+#pragma mark - SwpFMDB Delete Data Methods
 /**!
  *  @author swp_song
  *
@@ -236,6 +236,23 @@
     
     [self swpFMDBInTransaction:^(SwpFMDB *swpFMDB, FMDatabase *dataBase, BOOL *rollback) {
         [SwpFMDBManager clearModels:modelsClass swpFMDB:swpFMDB dataBase:dataBase isCloseDB:YES executionUpdateComplete:swpFMDBExecutionUpdateComplete];
+    }];
+}
+
+#pragma mark - SwpFMDB Delete Table Methods
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpFMDBDeleteTable:swpFMDBExecutionUpdateComplete:  ( 删除表 )
+ *
+ *  @param  table   table
+ *
+ *  @param  swpFMDBExecutionUpdateComplete  swpFMDBExecutionUpdateComplete
+ */
+- (void)swpFMDBDeleteTable:(Class)table swpFMDBExecutionUpdateComplete:(SwpFMDBExecutionUpdateComplete)swpFMDBExecutionUpdateComplete {
+    
+    [self swpFMDBInTransaction:^(SwpFMDB *swpFMDB, FMDatabase *dataBase, BOOL *rollback) {
+        [SwpFMDBManager deleteTable:table swpFMDB:swpFMDB dataBase:dataBase isCloseDB:YES executionUpdateComplete:swpFMDBExecutionUpdateComplete];
     }];
 }
 

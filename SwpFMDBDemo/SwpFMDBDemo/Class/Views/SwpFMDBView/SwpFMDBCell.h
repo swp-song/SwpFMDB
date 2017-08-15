@@ -13,6 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SwpFMDBCell : UITableViewCell
 
 /**!
+ *  @author swp_song
+ *
+ *  @brief  swpFMDBCellInit:    ( 快速初始化一个 Cell )
+ */
++ (__kindof SwpFMDBCell * _Nonnull (^)(UITableView * _Nonnull, NSString * _Nonnull))swpFMDBCellInit;
+
+/**!
  *  @ author swp_song
  *
  *  @ brief  swpFMDBCellWithTableView:forCellReuseIdentifier:  ( 快速 初始化 一个 cell )
@@ -26,11 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)swpFMDBCellWithTableView:(UITableView *)tableView forCellReuseIdentifier:(NSString *)identifier;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpFMDB:   ( 设置 数据 )
+ *  @brief  model: ( 设置 数据 )
  */
-- (SwpFMDBCell *(^)(SwpFMDBModel *swpFMDB, NSIndexPath *indexPath))swpFMDB;
+- (SwpFMDBCell * _Nonnull (^)(SwpFMDBModel * _Nonnull, NSIndexPath * _Nonnull))swpFMDB;
+
 
 @end
 NS_ASSUME_NONNULL_END

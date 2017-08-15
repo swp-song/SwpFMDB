@@ -32,13 +32,13 @@
 // 0xD9C79D(金色) 0x74F87D(浅绿) 0x74D8F8 (浅蓝)
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  initWithFrame: ( Override Init )
+ *  @brief  initWithFrame:  ( Override Init )
  *
- *  @ param  frame
+ *  @param  frame   frame
  *
- *  @ return SwpDataDisplayView
+ *  @return UIView
  */
 - (instancetype)initWithFrame:(CGRect)frame {
 
@@ -53,11 +53,11 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setData:   ( 设置 数据 )
+ *  @brief  setData:    ( 设置数据 )
  *
- *  @ param  model
+ *  @param  model   model
  */
 - (void)setData:(id)model {
     self.dataDisplayView.attributedText = [self mosaicModelAttributedString:model];
@@ -76,13 +76,13 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  mosaicModelAttributedString:   ( 设置 模型 AttributedString )
+ *  @brief  mosaicModelAttributedString:    ( 设置模型 AttributedString )
  *
- *  @ param  model
+ *  @param  model   model
  *
- *  @ return
+ *  @return NSAttributedString
  */
 - (NSAttributedString *)mosaicModelAttributedString:(id)model  {
 
@@ -106,17 +106,17 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setModelAttributedString:modelKey:modelValeu:  ( 设置 设置 Model AttributedString )
+ *  @brief  setModelAttributedString:modelKey:modelValeu:   ( 设置设置 Model AttributedString )
  *
- *  @ param  indexKey
+ *  @param  indexKey    indexKey
  *
- *  @ param  modelKey
+ *  @param  modelKey    modelKey
  *
- *  @ param  modelValeu
+ *  @param  modelValeu  modelValeu
  *
- *  @ return NSAttributedString
+ *  @return NSAttributedString
  */
 - (NSAttributedString *)setModelAttributedString:(NSString *)indexKey modelKey:(NSString *)modelKey modelValeu:(NSString *)modelValeu {
     
@@ -144,23 +144,23 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  setTextAttributedString:setFont:setTextFontColor:setFirstLineHeadIndent:setParagraphSpacing:setParagraphSpacingBefore:     ( 设置 AttributedString )
+ *  @brief  setTextAttributedString:setFont:setTextFontColor:setFirstLineHeadIndent:setParagraphSpacing:setParagraphSpacingBefore:  ( 设置 AttributedString )
  *
- *  @ param  text
+ *  @param  text                    text
  *
- *  @ param  font
+ *  @param  font                    font
  *
- *  @ param  fontColor
+ *  @param  fontColor               fontColor
  *
- *  @ param  firstLineHeadIndent
+ *  @param  firstLineHeadIndent     firstLineHeadIndent
  *
- *  @ param  paragraphSpacing
+ *  @param  paragraphSpacing        paragraphSpacing
  *
- *  @ param  paragraphSpacingBefore
+ *  @param  paragraphSpacingBefore  paragraphSpacingBefore
  *
- *  @ return NSAttributedString
+ *  @return NSAttributedString
  */
 - (NSAttributedString *)setTextAttributedString:(NSString *)text setFont:(UIFont *)font setTextFontColor:(UIColor *)fontColor setFirstLineHeadIndent:(CGFloat)firstLineHeadIndent setParagraphSpacing:(CGFloat)paragraphSpacing setParagraphSpacingBefore:(CGFloat)paragraphSpacingBefore {
     
@@ -192,13 +192,13 @@
 
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief getClassAll:classKeysAndValues: ( 取出 模型 数据 key And value )
+ *  @brief getClassAll:classKeysAndValues:  ( 取出模型数据 Key And Value )
  *
- *  @ param model
+ *  @param model    model
  *
- *  @ param class
+ *  @param class    class
  */
 - (void)getClassAll:(id)model classKeysAndValues:(void(^)(NSArray *keys, NSArray *values))class {
     
@@ -229,13 +229,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  conversionJSONSting:   ( 数组 | 字典 转换成 json 字符串 )
+ *  @brief  conversionJSONSting:    ( 数组 | 字典 转换成 json 字符串 )
  *
- *  @ param  object
+ *  @param  object  object
  *
- *  @ return NSString
+ *  @return NSString
  */
 - (NSString *)conversionJSONSting:(id)object {
     NSData   *jsonData   = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:nil];
@@ -244,13 +244,13 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  verifySystemCollectionType:    ( 验证 数据 是否是 系统 集合类型 )
+ *  @brief  verifySystemCollectionType: ( 验证数据是否是系统集合类型 )
  *
- *  @ param  value
+ *  @param  value   value
  *
- *  @ return BOOL
+ *  @return BOOL
  */
 - (BOOL)verifySystemCollectionType:(id)value {
     if ([value isKindOfClass:[NSDictionary class]] || [value isKindOfClass:[NSMutableDictionary class]] || [value isKindOfClass:[NSArray class]] || [value isKindOfClass:[NSMutableArray class]]) {
@@ -262,11 +262,11 @@
 
 #pragma mark - Public Methods
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpDataDisplayViewShow:    ( SwpDataDisplayView 显示 )
+ *  @brief  swpDataDisplayViewShow: ( SwpDataDisplayView 显示 )
  */
-- (SwpDataDisplayView *(^)())swpDataDisplayViewShow {
+- (SwpDataDisplayView * _Nonnull (^)())swpDataDisplayViewShow {
     
     return ^SwpDataDisplayView *() {
         self.alpha = 0.8;
@@ -277,11 +277,11 @@
 }
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  swpDataDisplayViewHidden:  ( swpDataDisplayViewHidden 隐藏 )
+ *  @brief  swpDataDisplayViewHidden:   ( swpDataDisplayViewHidden 隐藏 )
  */
-- (SwpDataDisplayView *(^)())swpDataDisplayViewHidden {
+- (SwpDataDisplayView * _Nonnull (^)())swpDataDisplayViewHidden {
     
     return ^SwpDataDisplayView *(){
         [UIView animateWithDuration:0.8 animations:^{
@@ -295,10 +295,12 @@
 /**!
  *  @ author swp_song
  *
- *  @ brief  model:  ( 设置 model  )
+ *  @ brief  model: ( 设置数据 )
  */
-- (SwpDataDisplayView *(^)(id model))model {
+- (SwpDataDisplayView * _Nonnull (^)(id _Nonnull))model {
+    
     return ^SwpDataDisplayView *(id model) {
+        if (!model) return self;
         [self setData:model];
         return self;
     };

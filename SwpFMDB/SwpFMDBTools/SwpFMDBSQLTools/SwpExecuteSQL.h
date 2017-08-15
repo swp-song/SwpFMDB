@@ -96,7 +96,22 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSArray *)swpExecuteSelectModelsSQL:(FMDatabase *)dataBase table:(Class)modelClass isCloseDB:(BOOL)isCloseDB;
 
-#pragma mark - SwpExecuteSQL Execute Delete SQL Methods
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteSelectPropertysSQL:table:isCloseDB:   ( 执行查询表中全部字段 SQL 语句 )
+ *
+ *  @param  dataBase    dataBase    < 数据库 >
+ *
+ *  @param  table       table       < 表名称 >
+ *
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return NSArray
+ */
++ (NSArray *)swpExecuteSelectPropertysSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB;
+
+#pragma mark - SwpExecuteSQL Execute Delete Data SQL Methods
 /**!
  *  @author swp_song
  *
@@ -144,6 +159,23 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return BOOL
  */
 + (BOOL)swpExecuteClearModelSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB;
+
+
+#pragma mark - SwpExecuteSQL Execute Delete Table SQL Methods
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpExecuteDeleteTaleSQL:table:isCloseDB:    ( 执行删除表, SQL )
+ *
+ *  @param  dataBase    dataBase    < 数据库 >
+ *
+ *  @param  table       table       < 表名称 >
+ *
+ *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
+ *
+ *  @return BOOL
+ */
++ (BOOL)swpExecuteDeleteTaleSQL:(FMDatabase *)dataBase table:(Class)table isCloseDB:(BOOL)isCloseDB;
 
 
 #pragma mark -

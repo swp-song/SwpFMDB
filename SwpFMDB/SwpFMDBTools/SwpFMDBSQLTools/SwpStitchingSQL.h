@@ -116,6 +116,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)swpStitchingSelectModelsSQL:(Class)table;
 
+/**!
+ *  @author swp_song
+ *
+ *  @brief  swpStitchingSelectPropertysSQL: ( 拼接查询全部字段 SQL 语句 )
+ *
+ *  @param  table   table   < 表名称 >
+ *
+ *  @return NSString
+ */
++ (NSString *)swpStitchingSelectPropertysSQL:(Class)table;
+
 #pragma mark - Swp Stitching Delete SQL Methods
 
 /**!

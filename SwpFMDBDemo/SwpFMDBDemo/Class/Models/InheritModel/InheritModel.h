@@ -20,36 +20,38 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableDictionary *dictionaryM;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  inheritInsterModelData  ( InheritModel 单条数据插入测试 )
+ *  @brief  inheritInsterModelData  ( InheritModel 单条数据插入测试 )
  *
- *  @ return InheritModel
+ *  @return InheritModel
  */
 + (instancetype)inheritInsterModelData;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  inheritInsterModelDatas ( InheritModel 一组数据插入测试 )
+ *  @brief  inheritInsterModelDatas ( InheritModel 一组数据插入测试 )
  *
- *  @ return NSArray<InheritModel *> *
+ *  @return NSArray
  */
 + (NSArray<InheritModel *> *)inheritInsterModelDatas;
+
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  inheritUpdateModelData ( InheritModel 单条数据修改测试 )
+ *  @brief  inheritUpdateModelData ( InheritModel 单条数据修改测试 )
  *
- *  @ return InheritModel
+ *  @return InheritModel
  */
 + (instancetype)inheritUpdateModelData;
+
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  inheritUpdateModelDatas    ( InheritModel 一组数据更新测试 )
+ *  @brief  inheritUpdateModelDatas    ( InheritModel 一组数据更新测试 )
  *
- *  @ return NSArray<InheritModel *>
+ *  @return NSArray
  */
 + (NSArray<InheritModel *> *)inheritUpdateModelDatas;
 

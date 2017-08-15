@@ -148,7 +148,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)selectModels:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionSelectModelsComplete:(SwpFMDBExecutionSelectModelsComplete _Nullable)executionSelectModelsComplete;
 
-#pragma mark - SwpFMDBManager Delegate Methods
+#pragma mark - SwpFMDBManager Delete Data Methods
 /**!
  *  @author swp_song
  *
@@ -199,6 +199,24 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param  executionUpdateComplete executionUpdateComplete
  */
 + (void)clearModels:(Class)modelClass swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
+
+#pragma mark - SwpFMDBManager Delete Table Methods
+/**!
+ *  @author swp_song
+ *
+ *  @brief  deleteTable:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete:   ( 删除表数据 )
+ *
+ *  @param  table       table
+ *
+ *  @param  swpFMDB     swpFMDB
+ *
+ *  @param  dataBase    dataBase
+ *
+ *  @param  isCloseDB   isCloseDB
+ *
+ *  @param  executionUpdateComplete executionUpdateComplete
+ */
++ (void)deleteTable:(Class)table swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete _Nullable)executionUpdateComplete;
 
 @end
 NS_ASSUME_NONNULL_END

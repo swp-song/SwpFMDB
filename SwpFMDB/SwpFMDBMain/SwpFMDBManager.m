@@ -240,7 +240,7 @@
 }
 
 
-#pragma mark - SwpFMDBManager Delegate Methods
+#pragma mark - SwpFMDBManager Delete Data Methods
 /**!
  *  @author swp_song
  *
@@ -338,7 +338,35 @@
     
     BOOL executionStatus = [SwpExecuteSQL swpExecuteClearModelSQL:dataBase table:modelClass isCloseDB:YES];
     if (executionUpdateComplete) executionUpdateComplete(swpFMDB, executionStatus);
+}
 
+#pragma mark - SwpFMDBManager Delete Table Methods
+/**!
+ *  @author swp_song
+ *
+ *  @brief  deleteTable:swpFMDB:dataBase:isCloseDB:executionSelectModelsComplete:   ( 删除表数据 )
+ *
+ *  @param  table       table
+ *
+ *  @param  swpFMDB     swpFMDB
+ *
+ *  @param  dataBase    dataBase
+ *
+ *  @param  isCloseDB   isCloseDB
+ *
+ *  @param  executionUpdateComplete executionUpdateComplete
+ */
++ (void)deleteTable:(Class)table swpFMDB:(SwpFMDB *)swpFMDB dataBase:(FMDatabase *)dataBase isCloseDB:(BOOL)isCloseDB executionUpdateComplete:(SwpFMDBExecutionUpdateComplete)executionUpdateComplete  {
+    
+    // 验证表
+    if (![self.class executeVerifyThatTheTableExists:table dataBase:dataBase isCloseDB:isCloseDB]) {
+        // 不存在
+        if (executionUpdateComplete) executionUpdateComplete(swpFMDB, NO);
+        return;
+    }
+    BOOL executionStatus = [SwpExecuteSQL swpExecuteDeleteTaleSQL:dataBase table:table isCloseDB:isCloseDB];
+    
+    if (executionUpdateComplete) executionUpdateComplete(swpFMDB, executionStatus);
 }
 
 

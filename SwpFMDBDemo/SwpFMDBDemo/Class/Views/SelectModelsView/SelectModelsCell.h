@@ -11,25 +11,34 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SelectModelsCell : UITableViewCell
 
+
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  selectModelsCellWithTableView:forCellReuseIdentifier:  ( 快速 初始化 一个 cell )
+ *  @brief  selectModelsCellInit  ( 快速初始化一个 Cell )
+ */
++ (__kindof SelectModelsCell * _Nonnull (^)(UITableView * _Nonnull, NSString * _Nonnull))selectModelsCellInit;
+
+/**!
+ *  @author swp_song
  *
- *  @ param  tableView
+ *  @brief  selectModelsCellWithTableView:forCellReuseIdentifier:   ( 快速初始化一个 Cell )
  *
- *  @ param  identifier
+ *  @param  tableView   tableView
  *
- *  @ return
+ *  @param  identifier  identifier
+ *
+ *  @return UITableViewCell
  */
 + (instancetype)selectModelsCellWithTableView:(UITableView *)tableView forCellReuseIdentifier:(NSString *)identifier;
 
 /**!
- *  @ author swp_song
+ *  @author swp_song
  *
- *  @ brief  model: ( 设置 数据 )
+ *  @brief  model   ( 设置数据 )
  */
-- (SelectModelsCell *(^)(id model, NSIndexPath *indexPath))model;
+- (SelectModelsCell * _Nonnull (^)(id _Nonnull, NSIndexPath * _Nonnull))model;
+
 
 @end
 NS_ASSUME_NONNULL_END
