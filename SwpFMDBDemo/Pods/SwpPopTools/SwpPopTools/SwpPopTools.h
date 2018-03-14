@@ -14,58 +14,58 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SwpPopTools : NSObject
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  shareInstance ( 单利 )
+ *  @brief  shareInstance ( 单利 )
  
- *  @ return SwpPopTools
+ *  @return SwpPopTools
  */
 + (instancetype)sharedInstance;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpPopToolsView:animatedCompletion:( 将一个 view 动画 添加 到 Window 上 )
+ *  @brief  swpPopToolsView:animatedCompletion: ( 使用动画显示 pop view )
  *
- *  @ param  view
+ *  @param  view        view
  *
- *  @ param  animated
+ *  @param  animated    animated
  */
 + (void)swpPopToolsView:(UIView *)view animated:(BOOL)animated;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpPopToolsView:animated:animatedCompletion:   ( 将一个 view 动画 添加 到 Window 上 )
+ *  @brief  swpPopToolsView:animated:animatedCompletion:    ( SwpPopTools，显示 )
  *
- *  @ param  view
+ *  @param  view                view
  *
- *  @ param  animated
+ *  @param  animated            animated
  *
- *  @ param  animatedCompletion
+ *  @param  animatedCompletion  animatedCompletion
  */
-+ (void)swpPopToolsView:(UIView *)view animated:(BOOL)animated animatedCompletion:(nullable void(^)())animatedCompletion;
++ (void)swpPopToolsView:(UIView *)view animated:(BOOL)animated animatedCompletion:(void(^ _Nullable)(void))animatedCompletion;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpPopToolsViewCloseAnimated:  ( 关闭 一个 view )
+ *  @brief  swpPopToolsViewCloseAnimated:   ( SwpPopTools，关闭 )
  *
- *  @ param  animated
+ *  @param  animated    animated
  */
 + (void)swpPopToolsViewCloseAnimated:(BOOL)animated;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpPopToolsViewCloseAnimated:animatedCompletion:   ( 关闭 一个 view )
+ *  @brief  swpPopToolsViewCloseAnimated:animatedCompletion:    ( SwpPopTools，关闭 )
  *
- *  @ param  animated
+ *  @param  animated            animated
  *
- *  @ param  animatedCompletion
+ *  @param  animatedCompletion  animatedCompletion
  */
-+ (void)swpPopToolsViewCloseAnimated:(BOOL)animated animatedCompletion:(nullable void(^)())animatedCompletion;
++ (void)swpPopToolsViewCloseAnimated:(BOOL)animated animatedCompletion:(void(^ _Nullable)(void))animatedCompletion;
 
 @end
 NS_ASSUME_NONNULL_END

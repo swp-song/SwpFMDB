@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SwpAttributedFont : SwpAttributedString
 
-/*! 设置 Attribute Font !*/
+/* 设置 Attribute Font */
 @property (nonatomic, strong) UIFont *swpAttributedFont;
 
 @end

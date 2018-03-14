@@ -16,14 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @brief  swpDataDisplayViewShow: ( SwpDataDisplayView 显示 )
  */
-- (SwpDataDisplayView * _Nonnull (^)())swpDataDisplayViewShow;
+- (SwpDataDisplayView * _Nonnull (^)(void))swpDataDisplayViewShow;
 
 /**!
  *  @author swp_song
  *
  *  @brief  swpDataDisplayViewHidden:   ( swpDataDisplayViewHidden 隐藏 )
  */
-- (SwpDataDisplayView * _Nonnull (^)())swpDataDisplayViewHidden;
+- (SwpDataDisplayView * _Nonnull (^)(void))swpDataDisplayViewHidden;
 
 @property (nonatomic, copy) void(^swpDataDisplayViewClickEvent)(SwpDataDisplayView *swpDataDisplayView);
 

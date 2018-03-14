@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		15B45F6E7D05E05A01E4B8DF /* libPods-SwpFMDBDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB6CD7DCF0B8430D3305B79 /* libPods-SwpFMDBDemo.a */; };
-		2D36BCF21F2EDE2E009EB9FA /* SwpFMDBBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D36BCF11F2EDE2E009EB9FA /* SwpFMDBBase.m */; };
 		2D885FED1E68192F006E0819 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D885FEC1E68192F006E0819 /* main.m */; };
 		2D885FF01E68192F006E0819 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D885FEF1E68192F006E0819 /* AppDelegate.m */; };
 		2D885FF21E68192F006E0819 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D885FF11E68192F006E0819 /* Assets.xcassets */; };
@@ -25,18 +24,9 @@
 		2D88602B1E681A43006E0819 /* SwpDataDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D88601C1E681A43006E0819 /* SwpDataDisplayView.m */; };
 		2D88602C1E681A43006E0819 /* SwpFMDBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D88601E1E681A43006E0819 /* SwpFMDBCell.m */; };
 		2D88602D1E681A43006E0819 /* SwpFMDBTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8860201E681A43006E0819 /* SwpFMDBTableView.m */; };
-		2DD4DA141E6A834400694D00 /* SwpFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA021E6A834400694D00 /* SwpFMDB.m */; };
-		2DD4DA151E6A834400694D00 /* SwpFMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA041E6A834400694D00 /* SwpFMDBManager.m */; };
-		2DD4DA161E6A834400694D00 /* SwpBDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA071E6A834400694D00 /* SwpBDModel.m */; };
-		2DD4DA171E6A834400694D00 /* SwpFMDBDataTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA0B1E6A834400694D00 /* SwpFMDBDataTypes.m */; };
-		2DD4DA181E6A834400694D00 /* SwpExecuteSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA0E1E6A834400694D00 /* SwpExecuteSQL.m */; };
-		2DD4DA191E6A834400694D00 /* SwpStitchingSQL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA101E6A834400694D00 /* SwpStitchingSQL.m */; };
-		2DD4DA1A1E6A834400694D00 /* SwpFMDBTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4DA131E6A834400694D00 /* SwpFMDBTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D36BCF01F2EDE2E009EB9FA /* SwpFMDBBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBBase.h; sourceTree = "<group>"; };
-		2D36BCF11F2EDE2E009EB9FA /* SwpFMDBBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBBase.m; sourceTree = "<group>"; };
 		2D885FE81E68192F006E0819 /* SwpFMDBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwpFMDBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D885FEC1E68192F006E0819 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2D885FEE1E68192F006E0819 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,21 +58,6 @@
 		2D88601E1E681A43006E0819 /* SwpFMDBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBCell.m; sourceTree = "<group>"; };
 		2D88601F1E681A43006E0819 /* SwpFMDBTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBTableView.h; sourceTree = "<group>"; };
 		2D8860201E681A43006E0819 /* SwpFMDBTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBTableView.m; sourceTree = "<group>"; };
-		2DD4D9FF1E6A834400694D00 /* SwpFMDBHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBHeader.h; sourceTree = "<group>"; };
-		2DD4DA011E6A834400694D00 /* SwpFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDB.h; sourceTree = "<group>"; };
-		2DD4DA021E6A834400694D00 /* SwpFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDB.m; sourceTree = "<group>"; };
-		2DD4DA031E6A834400694D00 /* SwpFMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBManager.h; sourceTree = "<group>"; };
-		2DD4DA041E6A834400694D00 /* SwpFMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBManager.m; sourceTree = "<group>"; };
-		2DD4DA061E6A834400694D00 /* SwpBDModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpBDModel.h; sourceTree = "<group>"; };
-		2DD4DA071E6A834400694D00 /* SwpBDModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpBDModel.m; sourceTree = "<group>"; };
-		2DD4DA0A1E6A834400694D00 /* SwpFMDBDataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBDataTypes.h; sourceTree = "<group>"; };
-		2DD4DA0B1E6A834400694D00 /* SwpFMDBDataTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBDataTypes.m; sourceTree = "<group>"; };
-		2DD4DA0D1E6A834400694D00 /* SwpExecuteSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpExecuteSQL.h; sourceTree = "<group>"; };
-		2DD4DA0E1E6A834400694D00 /* SwpExecuteSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpExecuteSQL.m; sourceTree = "<group>"; };
-		2DD4DA0F1E6A834400694D00 /* SwpStitchingSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpStitchingSQL.h; sourceTree = "<group>"; };
-		2DD4DA101E6A834400694D00 /* SwpStitchingSQL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpStitchingSQL.m; sourceTree = "<group>"; };
-		2DD4DA121E6A834400694D00 /* SwpFMDBTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwpFMDBTools.h; sourceTree = "<group>"; };
-		2DD4DA131E6A834400694D00 /* SwpFMDBTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwpFMDBTools.m; sourceTree = "<group>"; };
 		8502D38043E79509C6E3986C /* Pods-SwpFMDBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwpFMDBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwpFMDBDemo/Pods-SwpFMDBDemo.release.xcconfig"; sourceTree = "<group>"; };
 		ADB6CD7DCF0B8430D3305B79 /* libPods-SwpFMDBDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwpFMDBDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBDA860C3E4AF8B60E5BEFF /* Pods-SwpFMDBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwpFMDBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwpFMDBDemo/Pods-SwpFMDBDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,7 +96,6 @@
 		2D885FEA1E68192F006E0819 /* SwpFMDBDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2DD4D9FD1E6A834400694D00 /* SwpFMDB */,
 				2D885FFC1E681A43006E0819 /* Class */,
 				2D885FEE1E68192F006E0819 /* AppDelegate.h */,
 				2D885FEF1E68192F006E0819 /* AppDelegate.m */,
@@ -268,87 +242,6 @@
 			path = SwpFMDBView;
 			sourceTree = "<group>";
 		};
-		2DD4D9FD1E6A834400694D00 /* SwpFMDB */ = {
-			isa = PBXGroup;
-			children = (
-				2DD4D9FE1E6A834400694D00 /* SwpFMDBHeader */,
-				2DD4DA001E6A834400694D00 /* SwpFMDBMain */,
-				2DD4DA051E6A834400694D00 /* SwpFMDBModels */,
-				2DD4DA081E6A834400694D00 /* SwpFMDBTools */,
-			);
-			name = SwpFMDB;
-			path = ../../SwpFMDB;
-			sourceTree = "<group>";
-		};
-		2DD4D9FE1E6A834400694D00 /* SwpFMDBHeader */ = {
-			isa = PBXGroup;
-			children = (
-				2DD4D9FF1E6A834400694D00 /* SwpFMDBHeader.h */,
-			);
-			path = SwpFMDBHeader;
-			sourceTree = "<group>";
-		};
-		2DD4DA001E6A834400694D00 /* SwpFMDBMain */ = {
-			isa = PBXGroup;
-			children = (
-				2DD4DA011E6A834400694D00 /* SwpFMDB.h */,
-				2DD4DA021E6A834400694D00 /* SwpFMDB.m */,
-				2DD4DA031E6A834400694D00 /* SwpFMDBManager.h */,
-				2DD4DA041E6A834400694D00 /* SwpFMDBManager.m */,
-				2D36BCF01F2EDE2E009EB9FA /* SwpFMDBBase.h */,
-				2D36BCF11F2EDE2E009EB9FA /* SwpFMDBBase.m */,
-			);
-			path = SwpFMDBMain;
-			sourceTree = "<group>";
-		};
-		2DD4DA051E6A834400694D00 /* SwpFMDBModels */ = {
-			isa = PBXGroup;
-			children = (
-				2DD4DA061E6A834400694D00 /* SwpBDModel.h */,
-				2DD4DA071E6A834400694D00 /* SwpBDModel.m */,
-			);
-			path = SwpFMDBModels;
-			sourceTree = "<group>";
-		};
-		2DD4DA081E6A834400694D00 /* SwpFMDBTools */ = {
-			isa = PBXGroup;
-			children = (
-				2DD4DA091E6A834400694D00 /* SwpFMDBDataTypes */,
-				2DD4DA0C1E6A834400694D00 /* SwpFMDBSQLTools */,
-				2DD4DA111E6A834400694D00 /* SwpFMDBTools */,
-			);
-			path = SwpFMDBTools;
-			sourceTree = "<group>";
-		};
-		2DD4DA091E6A834400694D00 /* SwpFMDBDataTypes */ = {
-			isa = PBXGroup;
-			children = (
-				2DD4DA0A1E6A834400694D00 /* SwpFMDBDataTypes.h */,
-				2DD4DA0B1E6A834400694D00 /* SwpFMDBDataTypes.m */,
-			);
-			path = SwpFMDBDataTypes;
-			sourceTree = "<group>";
-		};
-		2DD4DA0C1E6A834400694D00 /* SwpFMDBSQLTools */ = {
-			isa = PBXGroup;
-			children = (
-				2DD4DA0D1E6A834400694D00 /* SwpExecuteSQL.h */,
-				2DD4DA0E1E6A834400694D00 /* SwpExecuteSQL.m */,
-				2DD4DA0F1E6A834400694D00 /* SwpStitchingSQL.h */,
-				2DD4DA101E6A834400694D00 /* SwpStitchingSQL.m */,
-			);
-			path = SwpFMDBSQLTools;
-			sourceTree = "<group>";
-		};
-		2DD4DA111E6A834400694D00 /* SwpFMDBTools */ = {
-			isa = PBXGroup;
-			children = (
-				2DD4DA121E6A834400694D00 /* SwpFMDBTools.h */,
-				2DD4DA131E6A834400694D00 /* SwpFMDBTools.m */,
-			);
-			path = SwpFMDBTools;
-			sourceTree = "<group>";
-		};
 		BDA56D900173505F36EA6679 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,7 +288,7 @@
 		2D885FE01E68192F006E0819 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = swp_song;
 				TargetAttributes = {
 					2D885FE71E68192F006E0819 = {
@@ -464,7 +357,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -493,25 +386,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DD4DA181E6A834400694D00 /* SwpExecuteSQL.m in Sources */,
 				2D8860241E681A43006E0819 /* CustomModel.m in Sources */,
-				2DD4DA171E6A834400694D00 /* SwpFMDBDataTypes.m in Sources */,
 				2D8860231E681A43006E0819 /* SwpFMDBViewController.m in Sources */,
-				2DD4DA141E6A834400694D00 /* SwpFMDB.m in Sources */,
 				2D885FF01E68192F006E0819 /* AppDelegate.m in Sources */,
 				2D88602D1E681A43006E0819 /* SwpFMDBTableView.m in Sources */,
 				2D8860251E681A43006E0819 /* InheritModel.m in Sources */,
 				2D885FED1E68192F006E0819 /* main.m in Sources */,
-				2DD4DA161E6A834400694D00 /* SwpBDModel.m in Sources */,
 				2D8860261E681A43006E0819 /* SwpFMDBModel.m in Sources */,
 				2D8860221E681A43006E0819 /* SelectModelsViewController.m in Sources */,
-				2DD4DA151E6A834400694D00 /* SwpFMDBManager.m in Sources */,
 				2D8860291E681A43006E0819 /* SelectModelsCell.m in Sources */,
 				2D88602C1E681A43006E0819 /* SwpFMDBCell.m in Sources */,
-				2DD4DA191E6A834400694D00 /* SwpStitchingSQL.m in Sources */,
-				2D36BCF21F2EDE2E009EB9FA /* SwpFMDBBase.m in Sources */,
 				2D88602B1E681A43006E0819 /* SwpDataDisplayView.m in Sources */,
-				2DD4DA1A1E6A834400694D00 /* SwpFMDBTools.m in Sources */,
 				2D8860271E681A43006E0819 /* TestModel.m in Sources */,
 				2D8860281E681A43006E0819 /* SwpFMDBDemoTools.m in Sources */,
 				2D88602A1E681A43006E0819 /* SelectModelsTableView.m in Sources */,
@@ -541,7 +426,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -549,7 +436,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -588,7 +479,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -596,7 +489,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

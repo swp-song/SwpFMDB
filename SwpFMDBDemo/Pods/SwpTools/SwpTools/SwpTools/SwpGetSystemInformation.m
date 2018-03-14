@@ -8,6 +8,8 @@
 
 #import "SwpGetSystemInformation.h"
 
+@import UIKit;
+
 /*! ---------------------- Tool       ---------------------- !*/
 #import <ifaddrs.h>                     // 获取 设备IP   使用
 #import <arpa/inet.h>                   // 获取 设备IP   使用
@@ -17,10 +19,10 @@
 
 @implementation SwpGetSystemInformation
 
-/**!
+/**
  *  @author swp_song
  *
- *  @brief  swpGetIphoneIpAddress   ( 获取 当前 电话的 Ip 地址 )
+ *  @brief  swpGetIphoneIpAddress   ( 获取当前电话的 Ip 地址 )
  *
  *  @return NSString Ip
  */
@@ -52,14 +54,14 @@
     return address;
 }
 
-/**!
+/**
  *  @author swp_song
  *
- *  @brief  swpGetIphoneDeviceDeviceType    ( 获取 设备 类型 )
+ *  @brief  swpGetIphoneDeviceType  ( 获取设备类型 )
  *
  *  @return NSString
  */
-+ (NSString *)swpGetIphoneDeviceDeviceType {
++ (NSString *)swpGetIphoneDeviceType {
     
     struct utsname systemMessage;
     uname(&systemMessage);
@@ -125,6 +127,89 @@
     
     return deviceType;
 }
+
+
+/**
+ *  @author swp_song
+ *
+ *  @brief  swpGetIphoneDeviceByScreenSize  ( 根据屏幕尺寸获取设备类型 )
+ *
+ *  @return SwpiPhoneScreenSize
+ */
++ (SwpiPhoneScreenSize)swpGetIphoneDeviceByScreenSize {
+    
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+        
+        //  获取屏幕尺寸信息
+        CGSize screenSize = [UIScreen mainScreen].bounds.size;
+        
+        //  竖屏情况
+        if (screenSize.height > screenSize.width) {
+            
+            if (screenSize.height == 568) {
+                
+                //  iPhone 5 / 5S / 5C / SE (iPod / iPod touch)
+                return SwpiPhoneScreenSize4_0;
+                
+            } else if (screenSize.height == 667) {
+                
+                //  iPone 6 / 6S / 7 / 8
+                return SwpiPhoneScreenSize4_7;
+                
+            } else if (screenSize.height == 736) {
+                
+                //  iPone 6 Plus / 6S Plus / 7 Plus / 8 Plus
+                return SwpiPhoneScreenSize5_5;
+                
+            } if (screenSize.height == 812)  {
+                
+                //  iPone X
+                return SwpiPhoneScreenSize5_8;
+                
+            } else {
+                
+                //  iPhone 4 / 4S
+                return SwpiPhoneScreenSize3_5;
+            }
+            
+        }
+        
+        //  横屏情况
+        if (screenSize.width > screenSize.height) {
+            
+            if (screenSize.width == 568) {
+                
+                //  iPhone 5 / 5S / 5C / SE (iPod / iPod touch)
+                return SwpiPhoneScreenSize4_0;
+                
+            } else if (screenSize.width == 667) {
+                
+                //  iPone 6 / 6S / 7 / 8
+                return SwpiPhoneScreenSize4_7;
+                
+            } else if (screenSize.width == 736) {
+                
+                //  iPone 6 Plus / 6S Plus / 7 Plus / 8 Plus
+                return SwpiPhoneScreenSize5_5;
+                
+            } else if (screenSize.width == 812) {
+                
+                //  iPone X
+                return SwpiPhoneScreenSize5_8;
+                
+            } else {
+                
+                //  iPhone 4 / 4S
+                return SwpiPhoneScreenSize3_5;
+            }
+        }
+    }
+    
+    return SwpiPhoneScreenSizeUnspecified;
+}
+
+
+
 
 
 

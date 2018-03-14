@@ -23,14 +23,14 @@ static id _swpPopTools;
 
 
 #pragma mark - Override Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  allocWithZone: ( Override  allocWithZone )
+ *  @brief  allocWithZone:  ( Override  allocWithZone )
  *
- *  @ param  zone
+ *  @param  zone    zone
  *
- *  @ return id
+ *  @return id
  */
 + (instancetype)allocWithZone:(struct _NSZone *)zone{
     static dispatch_once_t onceToken;
@@ -40,66 +40,66 @@ static id _swpPopTools;
     return _swpPopTools;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  copyWithZone:  ( Override  copyWithZone )
+ *  @brief  copyWithZone:   ( Override  copyWithZone )
  *
- *  @ param  zone
+ *  @param  zone    zone
  *
- *  @ return id
+ *  @return id
  */
 - (id)copyWithZone:(NSZone *)zone {
     return  _swpPopTools;
 }
 
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  copyWithZone:  ( Override  copyWithZone )
+ *  @brief  copyWithZone:   ( Override  copyWithZone )
  *
- *  @ param  zone
+ *  @param  zone    zone
  *
- *  @ return id
+ *  @return id
  */
 + (id)copyWithZone:(struct _NSZone *)zone {
     return  _swpPopTools;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  mutableCopyWithZone:   ( Override  mutableCopyWithZone )
+ *  @brief  mutableCopyWithZone:    ( Override  mutableCopyWithZone )
  *
- *  @ param  zone
+ *  @param  zone    zone
  *
- *  @ return id
+ *  @return id
  */
 + (id)mutableCopyWithZone:(struct _NSZone *)zone {
     return _swpPopTools;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  mutableCopyWithZone: ( Override  mutableCopyWithZone )
+ *  @brief  mutableCopyWithZone:    ( Override  mutableCopyWithZone )
  *
- *  @ param  zone
+ *  @param  zone    zone
  *
- *  @ return id
+ *  @return id
  */
 - (id)mutableCopyWithZone:(NSZone *)zone {
     return _swpPopTools;
 }
 
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  init    ( Override init )
+ *  @brief  init    ( Override init )
  *
- *  @ return SwpRequest
+ *  @return SwpRequest
  */
 - (instancetype)init {
     
@@ -111,18 +111,18 @@ static id _swpPopTools;
 
 
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  popToolsView:animated:animatedCompletion:  ( 将一个 view 动画 添加 到 Window 上 )
+ *  @brief  popToolsView:animated:animatedCompletion:   ( 添加 view 到 Window 上 )
  *
- *  @ param  view
+ *  @param  view                view
  *
- *  @ param  animated
+ *  @param  animated            animated
  *
- *  @ param  animatedCompletion
+ *  @param  animatedCompletion  animatedCompletion
  */
-- (void)popToolsView:(UIView *)view animated:(BOOL)animated animatedCompletion:(void(^)())animatedCompletion {
+- (void)popToolsView:(UIView *)view animated:(BOOL)animated animatedCompletion:(void(^)(void))animatedCompletion {
     
     _currentView             = view;
     CGFloat halfScreenWidth  = [[UIScreen mainScreen] bounds].size.width  * 0.5;
@@ -156,16 +156,16 @@ static id _swpPopTools;
 }
 
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  popToolsViewCloseAnimated:animatedCompletion:  ( 关闭 一个 view )
+ *  @brief  popToolsViewCloseAnimated:animatedCompletion:   ( 关闭 View )
  *
- *  @ param  animated
+ *  @param  animated            animated
  *
- *  @ param  animatedCompletion
+ *  @param  animatedCompletion  animatedCompletion
  */
-- (void)popToolsViewCloseAnimated:(BOOL)animated animatedCompletion:(void(^)())animatedCompletion {
+- (void)popToolsViewCloseAnimated:(BOOL)animated animatedCompletion:(void(^)(void))animatedCompletion {
     if (animated) {
         [UIView animateWithDuration:0.2 animations:^{
             _currentView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2);
@@ -185,12 +185,12 @@ static id _swpPopTools;
 
 
 #pragma mark - Public Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  shareInstance ( 单利 )
+ *  @brief  shareInstance ( 单利 )
  
- *  @ return SwpPopTools
+ *  @return SwpPopTools
  */
 + (instancetype)sharedInstance {
     static dispatch_once_t onceToken;
@@ -200,56 +200,56 @@ static id _swpPopTools;
     return _swpPopTools;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpPopToolsView:animatedCompletion:( 将一个 view 动画 添加 到 Window 上 )
+ *  @brief  swpPopToolsView:animatedCompletion: ( SwpPopTools，显示 )
  *
- *  @ param  view
+ *  @param  view        view
  *
- *  @ param  animated
+ *  @param  animated    animated
  */
 + (void)swpPopToolsView:(UIView *)view animated:(BOOL)animated {
     [[self class] swpPopToolsView:view animated:animated animatedCompletion:nil];
 }
 
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpPopToolsView:animated:animatedCompletion:   ( 将一个 view 动画 添加 到 Window 上 )
+ *  @brief  swpPopToolsView:animated:animatedCompletion:    ( SwpPopTools，显示 )
  *
- *  @ param  view
+ *  @param  view                view
  *
- *  @ param  animated
+ *  @param  animated            animated
  *
- *  @ param  animatedCompletion
+ *  @param  animatedCompletion  animatedCompletion
  */
-+ (void)swpPopToolsView:(UIView *)view animated:(BOOL)animated animatedCompletion:(void(^)())animatedCompletion {
++ (void)swpPopToolsView:(UIView *)view animated:(BOOL)animated animatedCompletion:(void(^)(void))animatedCompletion {
     [[SwpPopTools sharedInstance] popToolsView:view animated:animated animatedCompletion:animatedCompletion];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpPopToolsViewCloseAnimated:  ( 关闭 一个 view )
+ *  @brief  swpPopToolsViewCloseAnimated:   ( SwpPopTools，关闭 )
  *
- *  @ param  animated
+ *  @param  animated    animated
  */
 + (void)swpPopToolsViewCloseAnimated:(BOOL)animated {
     [[self class] swpPopToolsViewCloseAnimated:animated animatedCompletion:nil];
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpPopToolsViewCloseAnimated:animatedCompletion:   ( 关闭 一个 view )
+ *  @brief  swpPopToolsViewCloseAnimated:animatedCompletion:    ( SwpPopTools，关闭 )
  *
- *  @ param  animated
+ *  @param  animated            animated
  *
- *  @ param  animatedCompletion
+ *  @param  animatedCompletion  animatedCompletion
  */
-+ (void)swpPopToolsViewCloseAnimated:(BOOL)animated animatedCompletion:(void(^)())animatedCompletion {
++ (void)swpPopToolsViewCloseAnimated:(BOOL)animated animatedCompletion:(void(^)(void))animatedCompletion {
     [[SwpPopTools sharedInstance] popToolsViewCloseAnimated:animated animatedCompletion:animatedCompletion];
 }
 

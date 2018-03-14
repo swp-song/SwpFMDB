@@ -1,1 +1,1 @@
-../../../SwpCateGory/SwpCateGory/NSObject/NSDictionaryCateGory/NSDictionary+SwpGenerateProperty.h
+../../../SwpCateGory/SwpCateGory/NSObject/NSDictionaryCateGory/SwpGenerateProperty/NSDictionary+SwpGenerateProperty.h

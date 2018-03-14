@@ -13,21 +13,21 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface NSMutableAttributedString (SwpAttributed)
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  addStringAttribute: ( 添加 富文本 )
+ *  @brief  addStringAttribute: ( 添加 富文本 )
  *
- *  @ param  stringAttribute
+ *  @param  stringAttribute stringAttribute
  */
 - (void)addStringAttribute:(id<SwpAttributedDelegate>)stringAttribute;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  removeStringAttribute:  ( 移除 富文本 )
+ *  @brief  removeStringAttribute:  ( 移除富文本 )
  *
- *  @ param  stringAttribute
+ *  @param  stringAttribute stringAttribute
  */
 - (void)removeStringAttribute:(id<SwpAttributedDelegate>)stringAttribute;
 

@@ -10,7 +10,7 @@
 
 @implementation SwpCoordinateTransform
 
-/**!
+/**
  *  @ author swp_song
  *
  *  @ brief  SwpCoordinate2DMake
@@ -26,7 +26,7 @@ SwpCoordinate2D SwpCoordinate2DMake(SwpDegrees latitude, SwpDegrees longitude) {
     return swpCoordinate2D;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpCoordinateTransformBaiDuFromAMAP:longitude:  ( 经纬度 转换 百度 经纬度 转换成 高德 经纬度 )
@@ -52,7 +52,7 @@ SwpCoordinate2D SwpCoordinate2DMake(SwpDegrees latitude, SwpDegrees longitude) {
     return SwpCoordinate2DMake(latit, longt);
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpCoordinateTransformBaiDuFromAMAP:longitude:  ( 经纬度 转换 百度 经纬度 转换成 高德 经纬度 )

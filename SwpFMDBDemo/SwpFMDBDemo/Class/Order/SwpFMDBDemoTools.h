@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param  block       block
  */
-+ (void)swpFMDBDemoToolsShowDatabaseOperationCompletedAlert:(UIViewController *)controller clickSeeBlock:(void(^)())block;
++ (void)swpFMDBDemoToolsShowDatabaseOperationCompletedAlert:(UIViewController *)controller clickSeeBlock:(void(^)(void))block;
 
 /**!
  *  @author swp_song

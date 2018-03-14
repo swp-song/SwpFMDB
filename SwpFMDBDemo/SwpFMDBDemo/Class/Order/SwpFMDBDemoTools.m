@@ -52,7 +52,7 @@
  *
  *  @param  block       block
  */
-+ (void)swpFMDBDemoToolsShowDatabaseOperationCompletedAlert:(UIViewController *)controller clickSeeBlock:(void(^)())block {
++ (void)swpFMDBDemoToolsShowDatabaseOperationCompletedAlert:(UIViewController *)controller clickSeeBlock:(void(^)(void))block {
     [[self class] swpFMDBDemoToolsShowAlertViewController:controller alertControllerWithTitle:@"数据库操作完毕" message:@"是否查看数据 ? " isShowSeeButton:YES clickSeeBlock:block];
 }
 
@@ -83,7 +83,7 @@
  *
  *  @param  block           block
  */
-+ (void)swpFMDBDemoToolsShowAlertViewController:(UIViewController *)controller alertControllerWithTitle:(NSString *)title message:(NSString *)message isShowSeeButton:(BOOL)isShowSeeButton clickSeeBlock:(void(^)())block {
++ (void)swpFMDBDemoToolsShowAlertViewController:(UIViewController *)controller alertControllerWithTitle:(NSString *)title message:(NSString *)message isShowSeeButton:(BOOL)isShowSeeButton clickSeeBlock:(void(^)(void))block {
     
      UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 定义 定位 数据变量 !*/
 typedef double SwpDegrees;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  定义 经纬度 结构体
@@ -25,7 +25,7 @@ typedef struct {
 
 @interface SwpCoordinateTransform : NSObject
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  SwpCoordinate2DMake
@@ -38,7 +38,7 @@ typedef struct {
  */
 SwpCoordinate2D SwpCoordinate2DMake(SwpDegrees latitude, SwpDegrees longitude);
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpCoordinateTransformAMAPFromBaiDu:longitude:  ( 经纬度 转换 高德 经纬度 转换成 百度 经纬度 )
@@ -51,7 +51,7 @@ SwpCoordinate2D SwpCoordinate2DMake(SwpDegrees latitude, SwpDegrees longitude);
  */
 + (SwpCoordinate2D)swpCoordinateTransformAMAPFromBaiDu:(double)latitude longitude:(double)longitude;
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpCoordinateTransformBaiDuFromAMAP:longitude:  ( 经纬度 转换 百度 经纬度 转换成 高德 经纬度 )

@@ -2,7 +2,7 @@ project 'SwpFMDBDemo.xcodeproj'
 
 # Uncomment the next line to define a global platform for your project
   source 'https://github.com/CocoaPods/Specs.git'
-  platform :ios, '7.0'
+  platform :ios, '8.0'
 
 target 'SwpFMDBDemo' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -10,13 +10,14 @@ target 'SwpFMDBDemo' do
 
   # Pods for SwpFMDBDemo
   
-  inhibit_all_warnings!
-  pod 'pop'  
+#  inhibit_all_warnings!
+  pod 'pop'
   pod 'FMDB'
   pod 'Masonry'
   pod 'SwpTools'
   pod 'SwpCateGory'
   pod 'SwpPopTools'
   pod 'SVProgressHUD'
+  pod 'SwpFMDB', :path => '../'
 
 end

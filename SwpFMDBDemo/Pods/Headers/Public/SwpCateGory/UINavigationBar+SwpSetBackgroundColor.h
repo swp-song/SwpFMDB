@@ -1,1 +1,0 @@
-../../../SwpCateGory/SwpCateGory/UIKit/UINavigationBarCateGory/UINavigationBar+SwpSetBackgroundColor.h

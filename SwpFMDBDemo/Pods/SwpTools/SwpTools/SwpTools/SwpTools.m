@@ -8,6 +8,8 @@
 
 #import "SwpTools.h"
 
+#import <WebKit/WebKit.h>
+
 @class AppDelegate;
 
 static NSString * const defaultPlistName = @"mainInterfaceData.plist";
@@ -17,8 +19,8 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 
 #pragma mark - Get System Version & App Version Methods
 
-/**!
- *  @author swp_song, 2015-12-28 14:43:54
+/**
+ *  @author swp_song
  *
  *  @brief  swpToolCheckSystemVersion   ( 判断应用运行在什么系统版本上 )
  *
@@ -33,7 +35,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return systemVersion;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolCheckAppVersion  ( 判断应用的版本号 )
@@ -50,7 +52,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return APPVersion;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolGetAppVersion   ( 获取 系统 版本号 < 无需自己判断 > )
@@ -66,7 +68,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolBundleVersion   ( 获取 系统 版本号 Production )
@@ -77,7 +79,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolBundleShortVersionString   ( 获取 系统 版本号 Development )
@@ -91,7 +93,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 
 
 #pragma mark - Hiddle TableView Excessed Cell & Setting TableView Cell Separate Wire - Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolHiddleExcessedCellFromTableview: ( 隐藏 Tableivew 中多余的 Cell )
@@ -104,7 +106,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     [tableview setTableFooterView:view];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolSetTableViewAllCellWire:setTableViewCell:  ( 设置 Cell 的分割线 )
@@ -132,7 +134,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 
 
 #pragma mark - WebView Load Servers URL Method
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolWebViewLoadServersURL:setServersURLString:    ( WebView 加载 服务器端 URL )
@@ -145,7 +147,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:URLString]]];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolWKWebViewLoadServersURL:setServersURLString: ( WKWebView 加载 服务器端 URL )
@@ -159,7 +161,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 #pragma mark - Call Phone & Message - Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolCallPhone:superView:superView:   ( 拨打 电话 )
@@ -176,7 +178,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolSendMessage: ( 快速跳转到 发送 信息页面 <只能给固定人发送信息, 不能编辑信息内容> )
@@ -190,7 +192,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 
 
 #pragma mark - Trim String Front And Back Blanker Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolTrimString:  ( 去除 字符串 前后 空格 )
@@ -205,7 +207,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 
 
 #pragma mark - Set Button Timer Method
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolSettingButtonTimer:setTimer: ( 在 button 设置倒计时 计时器 )
@@ -218,7 +220,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     [self.class swpToolSetButtonTimer:button setTimer:timer appendTitle:@"秒后重发"];
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolSetButtonTimer:setTimer:appendTitle: ( 在 button 设置倒计时计时器 )
@@ -263,7 +265,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 #pragma mark - Jump ViewController Method
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolJumpContrillerWith:pushController:   ( Jump ViewController <跳转控制器 根据字符串实例化 控制器> )
@@ -277,7 +279,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 #pragma mark - Check Page Method
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolChekPageWithDataSource:page:firstPage:   ( Check page )
@@ -299,7 +301,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return array;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolSetLabelProperty:showBorderWidth:fontSize:fontColor: ( Setting Lable Property )
@@ -322,7 +324,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 #pragma mark - Set View UITapGestureRecognizer Method
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolSetTapGestureRecognizer:setViewTag:setClickCount:setTarget:setAction:setCancelsTouchesInView:    ( 绑定 一个 点击事件 给一个 view )
@@ -354,7 +356,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 
 
 #pragma - mark Delete Sandbox File Method
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolDeleteFileWithFileName:  ( Delete Sandbox File )
@@ -387,7 +389,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 #pragma mark - Image Compress Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolCompressImage:scaleToSize:   ( Image Compress Methods <图片 压缩> )
@@ -420,7 +422,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 #pragma mark - Data Save Plist & Get Plist Data - Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolDataWriteToPlist:plistName:  ( 将 数据写入 plist 文件中 )
@@ -484,7 +486,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return NO;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolGetDictionaryFromPlist:  ( 取出 plist 文件中数据 返回一个字典 )
@@ -517,7 +519,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     }
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolGetInterfaceURL: ( 取出 主接口 接口 URL )
@@ -533,7 +535,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 #pragma mark - About Screen Size Tools Methods
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolScreenWidth  ( 取出 设备 实际的宽度值 )
@@ -544,7 +546,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return [[UIScreen mainScreen] bounds].size.width;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolScreenHeight ( 取出 设备 实际的高度值 )
@@ -555,7 +557,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return [[UIScreen mainScreen] bounds].size.height;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolScreenSize   ( 取出 设备 实际的宽高 )
@@ -566,7 +568,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return CGSizeMake([[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height);
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolScreenScale:swpToolScreenScale:scaleWidth:scaleHeight:   ( 计算 宽高比 )
@@ -583,7 +585,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return screenWidth / scaleWidth * scaleHeight;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolIphone4sScreenSize   ( 获取 4 / 4s 屏幕尺寸 )
@@ -594,7 +596,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return CGSizeMake(320, 480);
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolIphone5sScreenSize   ( 获取 5 / 5s 屏幕尺寸 )
@@ -606,7 +608,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolIphone6sScreenSize   ( 获取 6 / 6s 屏幕尺寸 )
@@ -617,7 +619,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return CGSizeMake(375, 667);
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolIphone6pScreenSize   ( 获取 6p / 6ps 屏幕尺寸 )
@@ -629,7 +631,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 #pragma mark - Get Application Delegate Method
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolApplicationDelegate  ( 获取工 AppDelegat 代理 )
@@ -641,7 +643,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 #pragma mark - Check Existence Controller
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolCheckNavigationControllerExistenceController:checkController:checkResult:checkResult ( 验证 导航控制器 中 是否存在 指定 控制器 )
@@ -662,7 +664,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolValidationClassTypeWithObject:validationClass:   ( 验证两个类是否是同一个类 )
@@ -682,7 +684,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return NO;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolValidationClassTypeWithDataSource:validationClass:   ( 验证两个类是否是同一个类 )
@@ -706,7 +708,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolViewBottomDrawLines:linesHeight:linesColor:  ( 在 view 底部画线在 view drawRect 这个方法中调用, 一般适用于 绘制 cell 分割线)
@@ -728,7 +730,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolViewBottomDrawLines:linesColor:  ( 在 view 底部画线 在 view drawRect 这个方法中调用, 一般适用于 绘制 cell 分割线)
@@ -742,7 +744,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 }
 
 #pragma mark - Calculate String Size
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolCalculateRowHeight:font:width:   ( 根据字符串的宽度, 计算字符串的高度 )
@@ -765,7 +767,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return rect.size.height;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolCalculateRowWidth:font:height:       ( 根据字符串的高度, 计算字符串的宽度 )
@@ -788,7 +790,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
     return rect.size.width;
 }
 
-/**!
+/**
  *  @author swp_song
  *
  *  @brief  swpToolCharacterStringContainsEmoji:    ( 验证字符串中是否含有 < Emoji > )
@@ -840,7 +842,7 @@ static NSString * const defaultPlistName = @"mainInterfaceData.plist";
 
 
 #pragma mark - Order Error & Order Test - Method
-/**!
+/**
  *  设置导航控制器 搜索条
  *
  *  @param  searchBarWidth searchBar 宽度

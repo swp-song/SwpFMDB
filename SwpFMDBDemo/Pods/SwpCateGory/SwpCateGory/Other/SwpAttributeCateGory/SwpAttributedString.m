@@ -11,34 +11,34 @@
 @implementation SwpAttributedString
 
 #pragma mark - SwpAttributed Delegate Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpAttributeName    ( 设置 Attributed Key )
+ *  @brief  swpAttributeName    ( 设置 Attributed Key )
  *
- *  @ return swpAttributeName
+ *  @return swpAttributeName
  */
 - (NSString *)swpAttributeName {
     return nil;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpAttributeValue   ( 设置 Attributed Value )
+ *  @brief  swpAttributeValue   ( 设置 Attributed Value )
  *
- *  @ return swpAttributeValue
+ *  @return swpAttributeValue
  */
 - (id)swpAttributeValue {
     return nil;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpAttributeEffectiveStringRange    ( 设置 Attributed 生效的范围   )
+ *  @brief  swpAttributeEffectiveStringRange    ( 设置 Attributed 生效的范围   )
  *
- *  @ return NSRange
+ *  @return NSRange
  */
 - (NSRange)swpAttributeEffectiveStringRange {
     return self.swpAttributedEffectRange;

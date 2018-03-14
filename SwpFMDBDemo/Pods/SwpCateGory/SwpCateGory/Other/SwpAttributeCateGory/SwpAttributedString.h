@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface SwpAttributedString : NSObject <SwpAttributedDelegate>
 
-/*! 设置 Attributed 生效的范围  !*/
+/* 设置 Attributed 生效的范围 */
 @property (nonatomic, assign) NSRange swpAttributedEffectRange;
 
 @end

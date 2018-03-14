@@ -14,23 +14,23 @@
 
 
 #pragma mark - SwpAttributed Delegate Methods
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpAttributeName    ( 设置 Attributed Color Key )
+ *  @brief  swpAttributeName    ( 设置 Attributed Color Key )
  *
- *  @ return swpAttributeName
+ *  @return swpAttributeName
  */
 - (NSString *)swpAttributeName {
     return NSForegroundColorAttributeName;
 }
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpAttributeValue   ( 设置 Attributed Color )
+ *  @brief  swpAttributeValue   ( 设置 Attributed Color )
  *
- *  @ return swpAttributeValue
+ *  @return swpAttributeValue
  */
 - (id)swpAttributeValue {
     return self.swpAttributedColor ? self.swpAttributedColor : [UIColor blackColor];

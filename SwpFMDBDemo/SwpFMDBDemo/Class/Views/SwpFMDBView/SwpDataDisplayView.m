@@ -266,7 +266,7 @@
  *
  *  @brief  swpDataDisplayViewShow: ( SwpDataDisplayView 显示 )
  */
-- (SwpDataDisplayView * _Nonnull (^)())swpDataDisplayViewShow {
+- (SwpDataDisplayView * _Nonnull (^)(void))swpDataDisplayViewShow {
     
     return ^SwpDataDisplayView *() {
         self.alpha = 0.8;
@@ -281,7 +281,7 @@
  *
  *  @brief  swpDataDisplayViewHidden:   ( swpDataDisplayViewHidden 隐藏 )
  */
-- (SwpDataDisplayView * _Nonnull (^)())swpDataDisplayViewHidden {
+- (SwpDataDisplayView * _Nonnull (^)(void))swpDataDisplayViewHidden {
     
     return ^SwpDataDisplayView *(){
         [UIView animateWithDuration:0.8 animations:^{

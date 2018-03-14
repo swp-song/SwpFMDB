@@ -12,7 +12,7 @@
 #import "FMDB.h"                        //  FMDB
 #import "SwpFMDBTools.h"                //  Tools
 /*! ---------------------- Tool       ---------------------- !*/
-@interface SwpFMDBBase ()
+@interface SwpFMDBBase () <NSCoding, NSMutableCopying>
 
 /*! 数据库 操作 !*/
 @property (nonatomic, strong) FMDatabaseQueue *databaseQueue;

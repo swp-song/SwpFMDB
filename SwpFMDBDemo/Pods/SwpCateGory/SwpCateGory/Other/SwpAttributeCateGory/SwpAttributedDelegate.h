@@ -11,21 +11,21 @@
 @protocol SwpAttributedDelegate <NSObject>
 
 @required
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpAttributeName    ( 属性名字 )
+ *  @brief  swpAttributeName    ( 属性名字 )
  *
- *  @ return NSString
+ *  @return NSString
  */
 - (NSString *)swpAttributeName;
 
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpAttributeValue   ( 属性对应的值 )
+ *  @brief  swpAttributeValue   ( 属性对应的值 )
  *
- *  @ return id
+ *  @return id
  */
 - (id)swpAttributeValue;
 
@@ -33,12 +33,12 @@
 
 
 #pragma mark -
-/**!
- *  @ author swp_song
+/**
+ *  @author swp_song
  *
- *  @ brief  swpAttributeEffectiveStringRange:   ( 生效的范围 )
+ *  @brief  swpAttributeEffectiveStringRange    ( 生效的范围 )
  *
- *  @ return NSRange
+ *  @return NSRange
  */
 - (NSRange)swpAttributeEffectiveStringRange;
 
