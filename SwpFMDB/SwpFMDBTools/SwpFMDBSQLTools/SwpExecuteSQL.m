@@ -421,7 +421,7 @@
  *
  *  @param  isCloseDB   isCloseDB   < 是否关闭数据库 >
  */
-+ (BOOL)swpExecuteDBOperation:(FMDatabase *)dataBase dbOpenBlock:(void(^)())dbOpenBlock isCloseDB:(BOOL)isCloseDB {
++ (BOOL)swpExecuteDBOperation:(FMDatabase *)dataBase dbOpenBlock:(void(^)(void))dbOpenBlock isCloseDB:(BOOL)isCloseDB {
     
     if (![self.class swpExecuteOpenDB:dataBase]) {
         NSLog(@"数据库未打开");

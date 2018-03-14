@@ -12,7 +12,7 @@
 #import "FMDB.h"                        //  FMDB
 #import "SwpFMDBTools.h"                //  Tools
 /*! ---------------------- Tool       ---------------------- !*/
-@interface SwpFMDBBase () <NSCoding, NSMutableCopying>
+@interface SwpFMDBBase ()
 
 /*! 数据库 操作 !*/
 @property (nonatomic, strong) FMDatabaseQueue *databaseQueue;
@@ -128,7 +128,7 @@ static id _swpFMDBBase;
  *
  *  @brief  shareManagerChain   ( 单利方法, 快速初始化 )
  */
-+ (__kindof SwpFMDBBase * _Nonnull (^)())shareManagerChain {
++ (__kindof SwpFMDBBase * _Nonnull (^)(void))shareManagerChain {
     
     return ^() {
         return [self.class shareManager];
@@ -154,8 +154,6 @@ static id _swpFMDBBase;
     }];
     
 }
-
-
 
 @end
 

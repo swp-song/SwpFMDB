@@ -10,7 +10,7 @@ target 'SwpFMDBDemo' do
 
   # Pods for SwpFMDBDemo
   
-#  inhibit_all_warnings!
+  inhibit_all_warnings!
   pod 'pop'
   pod 'FMDB'
   pod 'Masonry'

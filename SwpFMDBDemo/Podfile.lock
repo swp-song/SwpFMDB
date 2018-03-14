@@ -44,7 +44,7 @@ PODS:
   - SwpCateGory/SwpSetTextField (2.5.0)
   - SwpCateGory/SwpUserDefaults (2.5.0)
   - SwpCateGory/SwpViewScreenshots (2.5.0)
-  - SwpFMDB (2.1.3):
+  - SwpFMDB (2.1.4):
     - FMDB
   - SwpPopTools (1.1.0)
   - SwpTools (3.4.0)
@@ -69,10 +69,10 @@ SPEC CHECKSUMS:
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwpCateGory: ae95e6280805186bf86315e58d8e96b745107c32
-  SwpFMDB: b53ef07c2dfd73f5a4dab591283cae82ac5a7797
+  SwpFMDB: 6cd82ed78c9548c5644a56415d533f81526a7f58
   SwpPopTools: 4e026391fed94bfb8d1cc5005643fb473b2e854c
   SwpTools: de8d15f8af82c9b34145ae9989c7b5d97ffe12c6
 
-PODFILE CHECKSUM: a4dd025114d6e54704ce89a5df76e3bcd2ddbf15
+PODFILE CHECKSUM: 4dd6b72f6b21459eecb6d886728cc577736c44ea
 
 COCOAPODS: 1.4.0

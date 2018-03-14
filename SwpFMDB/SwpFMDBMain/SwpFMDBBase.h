@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @brief  shareManagerChain   ( 单利方法, 快速初始化 )
  */
-+ (__kindof SwpFMDBBase * _Nonnull (^)())shareManagerChain;
++ (__kindof SwpFMDBBase * _Nonnull (^)(void))shareManagerChain;
 
 /**
  *  @author swp_song
